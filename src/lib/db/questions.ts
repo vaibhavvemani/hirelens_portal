@@ -1,27 +1,50 @@
-import clientPromise from "../mongodb";
+import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
+import { Question } from "@/types/question"
 
 const COLLECTION_NAME = "questions";
 
-export async function add_questions(questionData: any) {
+export async function add_questions(question_data: Question) {
   const client = await clientPromise;
   const db = client.db();
-  const result = await db.collection(COLLECTION_NAME).insertOne(questionData);
+  const result = await db.collection(COLLECTION_NAME).insertOne(question_data);
   return result.insertedId;
 }
 
-function update_question() {
+export async function update_question(id: string, updated_data: Question) {
+  const client = await clientPromise;
+  const db = client.db();
+  return await db.collection(COLLECTION_NAME).updateOne(
+    { _id: new ObjectId(id) },
+    { $set: updated_data}
+  )
+}
+
+export async function delete_question(id: string) {
+  const client = await clientPromise;
+  const db = client.db();
+  return await db.collection(COLLECTION_NAME).deleteOne(
+    { _id: new ObjectId(id) }
+  )
 
 }
 
-function delete_question() {
+export async function get_question_by_id(id: string) {
+  const client = await clientPromise;
+  const db = client.db();
+  const result = await db.collection(COLLECTION_NAME).findOne(
+    { _id: new ObjectId(id)}
+  )
+
+  return result;
 
 }
 
-function get_all_questions() {
+export async function get_questions(filter = {}) {
+  const client = await clientPromise;
+  const db = client.db();
+  const result = db.collection(COLLECTION_NAME).find(filter)
 
+  return result;
 }
 
-function get_question_by_id() {
-
-}
