@@ -15,7 +15,7 @@ export interface Question {
 }
 
 export interface Filter {
-  topic: string;
-  catagory: "quantitative" | "verbal" | "technical";
-  difficulty: "hard" | "medium" | "easy";
+  topic?: string;
+  category?: "quantitative" | "verbal" | "technical";
+  difficulty?: "hard" | "medium" | "easy";
 }
