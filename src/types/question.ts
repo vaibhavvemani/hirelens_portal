@@ -11,7 +11,7 @@ export interface Question {
     option_3: string;
     option_4: string;
   };
-  answer: QuestionOptionKey;
+  answer: QuestionOptionKey; 
 }
 
 export interface Filter {
