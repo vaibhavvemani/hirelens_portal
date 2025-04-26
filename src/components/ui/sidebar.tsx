@@ -261,6 +261,7 @@ export function SidebarTrigger({
   const { toggleSidebar } = useSidebar()
 
   return (
+    <div className="md:hidden">
     <Button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
@@ -273,11 +274,11 @@ export function SidebarTrigger({
       }}
       {...props}
     >
-      <div className="md:hidden">
+  
         <PanelRight/>
-      </div>
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
+    </div>
   )
 }
 
