@@ -32,8 +32,8 @@ const sidebarGroups: SidebarGroupType[] = [
     {
         label: "Placements",
         items: [
-            { title: "Dashboard", url: "#", icon: LayoutDashboard },
-            { title: "Interview Drives", url: "#", icon: BriefcaseBusiness },
+            { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
+            { title: "Interview Drives", url: "/admin", icon: BriefcaseBusiness },
         ],
     },
     {
