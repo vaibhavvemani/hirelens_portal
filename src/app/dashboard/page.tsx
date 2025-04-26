@@ -4,11 +4,15 @@ import Stats from "./components/Stats";
 
 const page = () => {
   return (
-    <div className="flex flex-col flex-1 bg-red-500 gap-5">
+    <div className="w-full flex justify-center">
+            <div className="flex flex-col flex-1 gap-5 max-w-[1300px] px-4">
       <Header />
       <Stats />
       <Details />
     </div>
+
+    </div>
+
   );
 };
 
