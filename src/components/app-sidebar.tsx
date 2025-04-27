@@ -75,16 +75,16 @@ const sidebarGroups: SidebarGroupType[] = [
 ];
 
 export function AppSidebar() {
-  const { toggleSidebar, setOpen } = useSidebar();
+  const { setOpen } = useSidebar();
 
   return (
     <Sidebar
       collapsible="icon"
       variant="floating"
-      onMouseEnter={toggleSidebar}
-      onMouseLeave={toggleSidebar}
+      onMouseEnter={()=>{setOpen(true)}}
+      onMouseLeave={()=>{setOpen(false)}}
     >
-      <SidebarContent onClick={() => setOpen(true)}>
+      <SidebarContent>
         {sidebarGroups.map((group) => (
           <SidebarGroup key={group.label}>
             <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
