@@ -12,7 +12,6 @@ import {
     BookOpen,
     MessageSquare,
     Code2,
-    Icon,
   } from "lucide-react";
   
   import { Button } from "@/components/ui/button";
@@ -27,9 +26,9 @@ import {
   ];
   
   const recommendedResourcesData = [
-    { src: "/placeholder.svg?height=40&width=40", alt: "JavaScript Book", title: "Advanced JavaScript Patterns", rating: "4.8 ★", type: "eBook" },
-    { src: "/placeholder.svg?height=40&width=40", alt: "Algorithm Course", title: "Algorithm Visualization Tools", rating: "4.6 ★", type: "Interactive" },
-    { src: "/placeholder.svg?height=40&width=40", alt: "Design Course", title: "Responsive Design Workshop", rating: "4.9 ★", type: "Video Course" },
+    { src: "/default.png", alt: "JavaScript Book", title: "Advanced JavaScript Patterns", rating: "4.8 ★", type: "eBook" },
+    { src: "/default.png", alt: "Algorithm Course", title: "Algorithm Visualization Tools", rating: "4.6 ★", type: "Interactive" },
+    { src: "/default.png", alt: "Design Course", title: "Responsive Design Workshop", rating: "4.9 ★", type: "Video Course" },
   ];
 
   interface RecentActivityItemProps {
@@ -65,7 +64,7 @@ import {
         width={40}
         height={40}
         alt={alt}
-        className="rounded-md object-cover"
+        className="rounded-md"
       />
       <div className="space-y-1">
         <p className="text-sm font-medium leading-none">{title}</p>
@@ -102,7 +101,7 @@ import {
             <CardDescription>Based on your current courses</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
+            <div className="flex flex-col gap-2">
               {recommendedResourcesData.map((resource, index) => (
                 <RecommendedResourceItem
                   key={index}
@@ -116,7 +115,7 @@ import {
             </div>
           </CardContent>
           <CardFooter>
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="w-full cursor-pointer">
               View All Resources
             </Button>
           </CardFooter>
