@@ -17,8 +17,8 @@ import {
 } from "@/components/ui/tabs"
 import Overview from "./TabsContent/Overview"
 import Courses from "./TabsContent/Courses"
-import Assignments from "./TabsContent/Assignments"
 import Performance from "./TabsContent/Performance"
+import Assessments from "./TabsContent/Assessments"
 
 const Stats = ()=>{
   return (
@@ -26,7 +26,7 @@ const Stats = ()=>{
       <TabsList className="flex gap-4">
         <TabsTrigger value="Overview" className="cursor-pointer">Overview</TabsTrigger>
         <TabsTrigger value="Courses" className="cursor-pointer">Courses</TabsTrigger>
-        <TabsTrigger value="Assignments" className="cursor-pointer">Assignments</TabsTrigger>
+        <TabsTrigger value="Assessments" className="cursor-pointer">Assessments</TabsTrigger>
         <TabsTrigger value="Performance" className="cursor-pointer">Performance</TabsTrigger>
       </TabsList>
       <TabsContent value="Overview">
@@ -35,8 +35,8 @@ const Stats = ()=>{
       <TabsContent value="Courses">
         <Courses />
       </TabsContent>
-      <TabsContent value="Assignments">
-        <Assignments />
+      <TabsContent value="Assessments">
+        <Assessments />
       </TabsContent>
       <TabsContent value="Performance">
         <Performance />

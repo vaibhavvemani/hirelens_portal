@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 
-import ProgressCard from "./Overview/Progress";
+import CourseProgress from "./Overview/CourseProgress";
 import Activities from "./Overview/Activities";
 
 import {
@@ -9,6 +9,8 @@ import {
   ChartColumnIncreasing,
   ChartPie,
 } from "lucide-react";
+import Deadlines from "./Overview/DeadLines";
+import Resources from "./Overview/Resources";
 
 const stats = [
   {
@@ -59,8 +61,14 @@ const Overview = () => {
           );
         })}
       </div>
-      <ProgressCard />
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+      <CourseProgress />
+      <Deadlines />
+      </div>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
       <Activities />
+      <Resources />
+      </div>
     </div>
   );
 };
