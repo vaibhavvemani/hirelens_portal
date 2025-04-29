@@ -6,9 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import React from "react";
+
 import { Award, CheckCircle, Flame, Medal } from "lucide-react";
+
 import ReactCalendarHeatmap from "./Performance/ReactCalendarHeatmap";
+import { PerformanceChart } from "./Performance/PerformaceChart";
+import LatestScores from "./Performance/LatestScores";
 
 const Performance = () => {
   const stats = [
@@ -20,7 +23,7 @@ const Performance = () => {
     },
     {
       title: "Completion Rate",
-      value: 92,
+      value: "92%",
       caption: "assessments submitted on time",
       icon: CheckCircle,
     },
@@ -33,43 +36,12 @@ const Performance = () => {
     },
   ];
 
-  const testCount = [
-    { month: "January", tests: 45 },
-    { month: "February", tests: 50 },
-    { month: "March", tests: 55 },
-    { month: "April", tests: 40 },
-    { month: "May", tests: 35 },
-    { month: "June", tests: 50 },
-    { month: "July", tests: 45 },
-    { month: "August", tests: 55 },
-    { month: "September", tests: 40 },
-    { month: "October", tests: 35 },
-    { month: "November", tests: 50 },
-    { month: "December", tests: 45 },
-  ];
-
-  const testScores = [
-    { month: "January", score: 70 },
-    { month: "February", score: 75 },
-    { month: "March", score: 80 },
-    { month: "April", score: 85 },
-    { month: "May", score: 90 },
-    { month: "June", score: 95 },
-    { month: "July", score: 100 },
-    { month: "August", score: 95 },
-    { month: "September", score: 90 },
-    { month: "October", score: 85 },
-    { month: "November", score: 80 },
-    { month: "December", score: 75 },
-  ];
-
-  const testContributionValues =[
+  const testContributionValues = [
     { date: "2025-01-05", count: 12 },
     { date: "2025-01-06", count: 8 },
     { date: "2025-01-09", count: 4 },
     { date: "2025-01-14", count: 2 },
-  ]
-
+  ];
 
   return (
     <div className="flex flex-col mt-3 w-full">
@@ -97,23 +69,46 @@ const Performance = () => {
         ))}
       </div>
       <div className="grid gap-4 md:grid-cols-2 mt-4">
-        <Card className="overflow-hidden pr-4">
+        <div className="flex flex-col gap-2">
+          <Card className="overflow-hidden pr-4">
+            <div className="flex flex-col">
+              <CardHeader>
+                <CardTitle>Assessment Graph</CardTitle>
+                <CardDescription>
+                  Number of assessments taken in the last 6 months
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="overflow-x-auto hide-scroller">
+                <div className="min-w-max mt-2">
+                  <ReactCalendarHeatmap
+                    startDate={new Date("2025-01-05")}
+                    endDate={new Date("2025-6-31")}
+                    values={testContributionValues}
+                  />
+                </div>
+              </CardContent>
+            </div>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Latest test scores</CardTitle>
+              <CardContent className="px-0">
+                <LatestScores />
+              </CardContent>
+            </CardHeader>
+          </Card>
+        </div>
+
+        <Card className="justify-around">
           <div className="flex flex-col">
             <CardHeader>
-              <CardTitle>Assessment Graph</CardTitle>
+              <CardTitle>Performance analysis</CardTitle>
               <CardDescription>
-                Number of assessments taken in the last 6 months
+                Average scores over the last 6 months
               </CardDescription>
             </CardHeader>
-            <CardContent className="overflow-x-auto hide-scroller">
-              <div className="min-w-max mt-2">
-              <ReactCalendarHeatmap
-                startDate={new Date("2025-01-05")}
-                endDate={new Date("2025-6-31")}
-                values={testContributionValues}
-              />
-
-              </div>
+            <CardContent className="mt-4">
+              <PerformanceChart />
             </CardContent>
           </div>
         </Card>

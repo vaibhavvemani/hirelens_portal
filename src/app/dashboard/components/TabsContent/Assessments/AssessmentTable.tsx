@@ -47,7 +47,7 @@ const AssessmentTable = ({status}: AssessmentTableProps) => {
             <TableBody>
                 {sampleAssessments.map((assessment: Assessment, index: number)=>(
                     assessment.status === status?
-                    <TableRow>
+                    <TableRow key={index}>
                         <TableCell>{assessment.title}</TableCell>
                         <TableCell>{formatDueDate(assessment.dueDate)}</TableCell>
                         <TableCell>

@@ -133,7 +133,7 @@ const ContributionHeatmap: React.FC<ContributionHeatmapProps> = ({
                         </TooltipTrigger>
                         <TooltipContent>
                           {date
-                            ? `${getDateKey(date)}: ${count} contributions`
+                            ? `${getDateKey(date)}: ${count} assessments taken`
                             : "No data"}
                         </TooltipContent>
                       </Tooltip>
