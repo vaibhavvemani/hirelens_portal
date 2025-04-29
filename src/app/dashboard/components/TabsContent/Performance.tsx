@@ -69,7 +69,7 @@ const Performance = () => {
         ))}
       </div>
       <div className="grid gap-4 md:grid-cols-2 mt-4">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <Card className="overflow-hidden pr-4">
             <div className="flex flex-col">
               <CardHeader>
