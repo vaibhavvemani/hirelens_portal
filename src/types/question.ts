@@ -13,3 +13,9 @@ export interface Question {
   };
   answer: QuestionOptionKey; 
 }
+
+export interface Filter {
+  topic?: string;
+  category?: "quantitative" | "verbal" | "technical";
+  difficulty?: "hard" | "medium" | "easy";
+}
