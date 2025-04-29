@@ -1,12 +1,14 @@
 import {
   Card,
   CardAction,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import React from "react";
 import { Award, CheckCircle, Flame, Medal } from "lucide-react";
+import ReactCalendarHeatmap from "./Performance/ReactCalendarHeatmap";
 
 const Performance = () => {
   const stats = [
@@ -95,6 +97,18 @@ const Performance = () => {
                 Number of assessments taken in the last 6 months
               </CardDescription>
             </CardHeader>
+            <CardContent>
+              <ReactCalendarHeatmap
+                startDate={new Date("2025-01-01")}
+                endDate={new Date("2025-6-31")}
+                values={[
+                  { date: "2025-01-01", count: 12 },
+                  { date: "2025-01-02", count: 8 },
+                  { date: "2025-01-03", count: 4 },
+                  { date: "2025-01-04", count: 0 },
+                ]}
+              />
+            </CardContent>
           </div>
         </Card>
       </div>
