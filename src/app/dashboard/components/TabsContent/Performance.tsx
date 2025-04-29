@@ -63,6 +63,14 @@ const Performance = () => {
     { month: "December", score: 75 },
   ];
 
+  const testContributionValues =[
+    { date: "2025-01-05", count: 12 },
+    { date: "2025-01-06", count: 8 },
+    { date: "2025-01-09", count: 4 },
+    { date: "2025-01-14", count: 2 },
+  ]
+
+
   return (
     <div className="flex flex-col mt-3 w-full">
       <h1 className="text-xl font-bold">Performance analytics</h1>
@@ -88,26 +96,24 @@ const Performance = () => {
           </Card>
         ))}
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card>
+      <div className="grid gap-4 md:grid-cols-2 mt-4">
+        <Card className="overflow-hidden pr-4">
           <div className="flex flex-col">
             <CardHeader>
-              <CardTitle>Tests Taken</CardTitle>
+              <CardTitle>Assessment Graph</CardTitle>
               <CardDescription>
                 Number of assessments taken in the last 6 months
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="overflow-x-auto hide-scroller">
+              <div className="min-w-max mt-2">
               <ReactCalendarHeatmap
-                startDate={new Date("2025-01-01")}
+                startDate={new Date("2025-01-05")}
                 endDate={new Date("2025-6-31")}
-                values={[
-                  { date: "2025-01-01", count: 12 },
-                  { date: "2025-01-02", count: 8 },
-                  { date: "2025-01-03", count: 4 },
-                  { date: "2025-01-04", count: 0 },
-                ]}
+                values={testContributionValues}
               />
+
+              </div>
             </CardContent>
           </div>
         </Card>

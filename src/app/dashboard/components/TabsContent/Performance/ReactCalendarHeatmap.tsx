@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-  } from "@/components/ui/tooltip"
-  
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import React from "react";
 
 type HeatmapValue = {
   date: string; // 'YYYY-MM-DD'
@@ -19,7 +19,7 @@ type ContributionHeatmapProps = {
   values: HeatmapValue[];
 };
 
-const getDateKey = (date: Date) => date.toISOString().split('T')[0];
+const getDateKey = (date: Date) => date.toISOString().split("T")[0];
 
 const generateDateRange = (startDate: Date, endDate: Date): Date[] => {
   const dates = [];
@@ -31,22 +31,32 @@ const generateDateRange = (startDate: Date, endDate: Date): Date[] => {
   return dates;
 };
 
-const ContributionHeatmap: React.FC<ContributionHeatmapProps> = ({ startDate, endDate, values }) => {
-  const dateCounts: Record<string, number> = {};
+const dayLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+const ContributionHeatmap: React.FC<ContributionHeatmapProps> = ({
+  startDate,
+  endDate,
+  values,
+}) => {
+  const dateCounts: Record<string, number> = {};
   values.forEach(({ date, count }) => {
     dateCounts[date] = count;
   });
 
   const allDates = generateDateRange(startDate, endDate);
 
-  // group dates by week
+  // pad the beginning so first date is a Sunday
+  while (allDates[0].getDay() !== 0) {
+    const prev = new Date(allDates[0]);
+    prev.setDate(prev.getDate() - 1);
+    allDates.unshift(prev);
+  }
+
+  // group by weeks
   const weeks: Date[][] = [];
   let currentWeek: Date[] = [];
-
   allDates.forEach((date) => {
     if (date.getDay() === 0 && currentWeek.length > 0) {
-      // new week (Sunday start)
       weeks.push(currentWeek);
       currentWeek = [];
     }
@@ -57,40 +67,84 @@ const ContributionHeatmap: React.FC<ContributionHeatmapProps> = ({ startDate, en
   }
 
   const getColor = (count: number) => {
-    if (count >= 10) return 'bg-green-600';
-    if (count >= 7) return 'bg-green-500';
-    if (count >= 4) return 'bg-green-400';
-    if (count >= 1) return 'bg-green-300';
-    return 'bg-gray-200';
+    if (count >= 10) return "bg-green-600";
+    if (count >= 7) return "bg-green-500";
+    if (count >= 4) return "bg-green-400";
+    if (count >= 1) return "bg-green-300";
+    return "bg-gray-200";
   };
 
-  return (
-    <div className="flex gap-1">
-      {weeks.map((week, weekIndex) => (
-        <div key={weekIndex} className="flex flex-col gap-1">
-          {/* days stacked vertically */}
-          {Array.from({ length: 7 }).map((_, dayIndex) => {
-            const date = week.find(d => d.getDay() === dayIndex);
-            const key = date ? getDateKey(date) : `${weekIndex}-${dayIndex}`;
-            const count = date ? (dateCounts[getDateKey(date)] || 0) : 0;
-            const color = getColor(count);
+  // generate month labels
+  const monthLabels: { label: string; colStart: number }[] = [];
+  let lastMonth = -1;
+  weeks.forEach((week, index) => {
+    const firstDay = week[0];
+    if (firstDay && firstDay.getMonth() !== lastMonth) {
+      monthLabels.push({
+        label: firstDay.toLocaleString("default", { month: "short" }),
+        colStart: index,
+      });
+      lastMonth = firstDay.getMonth();
+    }
+  });
 
+  return (
+    <div className="overflow-x-auto">
+      <div className="inline-flex flex-col gap-2">
+        {/* Month labels */}
+        <div className="flex ml-8 gap-1 text-xs text-muted-foreground font-bold">
+          {weeks.map((_, index) => {
+            const label = monthLabels.find((m) => m.colStart === index)?.label;
             return (
-              <div
-                key={key}
-                className={`w-4 h-4 rounded ${color} relative group`}
-              >
-                {/* Tooltip */}
-                {date && (
-                  <div className="absolute hidden group-hover:flex flex-col items-center bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs rounded px-2 py-1 whitespace-nowrap">
-                    {`${getDateKey(date)}: ${count} contributions`}
-                  </div>
-                )}
+              <div key={index} className="w-4 text-center">
+                {label || ""}
               </div>
             );
           })}
         </div>
-      ))}
+
+        <div className="flex">
+          {/* Day labels */}
+          <div className="flex flex-col gap-1 mr-2 text-xs text-muted-foreground">
+            {dayLabels.map((label) => (
+              <div key={label} className="h-4 w-6 text-right pr-1">
+                {label}
+              </div>
+            ))}
+          </div>
+
+          {/* Heatmap */}
+          <div className="flex gap-1">
+            {weeks.map((week, weekIndex) => (
+              <div key={weekIndex} className="flex flex-col gap-1">
+                {Array.from({ length: 7 }).map((_, dayIndex) => {
+                  const date = week.find((d) => d.getDay() === dayIndex);
+                  const key = date ? getDateKey(date) : `${weekIndex}-${dayIndex}`;
+                  const count = date ? dateCounts[getDateKey(date)] || 0 : 0;
+                  const color = getColor(count);
+
+                  return (
+                    <TooltipProvider key={key}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div
+                            className={`w-4 h-4 rounded ${color} relative group`}
+                          ></div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          {date
+                            ? `${getDateKey(date)}: ${count} contributions`
+                            : "No data"}
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
