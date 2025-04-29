@@ -2,6 +2,7 @@
   "name": "hirelens_assessment",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -22,7 +23,8 @@
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.2.0"
+    "tailwind-merge": "^3.2.0",
+    "tw-animate-css": "^1.2.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -35,6 +37,7 @@
     "prisma": "^6.6.0",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
   }
 }

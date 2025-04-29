@@ -1,5 +1,5 @@
-import { add_questions } from "@/lib/db/questions"
-import { Question } from "@/types/question";
+import { add_questions } from "@/lib/db/questions";
+import { Question } from "@/types/question.ts";
 
 const question_data: Question = {
   topic: "profit and loss",
