@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Week = () => {
+interface WeekProps {
+  range: [Date, Date];
+}
+
+const Week: React.FC<WeekProps> = ({ range }) => {
   return (
     <div>Week</div>
   )

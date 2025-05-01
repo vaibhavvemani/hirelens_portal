@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Month = () => {
+interface MonthProps {
+  range: [Date, Date];
+}
+
+const Month: React.FC<MonthProps> = ({ range }) => {
   return (
     <div>Month</div>
   )

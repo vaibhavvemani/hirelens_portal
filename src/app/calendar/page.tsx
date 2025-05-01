@@ -9,18 +9,122 @@ import {
   SelectContent,
 } from "@/components/ui/select";
 
+import AddEventDialog from "./AddEventDialog";
 
-import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
-import { useState } from "react";
+
+
+import { CalendarIcon, ChevronLeft, ChevronRight, Plus } from "lucide-react";
+import { useState, useEffect } from "react";
+
 
 import Day from "./components/day";
 import Month from "./components/month";
 import Week from "./components/week";
 
-
-const page = () => {
+const Page = () => {
+  const [eventDate, setEventDate] = useState<Date | undefined>(new Date());
   const [viewMode, setViewMode] = useState<"day" | "week" | "month">("week");
-  const [renderValue, setRenderValue] = useState<Date | string>(Date());
+  const [renderValue, setRenderValue] = useState<Date | [Date, Date]>(() => {
+    const now = new Date();
+    const start = new Date(now);
+    start.setDate(now.getDate() - 3);
+    const end = new Date(now);
+    end.setDate(now.getDate() + 3);
+    return [start, end];
+  });
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [newEvent, setNewEvent] = useState({
+    id: Date.now().toString(),
+    title: "",
+    type: "application",
+    status: "pending",
+    notes: "",
+    dueDate: new Date(),
+  });
+
+  useEffect(() => {
+    // Ensures renderValue is updated on view mode change
+    if (viewMode === "day") {
+      setRenderValue(new Date());
+    } else if (viewMode === "week") {
+      const now = new Date();
+      const start = new Date(now);
+      start.setDate(now.getDate() - 3);
+      const end = new Date(now);
+      end.setDate(now.getDate() + 3);
+      setRenderValue([start, end]);
+    } else if (viewMode === "month") {
+      const now = new Date();
+      const start = new Date(now.getFullYear(), now.getMonth(), 1);
+      const end = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+      setRenderValue([start, end]);
+    }
+  }, [viewMode]);
+
+  function handlePrev() {
+    if (viewMode === "day" && renderValue instanceof Date) {
+      setRenderValue(new Date(renderValue.setDate(renderValue.getDate() - 1)));
+    } else if (viewMode === "week" && Array.isArray(renderValue)) {
+      const startDate = new Date(renderValue[0]);
+      const endDate = new Date(renderValue[1]);
+      setRenderValue([
+        new Date(startDate.setDate(startDate.getDate() - 7)),
+        new Date(endDate.setDate(endDate.getDate() - 7)),
+      ]);
+    } else if (viewMode === "month" && Array.isArray(renderValue)) {
+      const startDate = new Date(renderValue[0]);
+      const endDate = new Date(renderValue[1]);
+      setRenderValue([
+        new Date(
+          startDate.getFullYear(),
+          startDate.getMonth() - 1,
+          startDate.getDate()
+        ),
+        new Date(
+          endDate.getFullYear(),
+          endDate.getMonth() - 1,
+          endDate.getDate()
+        ),
+      ]);
+    }
+  }
+
+  function handleNext() {
+    if (viewMode === "day") {
+      if (viewMode === "day" && renderValue instanceof Date) {
+        setRenderValue(
+          new Date(renderValue.setDate(renderValue.getDate() + 1))
+        );
+      }
+    } else if (viewMode === "week" && Array.isArray(renderValue)) {
+      const startDate = new Date(renderValue[0]);
+      const endDate = new Date(renderValue[1]);
+      setRenderValue([
+        new Date(startDate.setDate(startDate.getDate() + 7)),
+        new Date(endDate.setDate(endDate.getDate() + 7)),
+      ]);
+    } else if (viewMode === "month" && Array.isArray(renderValue)) {
+      const startDate = new Date(renderValue[0]);
+      const endDate = new Date(renderValue[1]);
+      setRenderValue([
+        new Date(
+          startDate.getFullYear(),
+          startDate.getMonth() + 1,
+          startDate.getDate()
+        ),
+        new Date(
+          endDate.getFullYear(),
+          endDate.getMonth() + 1,
+          endDate.getDate()
+        ),
+      ]);
+    }
+  }
+
+  function handleToday(){
+    setViewMode("day")
+    setRenderValue(new(Date))
+  }
 
   return (
     <div className="w-full flex justify-center mt-4">
@@ -33,21 +137,48 @@ const page = () => {
             </p>
           </div>
           <div className="flex items-center gap-2 h-fit">
-            <Button className="h-9 cursor-pointer">Today</Button>
+            <Button className="h-9 cursor-pointer" onClick={handleToday}>Today</Button>
             <div className="flex items-center gap-1">
-              <Button className="h-9 w-9 cursor-pointer bg-background hover:bg-muted">
-                <ChevronLeft className="text-foreground"/>
+              <Button
+                className="h-9 w-9 cursor-pointer bg-background hover:bg-muted"
+                onClick={handlePrev}
+              >
+                <ChevronLeft className="text-foreground" />
               </Button>
-              <p className="text-center p-2 bg-accent rounded-lg mx-2">{viewMode}</p>
-              <Button className="h-9 w-9 cursor-pointer bg-background hover:bg-muted">
-                <ChevronRight className="text-foreground"/>
+              <p className="text-center p-2 bg-accent rounded-lg mx-2 text-sm">
+                {viewMode === "day" && renderValue instanceof Date
+                  ? renderValue.toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })
+                  : Array.isArray(renderValue) && viewMode === "week"
+                  ? `${renderValue[0].toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })} - 
+                  ${renderValue[1].toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}`
+                  : Array.isArray(renderValue) && viewMode === "month"
+                  ? renderValue[0].toLocaleString("default", { month: "long" })
+                  : ""}
+              </p>
+              <Button
+                className="h-9 w-9 cursor-pointer bg-background hover:bg-muted"
+                onClick={handleNext}
+              >
+                <ChevronRight className="text-foreground" />
               </Button>
             </div>
             <Select
               value={viewMode}
-              onValueChange={(value) =>
-                setViewMode(value as "day" | "week" | "month")
-              }
+              onValueChange={(value) => {
+                setViewMode(value as "day" | "week" | "month");
+              }}
             >
               <SelectTrigger className="w-[120px] h-9 cursor-pointer">
                 <SelectValue placeholder="Week" />
@@ -58,21 +189,25 @@ const page = () => {
                 <SelectItem value="month">Month</SelectItem>
               </SelectContent>
             </Select>
-            <Button size="sm" className="h-9 cursor-pointer">
-              <Plus className="mr-2 h-4 w-4" />
-              Add Event
-            </Button>
+
+            
+<AddEventDialog onAddEvent={(event) => {
+  console.log("Event added:", event);
+  // TODO: Update your state/backend here
+}} />
           </div>
         </div>
-        {viewMode =="day"?
-        <Day />:
-        viewMode == "week"?
-        <Week />:
-        <Month />
-        }
+
+        {viewMode === "day" && renderValue instanceof Date ? (
+          <Day date={renderValue} />
+        ) : viewMode === "week" && Array.isArray(renderValue) ? (
+          <Week range={renderValue} />
+        ) : viewMode === "month" && Array.isArray(renderValue) ? (
+          <Month range={renderValue} />
+        ) : null}
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;
