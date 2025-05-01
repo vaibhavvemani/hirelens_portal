@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/select";
 
 import AddEventDialog from "./AddEventDialog";
+import Legend from "./components/legend";
+import Upcoming from "./components/upcoming";
 
 
 
@@ -205,7 +207,12 @@ const Page = () => {
         ) : viewMode === "month" && Array.isArray(renderValue) ? (
           <Month range={renderValue} />
         ) : null}
+              <div className="flex gap-4 mt-2">
+        <Upcoming />
+        <Legend />
       </div>
+      </div>
+
     </div>
   );
 };

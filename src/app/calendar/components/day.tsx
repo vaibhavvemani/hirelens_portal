@@ -143,10 +143,7 @@ const Day: React.FC<DayProps> = ({ date }) => {
           )}
         </div>
       </Card>
-      <div className="flex gap-4 mt-4">
-        <Upcoming />
-        <Legend />
-      </div>
+
     </div>
   );
 };
