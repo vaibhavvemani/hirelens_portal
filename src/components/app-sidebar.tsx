@@ -58,7 +58,7 @@ const sidebarGroups: SidebarGroupType[] = [
   {
     label: "Learning & Development",
     items: [
-      { title: "Coursework", url: "#", icon: BookOpen },
+      { title: "Coursework", url: "/schedule", icon: BookOpen },
       { title: "DSA Roadmap", url: "#", icon: CodeXml },
       { title: "Coding IDE", url: "#", icon: SquareChevronRight },
       { title: "Assignments", url: "#", icon: FileText },
@@ -70,7 +70,7 @@ const sidebarGroups: SidebarGroupType[] = [
   },
   {
     label: "Utilities",
-    items: [{ title: "Calendar", url: "#", icon: Calendar }],
+    items: [{ title: "Calendar", url: "/calendar", icon: Calendar }],
   },
 ];
 
