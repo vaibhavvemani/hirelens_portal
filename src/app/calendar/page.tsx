@@ -13,6 +13,7 @@ import AddEventDialog from "./AddEventDialog";
 import Legend from "./components/legend";
 import Upcoming from "./components/upcoming";
 
+import { endOfMonth } from "date-fns";
 
 
 import { CalendarIcon, ChevronLeft, ChevronRight, Plus } from "lucide-react";
@@ -58,7 +59,7 @@ const Page = () => {
     } else if (viewMode === "month") {
       const now = new Date();
       const start = new Date(now.getFullYear(), now.getMonth(), 1);
-      const end = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+      const end = new Date(now.getFullYear(), now.getMonth()+1, 0);
       setRenderValue([start, end]);
     }
   }, [viewMode]);
@@ -77,16 +78,8 @@ const Page = () => {
       const startDate = new Date(renderValue[0]);
       const endDate = new Date(renderValue[1]);
       setRenderValue([
-        new Date(
-          startDate.getFullYear(),
-          startDate.getMonth() - 1,
-          startDate.getDate()
-        ),
-        new Date(
-          endDate.getFullYear(),
-          endDate.getMonth() - 1,
-          endDate.getDate()
-        ),
+        new Date(startDate.getFullYear(), startDate.getMonth() -1, 1), // first day of next month
+        endOfMonth(new Date(startDate.getFullYear(), startDate.getMonth() -1, 1)) // last day of that month
       ]);
     }
   }
@@ -109,16 +102,8 @@ const Page = () => {
       const startDate = new Date(renderValue[0]);
       const endDate = new Date(renderValue[1]);
       setRenderValue([
-        new Date(
-          startDate.getFullYear(),
-          startDate.getMonth() + 1,
-          startDate.getDate()
-        ),
-        new Date(
-          endDate.getFullYear(),
-          endDate.getMonth() + 1,
-          endDate.getDate()
-        ),
+        new Date(startDate.getFullYear(), startDate.getMonth() + 1, 1), // first day of next month
+        endOfMonth(new Date(startDate.getFullYear(), startDate.getMonth() + 1, 1)) // last day of that month
       ]);
     }
   }

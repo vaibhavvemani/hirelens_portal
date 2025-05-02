@@ -66,10 +66,10 @@ const Week: React.FC<WeekProps> = ({ range }) => {
 
               return (
                 <TableRow key={key}>
-                  <TableCell className="font-medium">
+                  <TableCell className="font-medium p-2">
                     {format(day, "EEEE, MMM d")}
                   </TableCell>
-                  <TableCell>
+                  <TableCell className="p-2">
                     {events.length > 0 ? (
                       <div className="flex flex-col gap-2">
                         <TooltipProvider>
