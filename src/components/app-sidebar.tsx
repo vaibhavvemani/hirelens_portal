@@ -58,7 +58,7 @@ const sidebarGroups: SidebarGroupType[] = [
   {
     label: "Learning & Development",
     items: [
-      { title: "Coursework", url: "/schedule", icon: BookOpen },
+      { title: "Assessments", url: "/assessments", icon: BookOpen },
       { title: "DSA Roadmap", url: "#", icon: CodeXml },
       { title: "Coding IDE", url: "#", icon: SquareChevronRight },
       { title: "Assignments", url: "#", icon: FileText },

@@ -194,7 +194,6 @@ const Page = () => {
         ) : null}
               <div className="flex gap-4 mt-2">
         <Upcoming />
-        <Legend />
       </div>
       </div>
 
