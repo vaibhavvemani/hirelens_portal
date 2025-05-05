@@ -10,7 +10,7 @@ export type Assessment = {
     // "due" - next 15 days
     {
       title: "JavaScript Final Project",
-      dueDate: new Date(2025, 3, 30), // May 5, 2024
+      dueDate: new Date(2025, 4, 12), // May 5, 2024
       status: "Due",
     },
     {

@@ -5,7 +5,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { scheduleItems } from "./SampleSchedule";
-import { format } from "date-fns"; // make sure date-fns is installed
+import { format } from "date-fns";
 
 type TaskType =
   | "assignment"
@@ -14,16 +14,13 @@ type TaskType =
   | "orientation"
   | "assessment deadline";
 
-
 const Upcoming = () => {
   const today = new Date();
   const next7Days = new Date();
   next7Days.setDate(today.getDate() + 5);
 
   const upcomingItems = scheduleItems
-    .filter(
-      (item) => item.dueDate >= today && item.dueDate <= next7Days
-    )
+    .filter((item) => item.dueDate >= today && item.dueDate <= next7Days)
     .sort((a, b) => a.dueDate.getTime() - b.dueDate.getTime());
 
   const styleMap: Record<TaskType, string> = {
@@ -48,36 +45,38 @@ const Upcoming = () => {
       <CardDescription className="px-4 text-sm text-muted-foreground">
         Your schedule for the next 5 days
       </CardDescription>
-      <CardContent className="py-4 space-y-4 px-4">
+      <CardContent className="py-4 px-4">
         {upcomingItems.length === 0 ? (
           <p className="text-sm text-gray-500">
             No events in the next 7 days.
           </p>
         ) : (
-          upcomingItems.map((item) => {
-            const cardStyle = styleMap[item.type];
-            const badgeStyle = badgeMap[item.type];
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {upcomingItems.map((item) => {
+              const cardStyle = styleMap[item.type];
+              const badgeStyle = badgeMap[item.type];
 
-            return (
-              <div
-                key={item.id}
-                className={`border p-3 rounded-lg ${cardStyle}`}
-              >
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold">{item.title}</p>
-                  <span
-                    className={`text-xs font-medium px-2 py-1 rounded-full border ${badgeStyle}`}
-                  >
-                    {item.type.replace("-", " ")}
-                  </span>
+              return (
+                <div
+                  key={item.id}
+                  className={`border p-3 rounded-lg ${cardStyle}`}
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="font-semibold">{item.title}</p>
+                    <span
+                      className={`text-xs font-medium px-2 py-1 rounded-full border ${badgeStyle}`}
+                    >
+                      {item.type.replace("-", " ")}
+                    </span>
+                  </div>
+                  <p className="text-sm mt-1">
+                    {format(item.dueDate, "PPP")}
+                  </p>
+                  <p className="text-xs mt-1">{item.description}</p>
                 </div>
-                <p className="text-sm mt-1">
-                  {format(item.dueDate, "PPP")}
-                </p>
-                <p className="text-xs mt-1">{item.description}</p>
-              </div>
-            );
-          })
+              );
+            })}
+          </div>
         )}
       </CardContent>
     </Card>
