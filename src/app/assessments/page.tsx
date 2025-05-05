@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card";
+import AssessmentPage from "./components/assessmentPage";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const page = () => {
   return (
@@ -9,6 +11,26 @@ const page = () => {
           <p className="font-medium text-sm text-muted-foreground">
             Evaluate your skills and prepare confidently for every opportunity
           </p>
+    <Tabs defaultValue="account" className="w-full mt-4">
+      <TabsList className="grid w-full grid-cols-4">
+        <TabsTrigger value="all">All Assessments</TabsTrigger>
+        <TabsTrigger value="pending">Pending Assessments</TabsTrigger>
+        <TabsTrigger value="overdue">Overdue Assessments</TabsTrigger>
+        <TabsTrigger value="submitted">Submitted Assessments</TabsTrigger>
+      </TabsList>
+      <TabsContent value="all">
+      <AssessmentPage value="all"/>
+      </TabsContent>
+      <TabsContent value="pending">
+      <AssessmentPage value="pending"/>
+      </TabsContent>
+      <TabsContent value="overdue">
+      <AssessmentPage value="overdue"/>
+      </TabsContent>
+      <TabsContent value="submitted">
+      <AssessmentPage value="submitted"/>
+      </TabsContent>
+    </Tabs>
         </div>
       </div>
     </div>

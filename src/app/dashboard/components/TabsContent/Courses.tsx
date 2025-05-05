@@ -40,7 +40,21 @@ const coursesData = [
   },
 ];
 
+
+function organiseData() {
+  const inProgress = coursesData
+    .filter(course => course.completion < 100)
+    .sort((a, b) => b.completion - a.completion);
+
+  const completed = coursesData.filter(course => course.completion === 100);
+
+  return [...inProgress, ...completed];
+}
+
+
 const Courses = () => {
+  const organisedCourses = organiseData();
+
   return (
     <div className="flex flex-col mt-3  w-full">
       <h1 className="text-xl font-bold">My Courses</h1>
@@ -48,9 +62,9 @@ const Courses = () => {
         Manage and track the courses you've started
       </p>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(275px,1fr))] gap-6 mt-5 w-full">
-        {coursesData.map((course, index) => (
+        {organisedCourses.map((course, index) => (
           <Card
-          className="flex flex-col p-5 justify-center items-center transition-all"
+          className="flex flex-col p-5 justify-between transition-all"
             key={index}>
             <Badge className="self-start">{course.status}</Badge>
             <Image
