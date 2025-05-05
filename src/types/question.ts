@@ -2,8 +2,8 @@ export type QuestionOptionKey = "option_1" | "option_2" | "option_3" | "option_4
 
 export interface Question {
   topic: string;
-  catagory: "quantitative" | "verbal" | "technical";
-  difficulty: "hard" | "medium" | "easy";
+  catagory: string;
+  difficulty: string;
   text: string; 
   options: {
     option_1: string;
@@ -11,7 +11,7 @@ export interface Question {
     option_3: string;
     option_4: string;
   };
-  answer: QuestionOptionKey; 
+  answer: string; 
 }
 
 export interface Filter {
