@@ -3,10 +3,11 @@ import { ObjectId } from "mongodb";
 import { Question, Filter } from "@/types/question"
 
 const COLLECTION_NAME = "questions";
+const DB_NAME = "quiz";
 
 export async function add_questions(question_data: Question) {
   const client = await clientPromise;
-  const db = client.db();
+  const db = client.db(DB_NAME);
   const result = await db
     .collection(COLLECTION_NAME)
     .insertOne(question_data);
@@ -16,7 +17,7 @@ export async function add_questions(question_data: Question) {
 
 export async function update_question(id: string, updated_data: Question) {
   const client = await clientPromise;
-  const db = client.db();
+  const db = client.db(DB_NAME);
 
   return await db
     .collection(COLLECTION_NAME)
@@ -25,7 +26,7 @@ export async function update_question(id: string, updated_data: Question) {
 
 export async function delete_question(id: string) {
   const client = await clientPromise;
-  const db = client.db();
+  const db = client.db(DB_NAME);
 
   return await db
     .collection(COLLECTION_NAME)
@@ -34,7 +35,7 @@ export async function delete_question(id: string) {
 
 export async function get_question_by_id(id: string) {
   const client = await clientPromise;
-  const db = client.db();
+  const db = client.db(DB_NAME);
   const result = await db
   .collection<Question>(COLLECTION_NAME)
   .findOne( { _id: new ObjectId(id) } )
@@ -50,7 +51,7 @@ export async function get_questions(filter: Filter) {
   if (filter.difficulty) query.difficulty = filter.difficulty;
 
   const client = await clientPromise;
-  const db = client.db();
+  const db = client.db(DB_NAME);
   const result = await db
   .collection<Question>(COLLECTION_NAME)
   .find(query)

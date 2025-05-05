@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Question } from "@/types/question";
-import { add_questions } from "@/lib/db/questions";
+import { add_questions, update_question, delete_question, get_question_by_id } from "@/lib/db/questions";
 
 export async function POST(request: NextRequest) {
     const body = await request.json();
@@ -28,6 +28,45 @@ export async function POST(request: NextRequest) {
         console.error("Error adding question to db: ", error);
         return NextResponse.json({ message: "Error adding quesiton to db", error }, { status: 500 });
     }
-    
+}
 
+export async function PUT(request: NextRequest) {
+    const body = await request.json();
+    const { id, questionData } = body;
+
+    try {
+        const result = await update_question(id, questionData);
+        return NextResponse.json( { message: "Question updated", result }, { status: 200 });
+    }
+    catch(error) {
+        console.error("Error updating question in db: ", error);
+        return NextResponse.json( { message: "Error updating question in db", error }, { status: 500 });
+    }
+
+}
+
+export async function DELETE(request: NextRequest) {
+    const body = await request.json();
+    const { id } = body;
+
+    try {
+        const result = await delete_question(id);
+        return NextResponse.json( { message: "Question deleted", result }, { status: 200 });
+    }
+    catch(error) {
+        console.error("Error deleting question in db: ", error);
+        return NextResponse.json( { message: "Error deleting question in db", error }, { status: 500 });
+    }
+}
+
+export async function GET() {
+    const id = "6818e44d31d3fb2f5cfec5cc";
+    try {
+        const result = await get_question_by_id(id);
+        return NextResponse.json( { message: "Question fetched", result }, { status: 200 });
+    }
+    catch(error) {
+        console.error("Error fetching question from db: ", error);
+        return NextResponse.json( { message: "Error fetching question from db", error }, { status: 500 });
+    }
 }

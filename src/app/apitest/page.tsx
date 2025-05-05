@@ -1,22 +1,9 @@
 "use client"
 import React from 'react';
-// import { useState } from 'react';
-import { add_questions } from '@/lib/db/questions';
-// import { QuestionOptionKey } from '@/types/question';
 
 function Page() {
-  // const [topic, setTopic] = useState("");
-  // const [catagory, setCatagory] = useState<"quantitative" | "verbal" | "technical">();
-  // const [difficulty, setDifficulty] = useState("");
-  // const [text, setText] = useState("");
-  // const [option_1, setOption1] = useState("");
-  // const [option_2, setOption2] = useState("");
-  // const [option_3, setOption3] = useState("");
-  // const [option_4, setOption4] = useState("");
-  // const [answer, setAnswer] = useState("");
 
-  function handleAddQuestion() {
-
+  async function handleAddQuestion() {
     const questionData = {
       topic: "seomthing",
       catagory: "quantitative",
@@ -30,24 +17,84 @@ function Page() {
       },
       answer: "option_1"
     }
-    add_questions(questionData)
-      .then((result) => { 
-        console.log("Question added successfully", result);
-      })
 
+    const resp = await fetch("api/questions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(questionData)
+    })
+    .then((res) => {
+      if (res.ok) {
+        console.log("Question added successfully");
+        return res.json();
+      } else {
+        throw new Error("Failed to add question");
+      }
+    })
+
+    console.log(resp);
+  }
+
+  async function handleUpdateQuestion() {
+    const questionData = {
+      topic: "seomthing",
+      catagory: "quantitative",
+      difficulty: "hard",
+      text: "Who are you?",
+      options: {
+        option_1: "Mahesh Babu",
+        option_2: "Allu Arjun",
+        option_3: "Prabhas",
+        option_4: "NTR"
+      },
+      answer: "option_1"
+    }
+    const id = "6818e173b5297858c626b966"
+    const resp = await fetch("api/questions", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ id, questionData }) 
+    })
+
+    console.log(resp);
+
+  }
+
+  async function handleDeleteQuestion() {
+    const id = "6818e173b5297858c626b966";
+    const data = await fetch("api/questions", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id })
+    })
+
+    const resp = await data.json();
+    console.log(resp);
+  }
+
+  async function handleGetQuestion() {
+    const data = await fetch("api/questions", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+
+    const resp = await data.json();
+    console.log(resp);
   }
   return (
     <div>
-      {/* <input type="text" onChange={e => setTopic(e.target.value)} />
-      <input type="text"/>
-      <input type="text" onChange={e => setDifficulty(e.target.value)} />
-      <input type="text" onChange={e => setText(e.target.value)} />
-      <input type="text" onChange={e => setOption1(e.target.value)} />
-      <input type="text" onChange={e => setOption2(e.target.value)} />
-      <input type="text" onChange={e => setOption3(e.target.value)} />
-      <input type="text" onChange={e => setOption4(e.target.value)} />
-      <input type="text" onChange={e => setAnswer(e.target.value)} /> */}
       <button onClick={handleAddQuestion}>Add Question</button>
+      <button onClick={handleUpdateQuestion}>Update Question</button>
+      <button onClick={handleDeleteQuestion}>Delete Question</button>
+      <button onClick={handleGetQuestion}>Get Question</button>
     </div>
   )
 }
