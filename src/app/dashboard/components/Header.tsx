@@ -3,7 +3,7 @@ import { Calendar1, ClipboardMinus } from "lucide-react";
 
 const Header = () => {
   return (
-    <div className="flex justify-between pt-4">
+    <div className="flex justify-between">
       <div className="flex flex-col">
         <h1 className="text-2xl font-extrabold">Dashboard</h1>
         <p className="font-medium text-accent-foreground">
