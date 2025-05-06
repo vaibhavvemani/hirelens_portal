@@ -34,7 +34,7 @@ export default function TestPage() {
           onStart={() => setHasConfirmed(true)}
         />
       ) : (
-        <Countdown assessment={assessment as Test} />
+        <Countdown assessment={assessment as Test} testId={Number(testId)} />
       )}
     </div>
   );

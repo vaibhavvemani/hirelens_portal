@@ -76,8 +76,15 @@ const AssessmentPage: React.FC<AssessmentPageProps> = ({ value }) => {
               <TableCell className="w-1/5 py-2 pl-2">
                 {
                   <div className="flex flex-col">
-                    <p className="text-base font-medium">{SampleAssessment.tests[test.testUid].name.replace(/_/g," ")}</p>
-                    <p className="text-sm text-muted-foreground font-semibold">{SampleAssessment.tests[test.testUid].description}</p>
+                    <p className="text-base font-medium">
+                      {SampleAssessment.tests[test.testUid].name.replace(
+                        /_/g,
+                        " "
+                      )}
+                    </p>
+                    <p className="text-sm text-muted-foreground font-semibold">
+                      {SampleAssessment.tests[test.testUid].description}
+                    </p>
                   </div>
                 }
               </TableCell>
@@ -101,9 +108,12 @@ const AssessmentPage: React.FC<AssessmentPageProps> = ({ value }) => {
                 {value === "submitted" || new Date() > test.dueDate ? (
                   <Button>View</Button>
                 ) : (
-                  <Button>
-                    <Link href={`/tests/${test.testUid}`}>Attempt</Link>
-                    </Button>
+                  <Link
+                    href={`/tests/${test.testUid}`}
+                    className="cursor-pointer"
+                  >
+                    <Button>Attempt</Button>
+                  </Link>
                 )}
               </TableCell>
             </TableRow>

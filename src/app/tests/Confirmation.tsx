@@ -46,12 +46,13 @@ export function countQuestions(assessment: Record<string, any>): number {
         </TableBody>
       </Table>
       <div className="flex w-full justify-between gap-0">
-      <Button onClick={onStart} className="w-10/21">Start test</Button>
-      <Button className="w-10/21">
-      <Link href="/assessments">
+      <Button onClick={onStart} className="w-50/101">Start test</Button>
+      
+      <Link className="w-50/101" href="/assessments">
+      <Button className="w-full">
         Back to Assessments
+        </Button>
       </Link>
-      </Button>
       
       </div>
     </Card>

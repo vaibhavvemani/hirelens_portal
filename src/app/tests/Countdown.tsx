@@ -19,14 +19,15 @@ import { countQuestions } from "./Confirmation";
 
 interface CountdownProps {
   assessment: Test;
+  testId: number;
 }
-const Countdown = ({ assessment }: CountdownProps) => {
-  const [secondsLeft, setSecondsLeft] = useState(60);
+const Countdown = ({ assessment, testId }: CountdownProps) => {
+  const [secondsLeft, setSecondsLeft] = useState(10);
   const router = useRouter();
 
   useEffect(() => {
     if (secondsLeft === 0) {
-      router.push(`/testpage/${assessment.uid}`);
+      router.push(`/testpage/${testId}`);
       return;
     }
 
@@ -35,9 +36,10 @@ const Countdown = ({ assessment }: CountdownProps) => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [secondsLeft, router, assessment.uid]);
+  }, [secondsLeft, router, testId]);
 
   function calculateProgress(){
+    console.log(assessment)
     return ((60-secondsLeft)/60)*100
   }
 
