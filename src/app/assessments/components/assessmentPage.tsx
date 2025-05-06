@@ -14,6 +14,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import formatDueDate from "@/app/dashboard/components/TabsContent/Assessments/FormatDueDate";
+import Link from "next/link";
 
 interface AssessmentPageProps {
   value: string;
@@ -100,7 +101,9 @@ const AssessmentPage: React.FC<AssessmentPageProps> = ({ value }) => {
                 {value === "submitted" || new Date() > test.dueDate ? (
                   <Button>View</Button>
                 ) : (
-                  <Button>Attempt</Button>
+                  <Button>
+                    <Link href={`/tests/${test.testUid}`}>Attempt</Link>
+                    </Button>
                 )}
               </TableCell>
             </TableRow>

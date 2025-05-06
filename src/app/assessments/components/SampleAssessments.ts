@@ -25,7 +25,7 @@ interface Test {
   [key: string]: Question | string | number;
 }
 
-interface AssessmentSystem {
+export interface AssessmentSystem {
   tests: {
     [uid: number]: Test;
   };

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import {
   Sidebar,
   SidebarContent,
@@ -93,10 +95,10 @@ export function AppSidebar() {
                 {group.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <a href={item.url} className="flex items-center">
+                      <Link href={item.url} className="flex items-center">
                         <item.icon size={20} />
                         <span>{item.title}</span>
-                      </a>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}

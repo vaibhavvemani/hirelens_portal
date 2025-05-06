@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import SidebarConditional from "./SidebarConditional";
 import { Geist, Geist_Mono } from "next/font/google";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "EduLearn Platform",
   description: "Education portal for students",
 };
@@ -26,13 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SidebarProvider>
-          <AppSidebar />
+          <SidebarConditional /> {/* Include the SidebarConditional */}
           <main className="flex min-h-screen w-full">
-            <SidebarTrigger />
             {children}
           </main>
         </SidebarProvider>
