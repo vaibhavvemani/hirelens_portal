@@ -33,19 +33,10 @@ export async function delete_question(id: string) {
     .deleteOne( { _id: new ObjectId(id) })
 }
 
-export async function get_question_by_id(id: string) {
-  const client = await clientPromise;
-  const db = client.db(DB_NAME);
-  const result = await db
-  .collection<Question>(COLLECTION_NAME)
-  .findOne( { _id: new ObjectId(id) } )
-
-  return result;
-}
-
 export async function get_questions(filter: Filter) {
 
   const query:Filter = {}
+  if (filter._id) query._id = new ObjectId(filter._id);
   if (filter.topic) query.topic = filter.topic;
   if (filter.category) query.category = filter.category;
   if (filter.difficulty) query.difficulty = filter.difficulty;

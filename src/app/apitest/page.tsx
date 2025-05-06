@@ -79,11 +79,15 @@ function Page() {
   }
 
   async function handleGetQuestion() {
-    const data = await fetch("api/questions", {
-      method: "GET",
+    const data = await fetch("api/questions/search", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        _id: "6818e173b5297858c626b966", 
+        topic: "aptitude"
+      })
     })
 
     const resp = await data.json();

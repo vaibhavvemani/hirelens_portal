@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Question } from "@/types/question";
-import { add_questions, update_question, delete_question, get_question_by_id } from "@/lib/db/questions";
+import { add_questions, update_question, delete_question} from "@/lib/db/questions";
 
 export async function POST(request: NextRequest) {
     const body = await request.json();
@@ -56,17 +56,5 @@ export async function DELETE(request: NextRequest) {
     catch(error) {
         console.error("Error deleting question in db: ", error);
         return NextResponse.json( { message: "Error deleting question in db", error }, { status: 500 });
-    }
-}
-
-export async function GET() {
-    const id = "6818e44d31d3fb2f5cfec5cc";
-    try {
-        const result = await get_question_by_id(id);
-        return NextResponse.json( { message: "Question fetched", result }, { status: 200 });
-    }
-    catch(error) {
-        console.error("Error fetching question from db: ", error);
-        return NextResponse.json( { message: "Error fetching question from db", error }, { status: 500 });
     }
 }

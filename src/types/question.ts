@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 export type QuestionOptionKey = "option_1" | "option_2" | "option_3" | "option_4";
 
 export interface Question {
@@ -15,7 +16,8 @@ export interface Question {
 }
 
 export interface Filter {
+  _id?: ObjectId;
   topic?: string;
-  category?: "quantitative" | "verbal" | "technical";
-  difficulty?: "hard" | "medium" | "easy";
+  category?: string;
+  difficulty?: string;
 }
