@@ -18,7 +18,7 @@ interface Question {
 }
 
 interface Test {
-  uid: number
+  name: string
   description: string;
   cover_image: string;
   time: number; // in minutes
@@ -27,13 +27,13 @@ interface Test {
 
 interface AssessmentSystem {
   tests: {
-    [testName: string]: Test;
+    [uid: number]: Test;
   };
 }
 const SampleAssessment: AssessmentSystem = {
   tests: {
-    Web_Fundamentals_1: {
-      uid: 1001,
+    1001: {
+      name: "Web_Fundamentals_1",
       description: "HTML/CSS Basics Test",
       cover_image: "/default.png",
       time: 25,
@@ -145,8 +145,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    JavaScript_Essentials: {
-      uid: 1002,
+    1002: {
+      name:"JavaScript_Essentials",
       description: "JavaScript Programming Test",
       cover_image: "/default.png",
       time: 30,
@@ -255,8 +255,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    Python_Programming: {
-      uid: 1003,
+    1003: {
+      name: "Python_Programming",
       description: "Python Language Test",
       cover_image: "/default.png",
       time: 35,
@@ -357,8 +357,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    React_Framework: {
-      uid: 1004,
+    1004: {
+      name: "React_Framework",
       description: "React.js Fundamentals Test",
       cover_image: "/default.png",
       time: 35,
@@ -494,8 +494,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    NodeJS_Backend: {
-      uid: 1005,
+    1005: {
+      name: "NodeJS Backend",
       description: "Node.js Backend Development Test",
       cover_image: "/default.png",
       time: 40,
@@ -618,8 +618,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    Database_Concepts: {
-      uid: 1006,
+    1006: {
+      name: "Database Concepts",
       description: "Database Fundamentals Test",
       cover_image: "/default.png",
       time: 45,
@@ -730,8 +730,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    Git_Version_Control: {
-      uid: 1007,
+    1007: {
+      name: "Git_Version_Control",
       description: "Git and Version Control Test",
       cover_image: "/default.png",
       time: 30,
@@ -868,8 +868,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    Algorithms_Data_Structures: {
-      uid: 1008,
+    1008: {
+      name: "Algorithms_Data_Structures",
       description: "Algorithms and Data Structures Test",
       cover_image: "/default.png",
       time: 50,
@@ -1005,8 +1005,8 @@ const SampleAssessment: AssessmentSystem = {
       }
     },
 
-    Computer_Networking: {
-      uid: 1009,
+    1009: {
+      name: "Computer_Networking",
       description: "Computer Networking Fundamentals Test",
       cover_image: "/default.png",
       time: 40,
@@ -1112,8 +1112,8 @@ const SampleAssessment: AssessmentSystem = {
       },
     },
 
-    Cybersecurity_Basics: {
-      uid: 1010,
+    1010: {
+      name: "Cybersecurity_Basics",
       description: "Cybersecurity Fundamentals Test",
       cover_image: "/default.png",
       time: 35,

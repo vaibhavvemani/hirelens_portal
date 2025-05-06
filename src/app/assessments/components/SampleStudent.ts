@@ -9,7 +9,7 @@ interface TestsTaken {
   testsTaken: TestResult[];
 }
 
-type TestStatus = "completed" | "pending" | "overdue";
+type TestStatus = "completed" | "pending";
 
 interface AssignedTest {
   testUid: number;
