@@ -65,7 +65,7 @@ function Page() {
   }
 
   async function handleDeleteQuestion() {
-    const id = "6818e173b5297858c626b966";
+    const id = "6818e44d31d3fb2f5cfec5cc";
     const data = await fetch("api/questions", {
       method: "DELETE",
       headers: {
@@ -85,10 +85,10 @@ function Page() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        _id: "6818e173b5297858c626b966", 
-        topic: "aptitude"
-      })
+        _id: "681a0a46c5bc0f2023c319e1", 
+        category: "quantitative"
     })
+   })
 
     const resp = await data.json();
     console.log(resp);

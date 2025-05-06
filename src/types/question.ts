@@ -3,7 +3,7 @@ export type QuestionOptionKey = "option_1" | "option_2" | "option_3" | "option_4
 
 export interface Question {
   topic: string;
-  catagory: string;
+  category: string;
   difficulty: string;
   text: string; 
   options: {

@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
 
     const questionData: Question = {
         topic: topic,
-        catagory: catagory,
+        category: catagory,
         difficulty: difficulty,
         text: text,
         options: {

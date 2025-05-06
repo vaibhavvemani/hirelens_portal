@@ -41,6 +41,8 @@ export async function get_questions(filter: Filter) {
   if (filter.category) query.category = filter.category;
   if (filter.difficulty) query.difficulty = filter.difficulty;
 
+  console.log(query);
+
   const client = await clientPromise;
   const db = client.db(DB_NAME);
   const result = await db
