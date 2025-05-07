@@ -1,32 +1,31 @@
-export type questionLevel = "level 1" | "level 2" | "level 3";
+export type QuestionLevel = "level 1" | "level 2" | "level 3";
 export type OptionKey = "a" | "b" | "c" | "d";
 
 export interface Question {
   uid: number;
-  tag: questionLevel;
+  tag: QuestionLevel;
   category: string;
   statement: string;
-  options: {
-    a: string;
-    b: string;
-    c: string;
-    d: string;
-  };
+  options: Record<OptionKey, string>;
   correct_option: {
     value: OptionKey;
+    explanation?: string; // Optional explanation for the correct answer
   };
 }
 
 export interface Test {
-  name: string
+  name: string;
   description: string;
   cover_image: string;
   time: number; // in minutes
-  [key: string]: Question | string | number;
+  questions: {
+    [questionNumber: number]: Question; // Now questions are properly nested
+  };
+  // Removed the index signature since we have proper structure now
 }
 
 export interface AssessmentSystem {
   tests: {
-    [uid: number]: Test;
+    [testUid: number]: Test;
   };
 }
