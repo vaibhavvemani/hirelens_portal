@@ -103,7 +103,7 @@ export default function TestTakingPage() {
                   key={qNum}
                   variant={currentQuestion === qNum ? "default" : "outline"}
                   className={cn(
-                    "w-fit h-fit px-5 py-2",
+                    "w-fit h-fit px-5 py-3 text-lg font-bold",
                     currentQuestion === qNum
                       ? "bg-blue-300 text-white hover:bg-blue-400"
                       : ""

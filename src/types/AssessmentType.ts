@@ -21,7 +21,26 @@ export interface Test {
   questions: {
     [questionNumber: number]: Question; // Now questions are properly nested
   };
-  // Removed the index signature since we have proper structure now
+  question: {
+    category: category,
+  },
+
+}
+
+
+export interface category{
+  category: topic
+}
+
+
+export interface topic{
+  questionsLevel: difficulty
+}
+
+export interface difficulty{
+  easy?: number,
+  medium?: number,
+  hard?: number
 }
 
 export interface AssessmentSystem {
