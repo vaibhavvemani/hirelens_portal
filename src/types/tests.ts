@@ -10,8 +10,8 @@ export type Topic = {
 export interface Test {
     name: string;
     desc: string;
-    questionIds?: Question[];
-    category: string[];
     duration: number;
+    category: string[];
     topics?: Topic[];
+    questionIds?: Question[];
 }

@@ -11,26 +11,31 @@ export async function add_questions(question_data: Question) {
   const result = await db
     .collection(COLLECTION_NAME)
     .insertOne(question_data);
-
+  
+  client.close();
   return result.insertedId;
 }
 
 export async function update_question(id: string, updated_data: Question) {
   const client = await clientPromise;
   const db = client.db(DB_NAME);
-
-  return await db
+  const result = await db
     .collection(COLLECTION_NAME)
     .updateOne( { _id: new ObjectId(id) }, { $set: updated_data})
+
+  client.close();
+  return result.acknowledged;
 }
 
 export async function delete_question(id: string) {
   const client = await clientPromise;
   const db = client.db(DB_NAME);
-
-  return await db
+  const result = await db
     .collection(COLLECTION_NAME)
-    .deleteOne( { _id: new ObjectId(id) })
+    .deleteOne( { _id: new ObjectId(id) } )
+
+  client.close();
+  return result.acknowledged;
 }
 
 export async function get_questions(filter: Filter) {
@@ -50,5 +55,6 @@ export async function get_questions(filter: Filter) {
   .find(query)
   .toArray()
 
+  client.close();
   return result;
 }
