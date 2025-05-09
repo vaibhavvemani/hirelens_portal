@@ -16,11 +16,11 @@ type TaskType =
 
 const Upcoming = () => {
   const today = new Date();
-  const next7Days = new Date();
-  next7Days.setDate(today.getDate() + 5);
+  const  next5Days = new Date();
+   next5Days.setDate(today.getDate() + 5);
 
   const upcomingItems = scheduleItems
-    .filter((item) => item.dueDate >= today && item.dueDate <= next7Days)
+    .filter((item) => item.dueDate >= today && item.dueDate <=  next5Days)
     .sort((a, b) => a.dueDate.getTime() - b.dueDate.getTime());
 
   const styleMap: Record<TaskType, string> = {

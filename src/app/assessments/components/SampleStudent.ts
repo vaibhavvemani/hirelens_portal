@@ -24,7 +24,7 @@ interface AssignedTests {
 
 
 
-const sampleTestsTaken: TestsTaken = {
+export const sampleTestsTaken: TestsTaken = {
   studentId: "1NH22AI147",
   testsTaken: [
     {
@@ -48,16 +48,16 @@ const sampleTestsTaken: TestsTaken = {
 const sampleAssignedTests: AssignedTests = {
   studentId: "1NH22AI147",
   assignedTests: [
-    { testUid: 1001, status: "completed", dueDate: new Date("2025-05-01") },
-    { testUid: 1002, status: "completed", dueDate: new Date("2025-05-02") },
-    { testUid: 1003, status: "completed", dueDate: new Date("2025-05-03") },
-    { testUid: 1004, status: "pending", dueDate: new Date("2025-05-04") },
-    { testUid: 1005, status: "pending", dueDate: new Date("2025-05-05") },
-    { testUid: 1006, status: "pending", dueDate: new Date("2025-05-06") },
-    { testUid: 1007, status: "pending", dueDate: new Date("2025-05-07") },
-    { testUid: 1008, status: "pending", dueDate: new Date("2025-05-08") },
-    { testUid: 1009, status: "pending", dueDate: new Date("2025-05-09") },
-    { testUid: 1010, status: "pending", dueDate: new Date("2025-05-10") },
+    { testUid: 1001, status: "completed", dueDate: new Date("2025-05-06") },
+    { testUid: 1002, status: "completed", dueDate: new Date("2025-05-07") },
+    { testUid: 1003, status: "completed", dueDate: new Date("2025-05-08") },
+    { testUid: 1004, status: "pending", dueDate: new Date("2025-05-09") },
+    { testUid: 1005, status: "pending", dueDate: new Date("2025-05-10") },
+    { testUid: 1006, status: "pending", dueDate: new Date("2025-05-11") },
+    { testUid: 1007, status: "pending", dueDate: new Date("2025-05-12") },
+    { testUid: 1008, status: "pending", dueDate: new Date("2025-05-13") },
+    { testUid: 1009, status: "pending", dueDate: new Date("2025-05-14") },
+    { testUid: 1010, status: "pending", dueDate: new Date("2025-05-15") },
   ],
 };
 

@@ -13,5 +13,6 @@ export interface Test {
     duration: number;
     category: string[];
     topics?: Topic[];
-    questionIds?: Question[];
+    cover_image?: string;
+    questionIds: Question[];
 }

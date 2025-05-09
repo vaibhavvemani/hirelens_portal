@@ -1,1281 +1,1786 @@
-type QuestionLevel = "level 1" | "level 2" | "level 3";
-type OptionKey = "a" | "b" | "c" | "d";
+import { Test, Topic } from "@/types/tests";
+import { Question } from "@/types/question";
 
-interface Question {
-  uid: number;
-  tag: QuestionLevel;
-  category: string;
-  statement: string;
-  options: Record<OptionKey, string>;
-  correct_option: {
-    value: OptionKey;
-    explanation?: string; // Optional explanation for the correct answer
-  };
-}
-
-interface Test {
-  name: string;
-  description: string;
-  cover_image: string;
-  time: number; // in minutes
-  questions: {
-    [questionNumber: number]: Question; // Now questions are properly nested
-  };
-  // Removed the index signature since we have proper structure now
-}
-
-export interface AssessmentSystem {
-  tests: {
-    [testUid: number]: Test;
-  };
+interface AssessmentSystem {
+  tests: { [key: string]: Test };
 }
 
 const SampleAssessment: AssessmentSystem = {
   tests: {
     1001: {
       name: "Web_Fundamentals_1",
-      description: "HTML/CSS Basics Test",
+      desc: "HTML/CSS Basics Test",
       cover_image: "/default.png",
-      time: 25,
-      questions: {
-        1: {
-          uid: 3001,
-          tag: "level 1",
+      duration: 30,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 7,
+          medium: 3,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
           category: "Web Development",
-          statement: "What does HTML stand for?",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "What does HTML stand for?",
+          image: "",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Hyper Text Markup Language",
-            b: "Home Tool Markup Language",
-            c: "Hyperlinks and Text Markup Language",
-            d: "High-level Text Machine Language",
+            option_1: "Hyper Text Markup Language",
+            option_2: "Home Tool Markup Language",
+            option_3: "Hyperlinks and Text Markup Language",
+            option_4: "High-level Text Machine Language"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        2: {
-          uid: 3002,
-          tag: "level 1",
+        {
           category: "Web Development",
-          statement: "Which CSS property changes the text color?",
+          topic: "CSS",
+          difficulty: "easy",
+          text: "Which CSS property changes the text color?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "text-color",
-            b: "font-color",
-            c: "color",
-            d: "text-style",
+            option_1: "text-color",
+            option_2: "font-color",
+            option_3: "color",
+            option_4: "text-style"
           },
-          correct_option: { value: "c" },
+          answer: "option_3"
         },
-        3: {
-          uid: 3003,
-          tag: "level 1",
+        {
           category: "Web Development",
-          statement: "Which HTML tag is used for the largest heading?",
-          options: { a: "<h6>", b: "<heading>", c: "<h1>", d: "<head>" },
-          correct_option: { value: "c" },
-        },
-        4: {
-          uid: 3004,
-          tag: "level 2",
-          category: "Web Development",
-          statement: "What does CSS stand for?",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which HTML tag is used for the largest heading?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Computer Style Sheets",
-            b: "Creative Style Sheets",
-            c: "Cascading Style Sheets",
-            d: "Colorful Style Sheets",
+            option_1: "<h6>",
+            option_2: "<heading>",
+            option_3: "<h1>",
+            option_4: "<head>"
           },
-          correct_option: { value: "c" },
+          answer: "option_3"
         },
-        5: {
-          uid: 3005,
-          tag: "level 1",
+        {
           category: "Web Development",
-          statement: "Which attribute is used to link a CSS file to HTML?",
-          options: { a: "src", b: "link", c: "href", d: "style" },
-          correct_option: { value: "c" },
-        },
-        6: {
-          uid: 3006,
-          tag: "level 2",
-          category: "Web Development",
-          statement: "Which HTML element is used for JavaScript code?",
-          options: { a: "<javascript>", b: "<script>", c: "<js>", d: "<code>" },
-          correct_option: { value: "b" },
-        },
-        7: {
-          uid: 3007,
-          tag: "level 1",
-          category: "Web Development",
-          statement: "Which character is used to indicate an end tag?",
-          options: { a: "<", b: ">", c: "/", d: "\\" },
-          correct_option: { value: "c" },
-        },
-        8: {
-          uid: 3008,
-          tag: "level 2",
-          category: "Web Development",
-          statement: "Which CSS property controls text size?",
+          topic: "CSS",
+          difficulty: "medium",
+          text: "What does CSS stand for?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "text-style",
-            b: "font-size",
-            c: "text-size",
-            d: "font-style",
+            option_1: "Computer Style Sheets",
+            option_2: "Creative Style Sheets",
+            option_3: "Cascading Style Sheets",
+            option_4: "Colorful Style Sheets"
           },
-          correct_option: { value: "b" },
+          answer: "option_3"
         },
-        9: {
-          uid: 3009,
-          tag: "level 1",
+        {
           category: "Web Development",
-          statement: "How do you insert a comment in HTML?",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which attribute is used to link a CSS file to HTML?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "// This is a comment",
-            b: "<!-- This is a comment -->",
-            c: "' This is a comment",
-            d: "/* This is a comment */",
+            option_1: "src",
+            option_2: "link",
+            option_3: "href",
+            option_4: "style"
           },
-          correct_option: { value: "b" },
+          answer: "option_3"
         },
-        10: {
-          uid: 3010,
-          tag: "level 2",
+        {
           category: "Web Development",
-          statement:
-            "Which HTML attribute specifies an alternate text for an image?",
-          options: { a: "src", b: "alt", c: "title", d: "href" },
-          correct_option: { value: "b" },
+          topic: "HTML",
+          difficulty: "medium",
+          text: "Which HTML element is used for JavaScript code?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "<javascript>",
+            option_2: "<script>",
+            option_3: "<js>",
+            option_4: "<code>"
+          },
+          answer: "option_2"
         },
-      },
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which character is used to indicate an end tag?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "<",
+            option_2: ">",
+            option_3: "/",
+            option_4: "\\"
+          },
+          answer: "option_3"
+        },
+        {
+          category: "Web Development",
+          topic: "CSS",
+          difficulty: "medium",
+          text: "Which CSS property controls text size?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "text-style",
+            option_2: "font-size",
+            option_3: "text-size",
+            option_4: "font-style"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "How do you insert a comment in HTML?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "// This is a comment",
+            option_2: "<!-- This is a comment -->",
+            option_3: "' This is a comment",
+            option_4: "/* This is a comment */"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "medium",
+          text: "Which HTML attribute specifies an alternate text for an image?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "src",
+            option_2: "alt",
+            option_3: "title",
+            option_4: "href"
+          },
+          answer: "option_2"
+        }
+      ]
     },
 
     1002: {
       name: "JavaScript_Essentials",
-      description: "JavaScript Programming Test",
-      cover_image: "/default.png",
-      time: 30,
-      questions: {
-        1: {
-          uid: 3011,
-          tag: "level 1",
+      desc: "JavaScript Programming Test",
+      duration: 30,
+      category: ["tech mcq"],
+      questionIds: [
+        {
           category: "JavaScript",
-          statement:
-            "Which operator is used for strict equality comparison in JavaScript?",
-          options: { a: "==", b: "===", c: "=", d: "!=" },
-          correct_option: { value: "b" },
-        },
-        2: {
-          uid: 3012,
-          tag: "level 1",
-          category: "JavaScript",
-          statement: "How do you declare a variable in JavaScript?",
-          options: { a: "variable x", b: "v x", c: "let x", d: "x = variable" },
-          correct_option: { value: "c" },
-        },
-        3: {
-          uid: 3013,
-          tag: "level 2",
-          category: "JavaScript",
-          statement: "What will typeof null return in JavaScript?",
-          options: { a: "null", b: "undefined", c: "object", d: "number" },
-          correct_option: { value: "c" },
-        },
-        4: {
-          uid: 3014,
-          tag: "level 1",
-          category: "JavaScript",
-          statement:
-            "Which method adds one or more elements to the end of an array?",
-          options: { a: "push()", b: "pop()", c: "shift()", d: "unshift()" },
-          correct_option: { value: "a" },
-        },
-        5: {
-          uid: 3015,
-          tag: "level 2",
-          category: "JavaScript",
-          statement: "What is the output of: console.log(1 + '1')?",
-          options: { a: "2", b: "11", c: "NaN", d: "undefined" },
-          correct_option: { value: "b" },
-        },
-        6: {
-          uid: 3016,
-          tag: "level 2",
-          category: "JavaScript",
-          statement:
-            "Which keyword is used to declare a constant in JavaScript?",
-          options: { a: "let", b: "var", c: "const", d: "constant" },
-          correct_option: { value: "c" },
-        },
-        7: {
-          uid: 3017,
-          tag: "level 1",
-          category: "JavaScript",
-          statement: "What does DOM stand for in JavaScript?",
+          topic: "Operators",
+          difficulty: "easy",
+          text: "Which operator is used for strict equality comparison in JavaScript?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Data Object Model",
-            b: "Document Object Model",
-            c: "Digital Object Management",
-            d: "Display Object Method",
+            option_1: "==",
+            option_2: "===",
+            option_3: "=",
+            option_4: "!="
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        8: {
-          uid: 3018,
-          tag: "level 2",
+        {
           category: "JavaScript",
-          statement: "Which function is used to parse a string to an integer?",
+          topic: "Variables",
+          difficulty: "easy",
+          text: "How do you declare a variable in JavaScript?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "parseInt()",
-            b: "stringToInt()",
-            c: "toInteger()",
-            d: "int()",
+            option_1: "variable x",
+            option_2: "v x",
+            option_3: "let x",
+            option_4: "x = variable"
           },
-          correct_option: { value: "a" },
+          answer: "option_3"
         },
-        9: {
-          uid: 3019,
-          tag: "level 1",
+        {
           category: "JavaScript",
-          statement: "How do you write an IF statement in JavaScript?",
+          topic: "Data Types",
+          difficulty: "medium",
+          text: "What will typeof null return in JavaScript?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "if x == 5 then",
-            b: "if (x = 5)",
-            c: "if x = 5",
-            d: "if (x == 5)",
+            option_1: "null",
+            option_2: "undefined",
+            option_3: "object",
+            option_4: "number"
           },
-          correct_option: { value: "d" },
+          answer: "option_3"
         },
-        10: {
-          uid: 3020,
-          tag: "level 2",
+        {
           category: "JavaScript",
-          statement:
-            "What is the correct way to create a function in JavaScript?",
+          topic: "Arrays",
+          difficulty: "easy",
+          text: "Which method adds one or more elements to the end of an array?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "function = myFunction() {}",
-            b: "function myFunction() {}",
-            c: "create myFunction() {}",
-            d: "new function myFunction() {}",
+            option_1: "push()",
+            option_2: "pop()",
+            option_3: "shift()",
+            option_4: "unshift()"
           },
-          correct_option: { value: "b" },
+          answer: "option_1"
         },
-      },
+        {
+          category: "JavaScript",
+          topic: "Type Coercion",
+          difficulty: "medium",
+          text: "What is the output of: console.log(1 + '1')?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "2",
+            option_2: "11",
+            option_3: "NaN",
+            option_4: "undefined"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "JavaScript",
+          topic: "Variables",
+          difficulty: "medium",
+          text: "Which keyword is used to declare a constant in JavaScript?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "let",
+            option_2: "var",
+            option_3: "const",
+            option_4: "constant"
+          },
+          answer: "option_3"
+        },
+        {
+          category: "JavaScript",
+          topic: "DOM",
+          difficulty: "easy",
+          text: "What does DOM stand for in JavaScript?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "Data Object Model",
+            option_2: "Document Object Model",
+            option_3: "Digital Object Management",
+            option_4: "Display Object Method"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "JavaScript",
+          topic: "Type Conversion",
+          difficulty: "medium",
+          text: "Which function is used to parse a string to an integer?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "parseInt()",
+            option_2: "stringToInt()",
+            option_3: "toInteger()",
+            option_4: "int()"
+          },
+          answer: "option_1"
+        },
+        {
+          category: "JavaScript",
+          topic: "Control Flow",
+          difficulty: "easy",
+          text: "How do you write an IF statement in JavaScript?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "if x == 5 then",
+            option_2: "if (x = 5)",
+            option_3: "if x = 5",
+            option_4: "if (x == 5)"
+          },
+          answer: "option_4"
+        },
+        {
+          category: "JavaScript",
+          topic: "Functions",
+          difficulty: "medium",
+          text: "What is the correct way to create a function in JavaScript?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "function = myFunction() {}",
+            option_2: "function myFunction() {}",
+            option_3: "create myFunction() {}",
+            option_4: "new function myFunction() {}"
+          },
+          answer: "option_2"
+        }
+      ]
     },
 
     1003: {
       name: "Python_Programming",
-      description: "Python Language Test",
+      desc: "Python Language Test",
       cover_image: "/default.png",
-      time: 35,
-      questions: {
-        1: {
-          uid: 3021,
-          tag: "level 1",
+      duration: 35,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 5,
+          medium: 5,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
           category: "Python",
-          statement: "Which keyword is used to define a function in Python?",
-          options: { a: "def", b: "function", c: "func", d: "define" },
-          correct_option: { value: "a" },
-        },
-        2: {
-          uid: 3022,
-          tag: "level 1",
-          category: "Python",
-          statement: "How do you create a comment in Python?",
+          topic: "Functions",
+          difficulty: "easy",
+          text: "Which keyword is used to define a function in Python?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "// comment",
-            b: "/* comment */",
-            c: "# comment",
-            d: "-- comment",
+            option_1: "def",
+            option_2: "function",
+            option_3: "func",
+            option_4: "define"
           },
-          correct_option: { value: "c" },
+          answer: "option_1"
         },
-        3: {
-          uid: 3023,
-          tag: "level 2",
+        {
           category: "Python",
-          statement: "Which collection is ordered and changeable in Python?",
-          options: { a: "Tuple", b: "Set", c: "Dictionary", d: "List" },
-          correct_option: { value: "d" },
-        },
-        4: {
-          uid: 3024,
-          tag: "level 1",
-          category: "Python",
-          statement: "What is the output of: print(3 * 'hi')?",
-          options: { a: "hihihi", b: "3hi", c: "Error", d: "hi hi hi" },
-          correct_option: { value: "a" },
-        },
-        5: {
-          uid: 3025,
-          tag: "level 2",
-          category: "Python",
-          statement: "Which method removes all items from a dictionary?",
-          options: { a: "remove()", b: "delete()", c: "clear()", d: "purge()" },
-          correct_option: { value: "c" },
-        },
-        6: {
-          uid: 3026,
-          tag: "level 1",
-          category: "Python",
-          statement: "How do you start a for loop in Python?",
+          topic: "Syntax",
+          difficulty: "easy",
+          text: "How do you create a comment in Python?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "for x in y:",
-            b: "for (x in y)",
-            c: "for x = y",
-            d: "for each x in y",
+            option_1: "// comment",
+            option_2: "/* comment */",
+            option_3: "# comment",
+            option_4: "-- comment"
           },
-          correct_option: { value: "a" },
+          answer: "option_3"
         },
-        7: {
-          uid: 3027,
-          tag: "level 2",
+        {
           category: "Python",
-          statement: "What is the correct file extension for Python files?",
-          options: { a: ".pt", b: ".pyth", c: ".py", d: ".python" },
-          correct_option: { value: "c" },
-        },
-        8: {
-          uid: 3028,
-          tag: "level 1",
-          category: "Python",
-          statement: "Which operator is used for exponentiation in Python?",
-          options: { a: "^", b: "**", c: "*^", d: "^^" },
-          correct_option: { value: "b" },
-        },
-        9: {
-          uid: 3029,
-          tag: "level 2",
-          category: "Python",
-          statement: "What does PEP stand for in Python?",
+          topic: "Data Structures",
+          difficulty: "medium",
+          text: "Which collection is ordered and changeable in Python?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Python Enhancement Proposal",
-            b: "Python Execution Process",
-            c: "Programming Enhancement Protocol",
-            d: "Python Error Prevention",
+            option_1: "Tuple",
+            option_2: "Set",
+            option_3: "Dictionary",
+            option_4: "List"
           },
-          correct_option: { value: "a" },
+          answer: "option_4"
         },
-        10: {
-          uid: 3030,
-          tag: "level 2",
+        {
           category: "Python",
-          statement: "Which function returns the length of a list?",
-          options: { a: "count()", b: "size()", c: "len()", d: "length()" },
-          correct_option: { value: "c" },
+          topic: "Operators",
+          difficulty: "easy",
+          text: "What is the output of: print(3 * 'hi')?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "hihihi",
+            option_2: "3hi",
+            option_3: "Error",
+            option_4: "hi hi hi"
+          },
+          answer: "option_1"
         },
-      },
+        {
+          category: "Python",
+          topic: "Dictionaries",
+          difficulty: "medium",
+          text: "Which method removes all items from a dictionary?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "remove()",
+            option_2: "delete()",
+            option_3: "clear()",
+            option_4: "purge()"
+          },
+          answer: "option_3"
+        },
+        {
+          category: "Python",
+          topic: "Loops",
+          difficulty: "easy",
+          text: "How do you start a for loop in Python?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "for x in y:",
+            option_2: "for (x in y)",
+            option_3: "for x = y",
+            option_4: "for each x in y"
+          },
+          answer: "option_1"
+        },
+        {
+          category: "Python",
+          topic: "Files & Extensions",
+          difficulty: "medium",
+          text: "What is the correct file extension for Python files?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: ".pt",
+            option_2: ".pyth",
+            option_3: ".py",
+            option_4: ".python"
+          },
+          answer: "option_3"
+        },
+        {
+          category: "Python",
+          topic: "Operators",
+          difficulty: "easy",
+          text: "Which operator is used for exponentiation in Python?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "^",
+            option_2: "**",
+            option_3: "*^",
+            option_4: "^^"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "Python",
+          topic: "PEP & Standards",
+          difficulty: "medium",
+          text: "What does PEP stand for in Python?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "Python Enhancement Proposal",
+            option_2: "Python Execution Process",
+            option_3: "Programming Enhancement Protocol",
+            option_4: "Python Error Prevention"
+          },
+          answer: "option_1"
+        },
+        {
+          category: "Python",
+          topic: "Built-in Functions",
+          difficulty: "medium",
+          text: "Which function returns the length of a list?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "count()",
+            option_2: "size()",
+            option_3: "len()",
+            option_4: "length()"
+          },
+          answer: "option_3"
+        }
+      ]
     },
-
+    
     1004: {
-      name: "React_Framework",
-      description: "React.js Fundamentals Test",
+      name: "Web_Fundamentals_2",
+      desc: "Second HTML/CSS Basics Test",
       cover_image: "/default.png",
-      time: 35,
-      questions: {
-        1: {
-          uid: 3031,
-          tag: "level 1",
-          category: "React",
-          statement: "What is React?",
+      duration: 30,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 7,
+          medium: 3,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which tag is used to create a hyperlink in HTML?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A programming language",
-            b: "A JavaScript library for building user interfaces",
-            c: "A database management system",
-            d: "A server-side framework",
+            option_1: "<a>",
+            option_2: "<link>",
+            option_3: "<href>",
+            option_4: "<hyperlink>"
           },
-          correct_option: { value: "b" },
+          answer: "option_1"
         },
-        2: {
-          uid: 3032,
-          tag: "level 1",
-          category: "React",
-          statement: "Which command creates a new React app?",
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which tag is used to insert an image in HTML?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "npm create-react-app",
-            b: "npm new react-app",
-            c: "npx create-react-app",
-            d: "npx new-react-app",
+            option_1: "<img>",
+            option_2: "<image>",
+            option_3: "<src>",
+            option_4: "<pic>"
           },
-          correct_option: { value: "c" },
+          answer: "option_1"
         },
-        3: {
-          uid: 3033,
-          tag: "level 2",
-          category: "React",
-          statement: "What is JSX?",
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which tag creates a line break in HTML?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A syntax extension for JavaScript",
-            b: "A templating language",
-            c: "A state management library",
-            d: "A CSS preprocessor",
+            option_1: "<br>",
+            option_2: "<lb>",
+            option_3: "<break>",
+            option_4: "<newline>"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        4: {
-          uid: 3034,
-          tag: "level 1",
-          category: "React",
-          statement: "How do you pass data to a child component?",
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which attribute defines the destination of a link?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Using state",
-            b: "Using props",
-            c: "Using refs",
-            d: "Using context",
+            option_1: "src",
+            option_2: "href",
+            option_3: "link",
+            option_4: "dest"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        5: {
-          uid: 3035,
-          tag: "level 2",
-          category: "React",
-          statement: "Which hook replaces componentDidMount?",
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "medium",
+          text: "Which doctype declaration is correct for HTML5?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "useEffect",
-            b: "useState",
-            c: "useMemo",
-            d: "useContext",
+            option_1: "<!DOCTYPE html>",
+            option_2: "<!DOCTYPE HTML PUBLIC>",
+            option_3: "<!DOCTYPE HTML5>",
+            option_4: "<DOCTYPE html>"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        6: {
-          uid: 3036,
-          tag: "level 2",
-          category: "React",
-          statement: "What is the virtual DOM?",
+        {
+          category: "Web Development",
+          topic: "CSS",
+          difficulty: "medium",
+          text: "Which property is used to change the background color in CSS?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A lightweight copy of the real DOM",
-            b: "A shadow version of components",
-            c: "A backup of the DOM tree",
-            d: "A testing environment for components",
+            option_1: "color",
+            option_2: "background-color",
+            option_3: "bg-color",
+            option_4: "background"
           },
-          correct_option: { value: "a" },
+          answer: "option_2"
         },
-        7: {
-          uid: 3037,
-          tag: "level 1",
-          category: "React",
-          statement: "How do you update state in a functional component?",
+        {
+          category: "Web Development",
+          topic: "CSS",
+          difficulty: "easy",
+          text: "Which CSS property is used to center text?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "this.setState()",
-            b: "useState() hook",
-            c: "setState()",
-            d: "updateState()",
+            option_1: "text-align",
+            option_2: "align-text",
+            option_3: "center",
+            option_4: "alignment"
           },
-          correct_option: { value: "b" },
+          answer: "option_1"
         },
-        8: {
-          uid: 3038,
-          tag: "level 2",
-          category: "React",
-          statement:
-            "Which method is used to render React elements to the DOM?",
+        {
+          category: "Web Development",
+          topic: "CSS",
+          difficulty: "easy",
+          text: "How do you select an element with id 'main' in CSS?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "ReactDOM.render()",
-            b: "React.render()",
-            c: "DOM.render()",
-            d: "render()",
+            option_1: "#main",
+            option_2: ".main",
+            option_3: "main",
+            option_4: "*main"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        9: {
-          uid: 3039,
-          tag: "level 1",
-          category: "React",
-          statement: "What is the correct syntax for a functional component?",
+        {
+          category: "Web Development",
+          topic: "CSS",
+          difficulty: "medium",
+          text: "What is the correct syntax to apply a class called 'menu'?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "function MyComponent() { return <div />; }",
-            b: "class MyComponent extends React.Component { render() { return <div />; } }",
-            c: "const MyComponent = () => <div />",
-            d: "Both a and c",
+            option_1: "#menu",
+            option_2: ".menu",
+            option_3: "menu",
+            option_4: "@menu"
           },
-          correct_option: { value: "d" },
+          answer: "option_2"
         },
-        10: {
-          uid: 3040,
-          tag: "level 2",
-          category: "React",
-          statement: "Which tool helps inspect React components?",
+        {
+          category: "Web Development",
+          topic: "HTML",
+          difficulty: "easy",
+          text: "Which HTML tag is used to define a table row?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "React Developer Tools",
-            b: "Redux DevTools",
-            c: "Chrome Inspector",
-            d: "React Inspector",
+            option_1: "<tr>",
+            option_2: "<td>",
+            option_3: "<table>",
+            option_4: "<th>"
           },
-          correct_option: { value: "a" },
-        },
-      },
+          answer: "option_1"
+        }
+      ]
     },
-
+    
     1005: {
-      name: "NodeJS Backend",
-      description: "Node.js Backend Development Test",
+      name: "NodeJS_Backend",
+      desc: "Node.js Backend Development Test",
       cover_image: "/default.png",
-      time: 40,
-      questions: {
-        1: {
-          uid: 3041,
-          tag: "level 1",
+      duration: 40,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 5,
+          medium: 5,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
           category: "Node.js",
-          statement: "What is Node.js?",
+          topic: "Basics",
+          difficulty: "easy",
+          text: "What is Node.js?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A frontend JavaScript framework",
-            b: "A JavaScript runtime built on Chrome's V8 engine",
-            c: "A package manager for JavaScript",
-            d: "A database management system",
+            option_1: "A frontend JavaScript framework",
+            option_2: "A JavaScript runtime built on Chrome's V8 engine",
+            option_3: "A package manager for JavaScript",
+            option_4: "A database management system"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        2: {
-          uid: 3042,
-          tag: "level 1",
+        {
           category: "Node.js",
-          statement: "Which module is used for file system operations?",
-          options: { a: "http", b: "fs", c: "path", d: "os" },
-          correct_option: { value: "b" },
-        },
-        3: {
-          uid: 3043,
-          tag: "level 2",
-          category: "Node.js",
-          statement: "What does npm stand for?",
+          topic: "Modules",
+          difficulty: "easy",
+          text: "Which module is used for file system operations?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Node Package Manager",
-            b: "Node Project Manager",
-            c: "New Package Modules",
-            d: "Node Program Manager",
+            option_1: "http",
+            option_2: "fs",
+            option_3: "path",
+            option_4: "os"
           },
-          correct_option: { value: "a" },
+          answer: "option_2"
         },
-        4: {
-          uid: 3044,
-          tag: "level 1",
+        {
           category: "Node.js",
-          statement: "How do you import a module in Node.js?",
+          topic: "npm",
+          difficulty: "medium",
+          text: "What does npm stand for?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "import module",
-            b: "require()",
-            c: "include module",
-            d: "using module",
+            option_1: "Node Package Manager",
+            option_2: "Node Project Manager",
+            option_3: "New Package Modules",
+            option_4: "Node Program Manager"
           },
-          correct_option: { value: "b" },
+          answer: "option_1"
         },
-        5: {
-          uid: 3045,
-          tag: "level 2",
+        {
           category: "Node.js",
-          statement: "Which method creates a new Express application?",
+          topic: "Modules",
+          difficulty: "easy",
+          text: "How do you import a module in Node.js?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "express()",
-            b: "new Express()",
-            c: "createExpress()",
-            d: "Express.new()",
+            option_1: "import module",
+            option_2: "require()",
+            option_3: "include module",
+            option_4: "using module"
           },
-          correct_option: { value: "a" },
+          answer: "option_2"
         },
-        6: {
-          uid: 3046,
-          tag: "level 2",
+        {
           category: "Node.js",
-          statement: "What is the purpose of package.json?",
+          topic: "Express",
+          difficulty: "medium",
+          text: "Which method creates a new Express application?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "To store project metadata and dependencies",
-            b: "To configure the Node.js runtime",
-            c: "To define database schemas",
-            d: "To store application secrets",
+            option_1: "express()",
+            option_2: "new Express()",
+            option_3: "createExpress()",
+            option_4: "Express.new()"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        7: {
-          uid: 3047,
-          tag: "level 1",
+        {
           category: "Node.js",
-          statement:
-            "Which global object is available in Node.js but not in browsers?",
-          options: { a: "window", b: "document", c: "process", d: "console" },
-          correct_option: { value: "c" },
-        },
-        8: {
-          uid: 3048,
-          tag: "level 2",
-          category: "Node.js",
-          statement: "What is middleware in Express?",
+          topic: "npm",
+          difficulty: "medium",
+          text: "What is the purpose of package.json?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Functions that have access to request and response objects",
-            b: "Database connection handlers",
-            c: "Template rendering engines",
-            d: "Error handling functions",
+            option_1: "To store project metadata and dependencies",
+            option_2: "To configure the Node.js runtime",
+            option_3: "To define database schemas",
+            option_4: "To store application secrets"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        9: {
-          uid: 3049,
-          tag: "level 1",
+        {
           category: "Node.js",
-          statement:
-            "Which HTTP method is typically used for creating resources?",
-          options: { a: "GET", b: "POST", c: "PUT", d: "DELETE" },
-          correct_option: { value: "b" },
-        },
-        10: {
-          uid: 3050,
-          tag: "level 2",
-          category: "Node.js",
-          statement: "What does REST stand for?",
+          topic: "Global Objects",
+          difficulty: "easy",
+          text: "Which global object is available in Node.js but not in browsers?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Representational State Transfer",
-            b: "Remote Execution State Transfer",
-            c: "Resource Endpoint State Transfer",
-            d: "Representational Endpoint State Transfer",
+            option_1: "window",
+            option_2: "document",
+            option_3: "process",
+            option_4: "console"
           },
-          correct_option: { value: "a" },
+          answer: "option_3"
         },
-      },
+        {
+          category: "Node.js",
+          topic: "Express",
+          difficulty: "medium",
+          text: "What is middleware in Express?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "Functions that have access to request and response objects",
+            option_2: "Database connection handlers",
+            option_3: "Template rendering engines",
+            option_4: "Error handling functions"
+          },
+          answer: "option_1"
+        },
+        {
+          category: "Node.js",
+          topic: "HTTP Methods",
+          difficulty: "easy",
+          text: "Which HTTP method is typically used for creating resources?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "GET",
+            option_2: "POST",
+            option_3: "PUT",
+            option_4: "DELETE"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "Node.js",
+          topic: "API Design",
+          difficulty: "medium",
+          text: "What does REST stand for?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "Representational State Transfer",
+            option_2: "Remote Execution State Transfer",
+            option_3: "Resource Endpoint State Transfer",
+            option_4: "Representational Endpoint State Transfer"
+          },
+          answer: "option_1"
+        }
+      ]
     },
-
+    
     1006: {
-      name: "Database Concepts",
-      description: "Database Fundamentals Test",
+      name: "Database_Concepts",
+      desc: "Database Fundamentals Test",
       cover_image: "/default.png",
-      time: 45,
-      questions: {
-        1: {
-          uid: 3051,
-          tag: "level 1",
+      duration: 45,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 5,
+          medium: 5,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
           category: "Databases",
-          statement: "What is SQL?",
+          topic: "SQL",
+          difficulty: "easy",
+          text: "What is SQL?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A programming language",
-            b: "A structured query language",
-            c: "A NoSQL database",
-            d: "A server-side framework",
+            option_1: "A programming language",
+            option_2: "A structured query language",
+            option_3: "A NoSQL database",
+            option_4: "A server-side framework"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        2: {
-          uid: 3052,
-          tag: "level 1",
+        {
           category: "Databases",
-          statement: "Which SQL command retrieves data from a table?",
-          options: { a: "GET", b: "SELECT", c: "RETRIEVE", d: "FIND" },
-          correct_option: { value: "b" },
-        },
-        3: {
-          uid: 3053,
-          tag: "level 2",
-          category: "Databases",
-          statement: "What is a primary key?",
+          topic: "SQL",
+          difficulty: "easy",
+          text: "Which SQL command retrieves data from a table?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A field that uniquely identifies each record",
-            b: "The first field in a table",
-            c: "An encrypted password field",
-            d: "A foreign key reference",
+            option_1: "GET",
+            option_2: "SELECT",
+            option_3: "RETRIEVE",
+            option_4: "FIND"
           },
-          correct_option: { value: "a" },
+          answer: "option_2"
         },
-        4: {
-          uid: 3054,
-          tag: "level 1",
+        {
           category: "Databases",
-          statement: "Which database is document-oriented?",
-          options: { a: "MySQL", b: "PostgreSQL", c: "MongoDB", d: "SQLite" },
-          correct_option: { value: "c" },
-        },
-        5: {
-          uid: 3055,
-          tag: "level 2",
-          category: "Databases",
-          statement: "What does ACID stand for in database transactions?",
+          topic: "SQL",
+          difficulty: "medium",
+          text: "What is a primary key?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Atomicity, Consistency, Isolation, Durability",
-            b: "Accuracy, Consistency, Integrity, Durability",
-            c: "Atomicity, Completeness, Integrity, Durability",
-            d: "Accuracy, Completeness, Isolation, Durability",
+            option_1: "A field that uniquely identifies each record",
+            option_2: "The first field in a table",
+            option_3: "An encrypted password field",
+            option_4: "A foreign key reference"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        6: {
-          uid: 3056,
-          tag: "level 2",
+        {
           category: "Databases",
-          statement: "Which SQL clause filters records?",
-          options: { a: "FILTER BY", b: "WHERE", c: "HAVING", d: "GROUP BY" },
-          correct_option: { value: "b" },
-        },
-        7: {
-          uid: 3057,
-          tag: "level 1",
-          category: "Databases",
-          statement: "What is a foreign key?",
+          topic: "NoSQL",
+          difficulty: "easy",
+          text: "Which database is document-oriented?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A field that references the primary key of another table",
-            b: "An encrypted primary key",
-            c: "A key that cannot be duplicated",
-            d: "The main key of a table",
+            option_1: "MySQL",
+            option_2: "PostgreSQL",
+            option_3: "MongoDB",
+            option_4: "SQLite"
           },
-          correct_option: { value: "a" },
+          answer: "option_3"
         },
-        8: {
-          uid: 3058,
-          tag: "level 2",
+        {
           category: "Databases",
-          statement: "Which NoSQL database uses key-value pairs?",
-          options: { a: "MongoDB", b: "Redis", c: "Cassandra", d: "CouchDB" },
-          correct_option: { value: "b" },
-        },
-        9: {
-          uid: 3059,
-          tag: "level 1",
-          category: "Databases",
-          statement: "Which SQL command adds new records?",
-          options: { a: "ADD", b: "CREATE", c: "INSERT", d: "UPDATE" },
-          correct_option: { value: "c" },
-        },
-        10: {
-          uid: 3060,
-          tag: "level 2",
-          category: "Databases",
-          statement: "What is normalization?",
+          topic: "SQL",
+          difficulty: "medium",
+          text: "What does ACID stand for in database transactions?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "The process of organizing data to reduce redundancy",
-            b: "Converting data to a standard format",
-            c: "Encrypting database fields",
-            d: "Backing up database tables",
+            option_1: "Atomicity, Consistency, Isolation, Durability",
+            option_2: "Accuracy, Consistency, Integrity, Durability",
+            option_3: "Atomicity, Completeness, Integrity, Durability",
+            option_4: "Accuracy, Completeness, Isolation, Durability"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-      },
+        {
+          category: "Databases",
+          topic: "SQL",
+          difficulty: "medium",
+          text: "Which SQL clause filters records?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "FILTER BY",
+            option_2: "WHERE",
+            option_3: "HAVING",
+            option_4: "GROUP BY"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "Databases",
+          topic: "SQL",
+          difficulty: "easy",
+          text: "What is a foreign key?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "A field that references the primary key of another table",
+            option_2: "An encrypted primary key",
+            option_3: "A key that cannot be duplicated",
+            option_4: "The main key of a table"
+          },
+          answer: "option_1"
+        },
+        {
+          category: "Databases",
+          topic: "NoSQL",
+          difficulty: "medium",
+          text: "Which NoSQL database uses key-value pairs?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "MongoDB",
+            option_2: "Redis",
+            option_3: "Cassandra",
+            option_4: "CouchDB"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "Databases",
+          topic: "SQL",
+          difficulty: "easy",
+          text: "Which SQL command adds new records?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "ADD",
+            option_2: "CREATE",
+            option_3: "INSERT",
+            option_4: "UPDATE"
+          },
+          answer: "option_3"
+        },
+        {
+          category: "Databases",
+          topic: "SQL",
+          difficulty: "medium",
+          text: "What is normalization?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "The process of organizing data to reduce redundancy",
+            option_2: "Converting data to a standard format",
+            option_3: "Encrypting database fields",
+            option_4: "Backing up database tables"
+          },
+          answer: "option_1"
+        }
+      ]
     },
-
+    
     1007: {
       name: "Git_Version_Control",
-      description: "Git and Version Control Test",
+      desc: "Git and Version Control Test",
       cover_image: "/default.png",
-      time: 30,
-      questions: {
-        1: {
-          uid: 3061,
-          tag: "level 1",
+      duration: 30,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 4,
+          medium: 6,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
           category: "Version Control",
-          statement: "What is Git?",
+          topic: "Git",
+          difficulty: "easy",
+          text: "What is Git?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A programming language",
-            b: "A distributed version control system",
-            c: "A cloud storage service",
-            d: "A database management system",
+            option_1: "A programming language",
+            option_2: "A distributed version control system",
+            option_3: "A cloud storage service",
+            option_4: "A database management system"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        2: {
-          uid: 3062,
-          tag: "level 1",
+        {
           category: "Version Control",
-          statement: "What command initializes a new Git repository?",
+          topic: "Git",
+          difficulty: "easy",
+          text: "What command initializes a new Git repository?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "git start",
-            b: "git init",
-            c: "git new",
-            d: "git create",
+            option_1: "git start",
+            option_2: "git init",
+            option_3: "git new",
+            option_4: "git create"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        3: {
-          uid: 3063,
-          tag: "level 1",
+        {
           category: "Version Control",
-          statement: "How do you stage files for commit in Git?",
+          topic: "Git",
+          difficulty: "easy",
+          text: "How do you stage files for commit in Git?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "git stage",
-            b: "git add",
-            c: "git commit",
-            d: "git update",
+            option_1: "git stage",
+            option_2: "git add",
+            option_3: "git commit",
+            option_4: "git update"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        4: {
-          uid: 3064,
-          tag: "level 2",
+        {
           category: "Version Control",
-          statement: "What does 'git clone' do?",
+          topic: "Git",
+          difficulty: "medium",
+          text: "What does 'git clone' do?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Creates a new branch",
-            b: "Copies a remote repository to local",
-            c: "Deletes a repository",
-            d: "Merges two branches",
+            option_1: "Creates a new branch",
+            option_2: "Copies a remote repository to local",
+            option_3: "Deletes a repository",
+            option_4: "Merges two branches"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        5: {
-          uid: 3065,
-          tag: "level 2",
+        {
           category: "Version Control",
-          statement:
-            "How do you create and switch to a new branch in one command?",
+          topic: "Git",
+          difficulty: "medium",
+          text: "How do you create and switch to a new branch in one command?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "git branch -new",
-            b: "git checkout -b",
-            c: "git switch -c",
-            d: "git create-branch",
+            option_1: "git branch -new",
+            option_2: "git checkout -b",
+            option_3: "git switch -c",
+            option_4: "git create-branch"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        6: {
-          uid: 3066,
-          tag: "level 2",
+        {
           category: "Version Control",
-          statement: "What command shows the commit history?",
+          topic: "Git",
+          difficulty: "medium",
+          text: "What command shows the commit history?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "git history",
-            b: "git log",
-            c: "git commits",
-            d: "git show-history",
+            option_1: "git history",
+            option_2: "git log",
+            option_3: "git commits",
+            option_4: "git show-history"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        7: {
-          uid: 3067,
-          tag: "level 2",
+        {
           category: "Version Control",
-          statement: "How do you discard changes in a file before staging?",
+          topic: "Git",
+          difficulty: "medium",
+          text: "How do you discard changes in a file before staging?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "git undo",
-            b: "git reset",
-            c: "git checkout --",
-            d: "git clean",
+            option_1: "git undo",
+            option_2: "git reset",
+            option_3: "git checkout --",
+            option_4: "git clean"
           },
-          correct_option: { value: "c" },
+          answer: "option_3"
         },
-        8: {
-          uid: 3068,
-          tag: "level 1",
+        {
           category: "Version Control",
-          statement: "What does 'git rebase' do?",
+          topic: "Git",
+          difficulty: "easy",
+          text: "What does 'git rebase' do?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Deletes a branch",
-            b: "Moves or combines a sequence of commits to a new base",
-            c: "Creates a backup",
-            d: "Reverts all changes",
+            option_1: "Deletes a branch",
+            option_2: "Moves or combines a sequence of commits to a new base",
+            option_3: "Creates a backup",
+            option_4: "Reverts all changes"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        9: {
-          uid: 3069,
-          tag: "level 2",
+        {
           category: "Version Control",
-          statement: "How do you squash multiple commits into one?",
+          topic: "Git",
+          difficulty: "medium",
+          text: "How do you squash multiple commits into one?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "git merge --squash",
-            b: "git rebase -i",
-            c: "git commit --amend",
-            d: "git squash",
+            option_1: "git merge --squash",
+            option_2: "git rebase -i",
+            option_3: "git commit --amend",
+            option_4: "git squash"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        10: {
-          uid: 3070,
-          tag: "level 2",
+        {
           category: "Version Control",
-          statement: "What command shows changes between commits?",
+          topic: "Git",
+          difficulty: "medium",
+          text: "What command shows changes between commits?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "git changes",
-            b: "git diff",
-            c: "git compare",
-            d: "git status",
+            option_1: "git changes",
+            option_2: "git diff",
+            option_3: "git compare",
+            option_4: "git status"
           },
-          correct_option: { value: "b" },
-        },
-      },
-    },
+          answer: "option_2"
+        }
+      ]
+    },    
 
     1008: {
       name: "Algorithms_Data_Structures",
-      description: "Algorithms and Data Structures Test",
+      desc: "Algorithms and Data Structures Test",
       cover_image: "/default.png",
-      time: 50,
-      questions: {
-        1: {
-          uid: 3071,
-          tag: "level 1",
+      duration: 50,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 3,
+          medium: 3,
+          hard: 4
+        }
+      ],
+      questionIds: [
+        {
           category: "Algorithms",
-          statement: "What is the time complexity of binary search?",
+          topic: "Searching",
+          difficulty: "easy",
+          text: "What is the time complexity of binary search?",
+          image: "",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "O(n)",
-            b: "O(n log n)",
-            c: "O(log n)",
-            d: "O(1)",
+            option_1: "O(n)",
+            option_2: "O(n log n)",
+            option_3: "O(log n)",
+            option_4: "O(1)"
           },
-          correct_option: { value: "c" },
+          answer: "option_3"
         },
-        2: {
-          uid: 3072,
-          tag: "level 1",
+        {
           category: "Data Structures",
-          statement:
-            "Which data structure uses FIFO (First-In-First-Out) principle?",
+          topic: "Basic Structures",
+          difficulty: "easy",
+          text: "Which data structure uses FIFO (First-In-First-Out) principle?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Stack",
-            b: "Queue",
-            c: "Tree",
-            d: "Graph",
+            option_1: "Stack",
+            option_2: "Queue",
+            option_3: "Tree",
+            option_4: "Graph"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        3: {
-          uid: 3073,
-          tag: "level 1",
+        {
           category: "Algorithms",
-          statement: "What is the worst-case time complexity of bubble sort?",
+          topic: "Sorting",
+          difficulty: "easy",
+          text: "What is the worst-case time complexity of bubble sort?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "O(n)",
-            b: "O(n log n)",
-            c: "O(n²)",
-            d: "O(log n)",
+            option_1: "O(n)",
+            option_2: "O(n log n)",
+            option_3: "O(n²)",
+            option_4: "O(log n)"
           },
-          correct_option: { value: "c" },
+          answer: "option_3"
         },
-        4: {
-          uid: 3074,
-          tag: "level 2",
+        {
           category: "Data Structures",
-          statement:
-            "Which data structure is typically used for implementing recursion?",
+          topic: "Memory Management",
+          difficulty: "medium",
+          text: "Which data structure is typically used for implementing recursion?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Queue",
-            b: "Stack",
-            c: "Linked List",
-            d: "Tree",
+            option_1: "Queue",
+            option_2: "Stack",
+            option_3: "Linked List",
+            option_4: "Tree"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        5: {
-          uid: 3075,
-          tag: "level 2",
+        {
           category: "Algorithms",
-          statement: "What algorithm uses divide-and-conquer strategy?",
+          topic: "Sorting",
+          difficulty: "medium",
+          text: "What algorithm uses divide-and-conquer strategy?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Bubble sort",
-            b: "Merge sort",
-            c: "Insertion sort",
-            d: "Selection sort",
+            option_1: "Bubble sort",
+            option_2: "Merge sort",
+            option_3: "Insertion sort",
+            option_4: "Selection sort"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        6: {
-          uid: 3076,
-          tag: "level 2",
+        {
           category: "Data Structures",
-          statement: "What is the main advantage of a hash table?",
+          topic: "Hashing",
+          difficulty: "medium",
+          text: "What is the main advantage of a hash table?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Constant time complexity for search operations",
-            b: "Guaranteed ordered elements",
-            c: "Efficient for range queries",
-            d: "Simple implementation",
+            option_1: "Constant time complexity for search operations",
+            option_2: "Guaranteed ordered elements",
+            option_3: "Efficient for range queries",
+            option_4: "Simple implementation"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        7: {
-          uid: 3077,
-          tag: "level 3",
+        {
           category: "Algorithms",
-          statement:
-            "Which algorithm finds the shortest path in an unweighted graph?",
+          topic: "Graph Theory",
+          difficulty: "hard",
+          text: "Which algorithm finds the shortest path in an unweighted graph?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Dijkstra's",
-            b: "Bellman-Ford",
-            c: "Breadth-First Search",
-            d: "Depth-First Search",
+            option_1: "Dijkstra's",
+            option_2: "Bellman-Ford",
+            option_3: "Breadth-First Search",
+            option_4: "Depth-First Search"
           },
-          correct_option: { value: "c" },
+          answer: "option_3"
         },
-        8: {
-          uid: 3078,
-          tag: "level 3",
+        {
           category: "Data Structures",
-          statement:
-            "What is the time complexity of inserting into a binary heap?",
+          topic: "Heaps",
+          difficulty: "hard",
+          text: "What is the time complexity of inserting into a binary heap?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "O(1)",
-            b: "O(log n)",
-            c: "O(n)",
-            d: "O(n log n)",
+            option_1: "O(1)",
+            option_2: "O(log n)",
+            option_3: "O(n)",
+            option_4: "O(n log n)"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        9: {
-          uid: 3079,
-          tag: "level 3",
+        {
           category: "Algorithms",
-          statement:
-            "Which sorting algorithm has the best average-case time complexity?",
+          topic: "Sorting",
+          difficulty: "hard",
+          text: "Which sorting algorithm has the best average-case time complexity?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Quick sort",
-            b: "Merge sort",
-            c: "Heap sort",
-            d: "Insertion sort",
+            option_1: "Quick sort",
+            option_2: "Merge sort",
+            option_3: "Heap sort",
+            option_4: "Insertion sort"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        10: {
-          uid: 3080,
-          tag: "level 3",
+        {
           category: "Data Structures",
-          statement:
-            "What is the space complexity of a recursive algorithm that has depth n?",
+          topic: "Memory Management",
+          difficulty: "hard",
+          text: "What is the space complexity of a recursive algorithm that has depth n?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "O(1)",
-            b: "O(log n)",
-            c: "O(n)",
-            d: "O(n²)",
+            option_1: "O(1)",
+            option_2: "O(log n)",
+            option_3: "O(n)",
+            option_4: "O(n²)"
           },
-          correct_option: { value: "c" },
-        },
-      },
+          answer: "option_3"
+        }
+      ]
     },
-
+    
     1009: {
       name: "Computer_Networking",
-      description: "Computer Networking Fundamentals Test",
+      desc: "Computer Networking Fundamentals Test",
       cover_image: "/default.png",
-      time: 40,
-      questions: {
-        1: {
-          uid: 3081,
-          tag: "level 1",
+      duration: 40,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 4,
+          medium: 6,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
           category: "Networking",
-          statement: "What does IP stand for?",
+          topic: "Protocols",
+          difficulty: "easy",
+          text: "What does IP stand for?",
+          image: "",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Internet Protocol",
-            b: "Internal Process",
-            c: "Interconnected Protocol",
-            d: "International Protocol",
+            option_1: "Internet Protocol",
+            option_2: "Internal Process",
+            option_3: "Interconnected Protocol",
+            option_4: "International Protocol"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        2: {
-          uid: 3082,
-          tag: "level 1",
+        {
           category: "Networking",
-          statement: "Which port does HTTP typically use?",
-          options: { a: "21", b: "25", c: "80", d: "443" },
-          correct_option: { value: "c" },
-        },
-        3: {
-          uid: 3083,
-          tag: "level 2",
-          category: "Networking",
-          statement: "What is the purpose of a subnet mask?",
+          topic: "Protocols",
+          difficulty: "easy",
+          text: "Which port does HTTP typically use?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "To encrypt network traffic",
-            b: "To divide an IP address into network and host portions",
-            c: "To mask private IP addresses",
-            d: "To filter malicious packets",
+            option_1: "21",
+            option_2: "25",
+            option_3: "80",
+            option_4: "443"
           },
-          correct_option: { value: "b" },
+          answer: "option_3"
         },
-        4: {
-          uid: 3084,
-          tag: "level 1",
+        {
           category: "Networking",
-          statement: "Which device operates at the Network Layer (Layer 3)?",
-          options: { a: "Hub", b: "Switch", c: "Router", d: "Repeater" },
-          correct_option: { value: "c" },
-        },
-        5: {
-          uid: 3085,
-          tag: "level 2",
-          category: "Networking",
-          statement: "What does DNS stand for?",
+          topic: "IP Addressing",
+          difficulty: "medium",
+          text: "What is the purpose of a subnet mask?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Domain Name System",
-            b: "Data Network Service",
-            c: "Digital Naming Service",
-            d: "Dynamic Network Solution",
+            option_1: "To encrypt network traffic",
+            option_2: "To divide an IP address into network and host portions",
+            option_3: "To mask private IP addresses",
+            option_4: "To filter malicious packets"
           },
-          correct_option: { value: "a" },
+          answer: "option_2"
         },
-        6: {
-          uid: 3086,
-          tag: "level 2",
+        {
           category: "Networking",
-          statement: "Which protocol is used for secure web browsing?",
-          options: { a: "HTTP", b: "FTP", c: "HTTPS", d: "SMTP" },
-          correct_option: { value: "c" },
-        },
-        7: {
-          uid: 3087,
-          tag: "level 1",
-          category: "Networking",
-          statement: "What is the IPv4 loopback address?",
+          topic: "Network Devices",
+          difficulty: "easy",
+          text: "Which device operates at the Network Layer (Layer 3)?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "192.168.1.1",
-            b: "10.0.0.1",
-            c: "127.0.0.1",
-            d: "172.16.0.1",
+            option_1: "Hub",
+            option_2: "Switch",
+            option_3: "Router",
+            option_4: "Repeater"
           },
-          correct_option: { value: "c" },
+          answer: "option_3"
         },
-        8: {
-          uid: 3088,
-          tag: "level 2",
+        {
           category: "Networking",
-          statement: "Which protocol is used for sending email?",
-          options: { a: "IMAP", b: "POP3", c: "SMTP", d: "FTP" },
-          correct_option: { value: "c" },
-        },
-        9: {
-          uid: 3089,
-          tag: "level 2",
-          category: "Networking",
-          statement: "What is the main purpose of NAT?",
+          topic: "Protocols",
+          difficulty: "medium",
+          text: "What does DNS stand for?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "To encrypt network traffic",
-            b: "To allow multiple devices to share a single public IP",
-            c: "To block unauthorized access",
-            d: "To increase network speed",
+            option_1: "Domain Name System",
+            option_2: "Data Network Service",
+            option_3: "Digital Naming Service",
+            option_4: "Dynamic Network Solution"
           },
-          correct_option: { value: "b" },
+          answer: "option_1"
         },
-        10: {
-          uid: 3090,
-          tag: "level 2",
+        {
           category: "Networking",
-          statement: "Which wireless encryption standard is most secure?",
-          options: { a: "WEP", b: "WPA", c: "WPA2", d: "WPA3" },
-          correct_option: { value: "d" },
+          topic: "Protocols",
+          difficulty: "medium",
+          text: "Which protocol is used for secure web browsing?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "HTTP",
+            option_2: "FTP",
+            option_3: "HTTPS",
+            option_4: "SMTP"
+          },
+          answer: "option_3"
         },
-      },
+        {
+          category: "Networking",
+          topic: "IP Addressing",
+          difficulty: "easy",
+          text: "What is the IPv4 loopback address?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "192.168.1.1",
+            option_2: "10.0.0.1",
+            option_3: "127.0.0.1",
+            option_4: "172.16.0.1"
+          },
+          answer: "option_3"
+        },
+        {
+          category: "Networking",
+          topic: "Protocols",
+          difficulty: "medium",
+          text: "Which protocol is used for sending email?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "IMAP",
+            option_2: "POP3",
+            option_3: "SMTP",
+            option_4: "FTP"
+          },
+          answer: "option_3"
+        },
+        {
+          category: "Networking",
+          topic: "Network Address Translation",
+          difficulty: "medium",
+          text: "What is the main purpose of NAT?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "To encrypt network traffic",
+            option_2: "To allow multiple devices to share a single public IP",
+            option_3: "To block unauthorized access",
+            option_4: "To increase network speed"
+          },
+          answer: "option_2"
+        },
+        {
+          category: "Networking",
+          topic: "Wireless Security",
+          difficulty: "medium",
+          text: "Which wireless encryption standard is most secure?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "WEP",
+            option_2: "WPA",
+            option_3: "WPA2",
+            option_4: "WPA3"
+          },
+          answer: "option_4"
+        }
+      ]
     },
-
+    
     1010: {
       name: "Cybersecurity_Basics",
-      description: "Cybersecurity Fundamentals Test",
+      desc: "Cybersecurity Fundamentals Test",
       cover_image: "/default.png",
-      time: 35,
-      questions: {
-        1: {
-          uid: 3091,
-          tag: "level 1",
+      duration: 35,
+      category: ["mcq"],
+      topics: [
+        {
+          name: "technical_mcq",
+          easy: 4,
+          medium: 6,
+          hard: 0
+        }
+      ],
+      questionIds: [
+        {
           category: "Security",
-          statement: "What is phishing?",
+          topic: "Threats",
+          difficulty: "easy",
+          text: "What is phishing?",
+          image: "",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A network scanning technique",
-            b: "A fraudulent attempt to obtain sensitive information",
-            c: "A type of malware",
-            d: "A password cracking method",
+            option_1: "A network scanning technique",
+            option_2: "A fraudulent attempt to obtain sensitive information",
+            option_3: "A type of malware",
+            option_4: "A password cracking method"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        2: {
-          uid: 3092,
-          tag: "level 1",
+        {
           category: "Security",
-          statement: "What is the purpose of a firewall?",
+          topic: "Network Security",
+          difficulty: "easy",
+          text: "What is the purpose of a firewall?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "To prevent unauthorized access to a network",
-            b: "To increase internet speed",
-            c: "To encrypt all network traffic",
-            d: "To block spam emails",
+            option_1: "To prevent unauthorized access to a network",
+            option_2: "To increase internet speed",
+            option_3: "To encrypt all network traffic",
+            option_4: "To block spam emails"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        3: {
-          uid: 3093,
-          tag: "level 2",
+        {
           category: "Security",
-          statement: "What is two-factor authentication?",
+          topic: "Authentication",
+          difficulty: "medium",
+          text: "What is two-factor authentication?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Using two different passwords",
-            b: "Verifying identity using two different methods",
-            c: "Having two user accounts",
-            d: "Using two different security questions",
+            option_1: "Using two different passwords",
+            option_2: "Verifying identity using two different methods",
+            option_3: "Having two user accounts",
+            option_4: "Using two different security questions"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-        4: {
-          uid: 3094,
-          tag: "level 1",
+        {
           category: "Security",
-          statement: "Which is an example of malware?",
-          options: { a: "Firewall", b: "VPN", c: "Virus", d: "HTTPS" },
-          correct_option: { value: "c" },
-        },
-        5: {
-          uid: 3095,
-          tag: "level 2",
-          category: "Security",
-          statement: "What does VPN stand for?",
+          topic: "Threats",
+          difficulty: "easy",
+          text: "Which is an example of malware?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Virtual Private Network",
-            b: "Verified Private Network",
-            c: "Virtual Protected Network",
-            d: "Verified Protected Network",
+            option_1: "Firewall",
+            option_2: "VPN",
+            option_3: "Virus",
+            option_4: "HTTPS"
           },
-          correct_option: { value: "a" },
+          answer: "option_3"
         },
-        6: {
-          uid: 3096,
-          tag: "level 2",
+        {
           category: "Security",
-          statement: "What is the purpose of encryption?",
+          topic: "Network Security",
+          difficulty: "medium",
+          text: "What does VPN stand for?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "To make data unreadable without a key",
-            b: "To compress data for storage",
-            c: "To authenticate users",
-            d: "To filter network traffic",
+            option_1: "Virtual Private Network",
+            option_2: "Verified Private Network",
+            option_3: "Virtual Protected Network",
+            option_4: "Verified Protected Network"
           },
-          correct_option: { value: "a" },
+          answer: "option_1"
         },
-        7: {
-          uid: 3097,
-          tag: "level 1",
+        {
           category: "Security",
-          statement: "What should you do if you receive a suspicious email?",
+          topic: "Cryptography",
+          difficulty: "medium",
+          text: "What is the purpose of encryption?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Open any attachments to check",
-            b: "Reply to verify the sender",
-            c: "Click on links to see where they lead",
-            d: "Don't open it and report it",
+            option_1: "To make data unreadable without a key",
+            option_2: "To compress data for storage",
+            option_3: "To authenticate users",
+            option_4: "To filter network traffic"
           },
-          correct_option: { value: "d" },
+          answer: "option_1"
         },
-        8: {
-          uid: 3098,
-          tag: "level 2",
+        {
           category: "Security",
-          statement: "What is a zero-day vulnerability?",
+          topic: "Best Practices",
+          difficulty: "easy",
+          text: "What should you do if you receive a suspicious email?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "A bug with no known fix",
-            b: "A security flaw that's been patched",
-            c: "A type of phishing attack",
-            d: "An expired security certificate",
+            option_1: "Open any attachments to check",
+            option_2: "Reply to verify the sender",
+            option_3: "Click on links to see where they lead",
+            option_4: "Don't open it and report it"
           },
-          correct_option: { value: "a" },
+          answer: "option_4"
         },
-        9: {
-          uid: 3099,
-          tag: "level 2",
+        {
           category: "Security",
-          statement: "Which is NOT a strong password practice?",
+          topic: "Vulnerabilities",
+          difficulty: "medium",
+          text: "What is a zero-day vulnerability?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Using a mix of letters, numbers, and symbols",
-            b: "Using the same password for multiple accounts",
-            c: "Changing passwords regularly",
-            d: "Using a password manager",
+            option_1: "A bug with no known fix",
+            option_2: "A security flaw that's been patched",
+            option_3: "A type of phishing attack",
+            option_4: "An expired security certificate"
           },
-          correct_option: { value: "b" },
+          answer: "option_1"
         },
-        10: {
-          uid: 3100,
-          tag: "level 2",
+        {
           category: "Security",
-          statement: "What is social engineering?",
+          topic: "Authentication",
+          difficulty: "medium",
+          text: "Which is NOT a strong password practice?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
           options: {
-            a: "Building social media platforms",
-            b: "Manipulating people to gain access to systems",
-            c: "A type of network architecture",
-            d: "Programming social media algorithms",
+            option_1: "Using a mix of letters, numbers, and symbols",
+            option_2: "Using the same password for multiple accounts",
+            option_3: "Changing passwords regularly",
+            option_4: "Using a password manager"
           },
-          correct_option: { value: "b" },
+          answer: "option_2"
         },
-      },
-    },
+        {
+          category: "Security",
+          topic: "Threats",
+          difficulty: "medium",
+          text: "What is social engineering?",
+          questionType: "mcq",
+          marks: 1,
+          optionType: "single",
+          options: {
+            option_1: "Building social media platforms",
+            option_2: "Manipulating people to gain access to systems",
+            option_3: "A type of network architecture",
+            option_4: "Programming social media algorithms"
+          },
+          answer: "option_2"
+        }
+      ]
+    }
   },
 };
 

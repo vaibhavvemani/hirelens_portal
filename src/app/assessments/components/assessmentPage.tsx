@@ -10,11 +10,13 @@ import {
 import SampleAssessment from "./SampleAssessments";
 import sampleAssignedTests from "./SampleStudent";
 import { Card } from "@/components/ui/card";
-import Image from "next/image";
+import { sampleTestsTaken } from "./SampleStudent";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import formatDueDate from "@/app/dashboard/components/TabsContent/Assessments/FormatDueDate";
 import Link from "next/link";
+import { Tooltip, TooltipProvider, TooltipContent } from "@/components/ui/tooltip";
+import { TooltipTrigger } from "@radix-ui/react-tooltip";
 
 interface AssessmentPageProps {
   value: string;
@@ -83,7 +85,7 @@ const AssessmentPage: React.FC<AssessmentPageProps> = ({ value }) => {
                       )}
                     </p>
                     <p className="text-sm text-muted-foreground font-semibold">
-                      {SampleAssessment.tests[test.testUid].description}
+                      {SampleAssessment.tests[test.testUid].desc}
                     </p>
                   </div>
                 }
@@ -95,9 +97,35 @@ const AssessmentPage: React.FC<AssessmentPageProps> = ({ value }) => {
                 {new Date() > test.dueDate && test.status != "completed" ? (
                   <Badge className="bg-red-400 px-2 py-1">Overdue</Badge>
                 ) : test.status === "completed" ? (
-                  <Badge className="bg-green-400 px-2 py-1">
-                    {test.status.charAt(0).toUpperCase() + test.status.slice(1)}
-                  </Badge>
+
+                    <div className="">
+
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger>
+                          <Badge className="bg-green-400 px-2 py-1">
+                        {test.status.charAt(0).toUpperCase() + test.status.slice(1)}
+                      </Badge>
+                      
+                          </TooltipTrigger>
+                          
+                          <TooltipContent className="text-sm p-2 rounded-md shadow-lg">
+                            {(() => {
+                              const takenTest = sampleTestsTaken.testsTaken.find(
+                                (testTaken) => testTaken.testUid === test.testUid
+                              );
+                              const totalQuestions =
+                                SampleAssessment.tests[test.testUid.toString()]?.questionIds.length;
+                    
+                              return takenTest
+                                ? `Score: ${takenTest.score} / ${totalQuestions}`
+                                : "Not Attempted";
+                            })()}
+                          </TooltipContent>
+                          </Tooltip>
+                      </TooltipProvider>
+                    </div>
+                    
                 ) : (
                   <Badge className="bg-blue-400 px-2 py-1">
                     {test.status.charAt(0).toUpperCase() + test.status.slice(1)}
