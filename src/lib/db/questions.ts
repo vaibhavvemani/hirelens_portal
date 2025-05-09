@@ -2,8 +2,8 @@ import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 import { Question, Filter } from "@/types/question"
 
+const DB_NAME = "college_db";
 const COLLECTION_NAME = "questions";
-const DB_NAME = "quiz";
 
 export async function add_questions(question_data: Question) {
   const client = await clientPromise;

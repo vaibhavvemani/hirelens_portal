@@ -1,3 +1,5 @@
+import {Question} from "@/types/question";
+
 export type Topic = {
     name: string;
     easy: number;
@@ -5,12 +7,11 @@ export type Topic = {
     hard: number;
 }
 
-export type Category = string;
-
-export interface Tests {
-    uid: number;
+export interface Test {
     name: string;
     desc: string;
-    category: [Category];
-    topics: [Topic];
+    questionIds?: Question[];
+    category: string[];
+    duration: number;
+    topics?: Topic[];
 }

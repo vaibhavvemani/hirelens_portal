@@ -4,13 +4,16 @@ import { add_questions, update_question, delete_question} from "@/lib/db/questio
 
 export async function POST(request: NextRequest) {
     const body = await request.json();
-    const { topic, catagory, difficulty, text, options, answer } = body;
+    const { topic, catagory, difficulty, text, questionType, marks, optionType, options, answer } = body;
 
     const questionData: Question = {
-        topic: topic,
         category: catagory,
+        topic: topic,
         difficulty: difficulty,
         text: text,
+        questionType: questionType,
+        marks: marks,
+        optionType: optionType,
         options: {
             option_1: options.option_1,
             option_2: options.option_2,
