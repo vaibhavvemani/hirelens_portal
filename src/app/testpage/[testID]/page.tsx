@@ -20,7 +20,7 @@ export default function TestTakingPage() {
 
   const [currentQuestion, setCurrentQuestion] = useState<number>(1);
   const questionKey = currentQuestion;
-  const question = assessment.questions[questionKey] as Question;
+  const question = assessment.questionIds[questionKey];
 
   const [answers, setAnswers] = useState<Record<number, string | null>>({});
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -28,7 +28,7 @@ export default function TestTakingPage() {
   function handleNext() {
     setAnswers((prev) => ({ ...prev, [currentQuestion]: selectedOption }));
   
-    if (currentQuestion < Object.keys(assessment.questions).length) {
+    if (currentQuestion < Object.keys(assessment.questionIds).length) {
       const nextQuestion = currentQuestion + 1;
       setCurrentQuestion(nextQuestion);
       setSelectedOption(answers[nextQuestion] || null);
@@ -71,7 +71,7 @@ export default function TestTakingPage() {
             <div className="flex flex-col gap-5">
               <h1 className="text-accent-foreground font-bold text-2xl bg-accent w-fit px-2 py-1 rounded-md">
                 Question {currentQuestion} of{" "}
-                {Object.keys(assessment.questions).length}
+                {Object.keys(assessment.questionIds).length}
               </h1>
               <Questions question={question} />
             </div>
@@ -95,7 +95,7 @@ export default function TestTakingPage() {
         </div>
         <Card className="w-full p-4 flex flex-row gap-2 justify-center-safe">
           {Array.from(
-            { length: Object.keys(assessment.questions).length },
+            { length: Object.keys(assessment.questionIds).length },
             (_, i) => {
               const qNum = i + 1;
               return (

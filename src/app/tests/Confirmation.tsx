@@ -3,17 +3,16 @@
 import { Card,CardDescription, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
-import { Test } from "@/types/AssessmentType";
+import { Test } from "@/types/tests";
 import Link from "next/link";
 
 interface ConfirmationProps {
-    assessment: Test;
+    assessment: Test
     onStart: () => void;
   }  
 
 export function countQuestions(assessment: Record<string, any>): number {
-    return Object.keys(assessment).filter((key) => key.startsWith("question_"))
-      .length;
+    return Object.keys(assessment).length
   }
 
   const Confirmation = ({ assessment, onStart }: ConfirmationProps)=> {
@@ -23,10 +22,10 @@ export function countQuestions(assessment: Record<string, any>): number {
       <div className="flex justify-between">
         <div className="flex flex-col gap-0">
           <CardTitle className="text-2xl">{assessment.name.replace(/_/g, " ")}</CardTitle>
-          <CardDescription className="text-base">{assessment.description}</CardDescription>
+          <CardDescription className="text-base">{assessment.desc}</CardDescription>
         </div>
         <p className="text-lg font-bold bg-accent h-fit px-2 py-1 rounded-md">
-          Time: {assessment.time} mins
+          Time: {assessment.duration} mins
         </p>
       </div>
       <Table>
@@ -39,9 +38,9 @@ export function countQuestions(assessment: Record<string, any>): number {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell className="p-3">{countQuestions(assessment)}</TableCell>
+            <TableCell className="p-3">{countQuestions(assessment.questionIds)}</TableCell>
             <TableCell className="p-3 text-center">1</TableCell>
-            <TableCell className="p-3 text-right">{countQuestions(assessment) * 1}</TableCell>
+            <TableCell className="p-3 text-right">{countQuestions(assessment.questionIds) * 1}</TableCell>
           </TableRow>
         </TableBody>
       </Table>

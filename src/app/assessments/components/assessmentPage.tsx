@@ -118,7 +118,7 @@ const AssessmentPage: React.FC<AssessmentPageProps> = ({ value }) => {
                                 SampleAssessment.tests[test.testUid.toString()]?.questionIds.length;
                     
                               return takenTest
-                                ? `Score: ${takenTest.score} / ${totalQuestions}`
+                                ? <p className="font-bold text-sm">Score: {takenTest.score} / {totalQuestions}</p>
                                 : "Not Attempted";
                             })()}
                           </TooltipContent>

@@ -3,13 +3,10 @@
 import { useParams } from "next/navigation";
 import SampleAssessment from "@/app/assessments/components/SampleAssessments";
 import Confirmation from "../Confirmation";
-import { Test } from "@/types/AssessmentType";
+import { Test } from "@/types/tests";
 import Countdown from "../Countdown";
 
 import { useState } from "react";
-
-
-
 
 
 export default function TestPage() {

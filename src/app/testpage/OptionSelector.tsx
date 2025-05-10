@@ -32,7 +32,15 @@ export default function OptionSelector({ options, selected, onSelect }: Props) {
                 selected === key ? "text-blue-600" : "text-muted-foreground"
               )}
             >
-              {key.toUpperCase()}
+              {key == "option_1"
+                ? "A"
+                : key == "option_2"
+                ? "B"
+                : key == "option_3"
+                ? "C"
+                : key == "option_4"
+                ? "D"
+                : "E"}
             </p>
           </div>
         </div>

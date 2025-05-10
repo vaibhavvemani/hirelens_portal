@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { Test } from "@/types/AssessmentType";
+import { Test } from "@/types/tests";
 import { Card } from "@/components/ui/card";
 import {
   Table,
@@ -51,7 +51,7 @@ const Countdown = ({ assessment, testId }: CountdownProps) => {
             {assessment.name.replace(/_/g, " ")}
           </h1>
           <p className="text-lg font-bold bg-accent h-fit px-2 py-1 rounded-md">
-            Time: {assessment.time} mins
+            Time: {assessment.duration} mins
           </p>
         </div>
 
@@ -66,11 +66,11 @@ const Countdown = ({ assessment, testId }: CountdownProps) => {
           <TableBody>
             <TableRow>
               <TableCell className="p-3">
-                {countQuestions(assessment)}
+                {countQuestions(assessment.questionIds)}
               </TableCell>
               <TableCell className="p-3 text-center">1</TableCell>
               <TableCell className="p-3 text-right">
-                {countQuestions(assessment) * 1}
+                {countQuestions(assessment.questionIds) * 1}
               </TableCell>
             </TableRow>
           </TableBody>

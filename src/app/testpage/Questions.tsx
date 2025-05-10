@@ -1,5 +1,6 @@
 
-import { Question } from "@/types/AssessmentType"
+import { Question } from "@/types/question"
+
 interface QuestionComponentProps{
     question: Question
 }
@@ -16,7 +17,7 @@ const Questions = (question: QuestionComponentProps) => {
       <p>Option C: {question.question.options.c}</p>
       <p>Option D: {question.question.options.d}</p>
       <p>Correct Option: {question.question.correct_option.value}</p> */}
-      <h2 className="text-accent-foreground font-bold font-lg">{question.question.statement}</h2>
+      <h2 className="text-accent-foreground font-bold font-lg">{question.question.text}</h2>
     </div>
   )
 }
