@@ -3,24 +3,36 @@ import { Question } from "@/types/question";
 import { add_questions, update_question, delete_question} from "@/lib/db/questions";
 
 export async function POST(request: NextRequest) {
-    const body = await request.json();
-    const { topic, catagory, difficulty, text, questionType, marks, optionType, options, answer } = body;
+    const formData = await request.json();
+    const formCategory = formData.get("category");
+    const formTopic = formData.get("topic");
+    const formDifficulty = formData.get("difficulty");
+    const formText = formData.get("text");
+    const formQuestionType = formData.get("questionType");
+    const formMarks = formData.get("marks");
+    const formOptionType = formData.get("optionType");
+    const formOption_1 = formData.get("option_1");
+    const formOption_2 = formData.get("option_2");
+    const formOption_3 = formData.get("option_3");
+    const formOption_4 = formData.get("option_4");
+    const formAnswer = formData.get("answer");
+
 
     const questionData: Question = {
-        category: catagory,
-        topic: topic,
-        difficulty: difficulty,
-        text: text,
-        questionType: questionType,
-        marks: marks,
-        optionType: optionType,
+        category: formCategory,
+        topic: formTopic,
+        difficulty: formDifficulty,
+        text: formText,
+        questionType: formQuestionType,
+        marks: formMarks,
+        optionType: formOptionType,
         options: {
-            option_1: options.option_1,
-            option_2: options.option_2,
-            option_3: options.option_3,
-            option_4: options.option_4
+            option_1: formOption_1,
+            option_2: formOption_2,
+            option_3: formOption_3,
+            option_4: formOption_4
         },
-        answer: answer
+        answer: formAnswer
     }
 
     try {
@@ -34,11 +46,41 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-    const body = await request.json();
-    const { id, questionData } = body;
+    const formData = await request.json();
+    const formId = formData.get("id");
+    const formCategory = formData.get("category");
+    const formTopic = formData.get("topic");
+    const formDifficulty = formData.get("difficulty");
+    const formText = formData.get("text");
+    const formQuestionType = formData.get("questionType");
+    const formMarks = formData.get("marks");
+    const formOptionType = formData.get("optionType");
+    const formOption_1 = formData.get("option_1");
+    const formOption_2 = formData.get("option_2");
+    const formOption_3 = formData.get("option_3");
+    const formOption_4 = formData.get("option_4");
+    const formAnswer = formData.get("answer");
+
+
+    const questionData: Question = {
+        category: formCategory,
+        topic: formTopic,
+        difficulty: formDifficulty,
+        text: formText,
+        questionType: formQuestionType,
+        marks: formMarks,
+        optionType: formOptionType,
+        options: {
+            option_1: formOption_1,
+            option_2: formOption_2,
+            option_3: formOption_3,
+            option_4: formOption_4
+        },
+        answer: formAnswer
+    }
 
     try {
-        const result = await update_question(id, questionData);
+        const result = await update_question(formId, questionData);
         return NextResponse.json( { message: "Question updated", result }, { status: 200 });
     }
     catch(error) {
@@ -49,8 +91,8 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-    const body = await request.json();
-    const { id } = body;
+    const formData = await request.json();
+    const id = formData.get("id");
 
     try {
         const result = await delete_question(id);
