@@ -1,21 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Question } from "@/types/question";
+import { Question, QuestionOptionKey, QuestionType, OptionType} from "@/types/question";
 import { add_questions, update_question, delete_question} from "@/lib/db/questions";
 
 export async function POST(request: NextRequest) {
-    const formData = await request.json();
-    const formCategory = formData.get("category");
-    const formTopic = formData.get("topic");
-    const formDifficulty = formData.get("difficulty");
-    const formText = formData.get("text");
-    const formQuestionType = formData.get("questionType");
-    const formMarks = formData.get("marks");
-    const formOptionType = formData.get("optionType");
-    const formOption_1 = formData.get("option_1");
-    const formOption_2 = formData.get("option_2");
-    const formOption_3 = formData.get("option_3");
-    const formOption_4 = formData.get("option_4");
-    const formAnswer = formData.get("answer");
+    const formData = await request.formData();
+    const formCategory = formData.get("category") as string;
+    const formTopic = formData.get("topic") as string;
+    const formDifficulty = formData.get("difficulty") as string;
+    const formText = formData.get("text") as string;
+    const formQuestionType = formData.get("questionType") as QuestionType;
+    const formMarks = formData.get("marks") as string;
+    const formOptionType = formData.get("optionType") as OptionType;
+    const formOption_1 = formData.get("option_1") as string;
+    const formOption_2 = formData.get("option_2") as string;
+    const formOption_3 = formData.get("option_3") as string;
+    const formOption_4 = formData.get("option_4") as string;
+    const formAnswer = formData.get("answer") as QuestionOptionKey;
 
 
     const questionData: Question = {
@@ -33,6 +33,10 @@ export async function POST(request: NextRequest) {
             option_4: formOption_4
         },
         answer: formAnswer
+    }
+
+    if (formData.get("optioin_5")) {
+        questionData.options.option_5 = formData.get("option_5") as string;
     }
 
     try {
@@ -46,20 +50,20 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-    const formData = await request.json();
-    const formId = formData.get("id");
-    const formCategory = formData.get("category");
-    const formTopic = formData.get("topic");
-    const formDifficulty = formData.get("difficulty");
-    const formText = formData.get("text");
-    const formQuestionType = formData.get("questionType");
-    const formMarks = formData.get("marks");
-    const formOptionType = formData.get("optionType");
-    const formOption_1 = formData.get("option_1");
-    const formOption_2 = formData.get("option_2");
-    const formOption_3 = formData.get("option_3");
-    const formOption_4 = formData.get("option_4");
-    const formAnswer = formData.get("answer");
+    const formData = await request.formData();
+    const formId = formData.get("id") as string;
+    const formCategory = formData.get("category") as string;
+    const formTopic = formData.get("topic") as string;
+    const formDifficulty = formData.get("difficulty") as string;
+    const formText = formData.get("text") as string;
+    const formQuestionType = formData.get("questionType") as QuestionType;
+    const formMarks = formData.get("marks") as string;
+    const formOptionType = formData.get("optionType") as OptionType;
+    const formOption_1 = formData.get("option_1") as string;
+    const formOption_2 = formData.get("option_2") as string;
+    const formOption_3 = formData.get("option_3") as string;
+    const formOption_4 = formData.get("option_4") as string;
+    const formAnswer = formData.get("answer") as QuestionOptionKey;
 
 
     const questionData: Question = {
@@ -77,6 +81,10 @@ export async function PUT(request: NextRequest) {
             option_4: formOption_4
         },
         answer: formAnswer
+    }
+
+    if (formData.get("option_5")) {
+        questionData.options.option_5 = formData.get("option_5") as string;
     }
 
     try {
@@ -91,8 +99,8 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-    const formData = await request.json();
-    const id = formData.get("id");
+    const formData = await request.formData();
+    const id = formData.get("id") as string;
 
     try {
         const result = await delete_question(id);

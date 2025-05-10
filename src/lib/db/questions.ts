@@ -12,7 +12,6 @@ export async function add_questions(question_data: Question) {
     .collection<Question>(COLLECTION_NAME)
     .insertOne(question_data);
   
-  client.close();
   return result.insertedId;
 }
 
@@ -23,7 +22,6 @@ export async function update_question(id: string, updated_data: Question) {
     .collection<Question>(COLLECTION_NAME)
     .updateOne( { _id: new ObjectId(id) }, { $set: updated_data})
 
-  client.close();
   return result.acknowledged;
 }
 
@@ -34,7 +32,6 @@ export async function delete_question(id: string) {
     .collection<Question>(COLLECTION_NAME)
     .deleteOne( { _id: new ObjectId(id) } )
 
-  client.close();
   return result.acknowledged;
 }
 
@@ -55,6 +52,5 @@ export async function get_questions(filter: Filter) {
   .find(query)
   .toArray()
 
-  client.close();
   return result;
 }

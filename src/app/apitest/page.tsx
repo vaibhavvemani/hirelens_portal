@@ -8,9 +8,9 @@ function Page() {
     const formData = new FormData();
     formData.append("category", "aptitude");
     formData.append("topic", "percentages");
-    formData.append("difficulty", "easy");
+    formData.append("difficulty", "something");
     formData.append("text", "Who is mahesh babu?");
-    formData.append("questionType", "mcq");
+    formData.append("questionType", "something");
     formData.append("marks", "1");
     formData.append("optionType", "single");
     formData.append("option_1", "The G.O.A.T");
@@ -22,9 +22,6 @@ function Page() {
 
     const resp = await fetch("api/questions", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
       body: formData
     })
 
@@ -34,25 +31,22 @@ function Page() {
   async function handleUpdateQuestion() {
     const formData = new FormData();
     formData.append("category", "aptitude");
-    formData.append("topic", "percentages");
+    formData.append("topic", "profit and loss");
     formData.append("difficulty", "easy");
     formData.append("text", "Who is mahesh babu?");
     formData.append("questionType", "mcq");
     formData.append("marks", "1");
     formData.append("optionType", "single");
     formData.append("option_1", "The G.O.A.T");
-    formData.append("option_2", "KING");
+    formData.append("option_2", "K>I>N>G");
     formData.append("option_3", "SUPER STAR");
     formData.append("option_4", "Babulake Baabu");
     formData.append("answer", "option_1");
 
-    formData.append("id", "6818e173b5297858c626b966");
+    formData.append("id", "681edd571123bf9de03f0f8e");
 
     const resp = await fetch("api/questions", {
       method: "PUT",
-      headers: {
-        "Content-Type": "application/json"
-      },
       body: formData 
     })
 
@@ -61,28 +55,22 @@ function Page() {
   }
 
   async function handleDeleteQuestion() {
-    const id = "6818e44d31d3fb2f5cfec5cc";
-    const data = await fetch("api/questions", {
+
+    const formData = new FormData();
+    formData.append("id", "681edd901123bf9de03f0f90")
+    const resp = await fetch("api/questions", {
       method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id })
+      body: formData
     })
 
-    const resp = await data.json();
     console.log(resp);
   }
 
   async function handleGetQuestion() {
     const data = await fetch("api/questions/search", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({
-        _id: "681a0a46c5bc0f2023c319e1", 
-        category: "quantitative"
+        category: "aptitude"
     })
    })
 

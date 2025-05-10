@@ -3,7 +3,7 @@ import { Test } from "@/types/tests"
 import { add_test } from "@/lib/db/tests";
 
 export async function POST(request: NextRequest) {
-    const formData = await request.json();
+    const formData = await request.formData();
     const formName = formData.get("name");
     const formDesc = formData.get("desc");
     const formDuration = formData.get("duration");
