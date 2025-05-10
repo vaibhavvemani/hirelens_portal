@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Questions from "../Questions";
 import { useEffect, useState } from "react";
-import { Question } from "@/types/AssessmentType";
 import { cn } from "@/lib/utils";
 import OptionSelector from "../OptionSelector";
 
