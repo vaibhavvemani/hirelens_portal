@@ -1,34 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
-import { Test } from "@/types/tests"
-import { add_test } from "@/lib/db/tests";
+import { add_test, delete_test, update_test } from "@/lib/db/tests";
 
 export async function POST(request: NextRequest) {
-    const formData = await request.formData();
-    const formName = formData.get("name");
-    const formDesc = formData.get("desc");
-    const formDuration = formData.get("duration");
-    const formCategory = formData.get("category");
-    const formTopic = formData.get("topic");
-    const formQuestionId = formData.get("questionIds");
-
-    const testData: Test = {
-        name: formName,
-        desc: formDesc,
-        duration: formDuration,
-    }
-
-    if (formCategory) {
-        testData["category"] = formCategory;
-    }
-    if (formTopic) {
-        testData["topics"] = formTopic;
-    }
-    if (formQuestionId) {
-        testData["questionIds"] = formQuestionId;
-    }
+    const data = await request.json();
 
     try {
-        const result = await add_test(testData);
+        const result = await add_test(data);
         return NextResponse.json({ message: "Test added succesfully", result }, { status: 200 });
     }
     catch(error) {
@@ -36,4 +13,33 @@ export async function POST(request: NextRequest) {
         return NextResponse.json( { message: "Error adding test to db", error }, { status: 500 })
     }
 
+}
+
+export async function PUT(request: NextRequest) {
+    const data = await request.json();
+    const id = data["id"];
+    const testData = data["updatedTest"];
+
+    try {
+        const result = await update_test(id, testData);
+        return NextResponse.json( { messsage: "Test updated succesfully", result }, { status: 200 });
+    }
+    catch(error) {
+        console.error("Test update failed: ", error)
+        return NextResponse.json( { message: "Test Update Failed", error }, { status: 500 });
+    }
+}
+
+export async function DELETE(request: NextRequest) {
+    const data = await request.json();
+    const id = data["id"];
+
+    try {
+        const result = await delete_test(id);
+        return NextResponse.json( { message: "Test deleted succesfully", result}, { status: 200 });
+    }
+    catch(error) {
+        console.error("Test deletion failed", error);
+        return NextResponse.json( { message: "Test Deletion failed", error}, { status: 500 });
+    }
 }

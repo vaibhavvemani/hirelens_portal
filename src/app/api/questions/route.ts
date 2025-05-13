@@ -1,21 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Question, QuestionOptionKey, QuestionType, OptionType} from "@/types/question";
+import { Question } from "@/types/question";
 import { add_questions, update_question, delete_question} from "@/lib/db/questions";
 
 export async function POST(request: NextRequest) {
-    const formData = await request.formData();
-    const formCategory = formData.get("category") as string;
-    const formTopic = formData.get("topic") as string;
-    const formDifficulty = formData.get("difficulty") as string;
-    const formText = formData.get("text") as string;
-    const formQuestionType = formData.get("questionType") as QuestionType;
-    const formMarks = formData.get("marks") as string;
-    const formOptionType = formData.get("optionType") as OptionType;
-    const formOption_1 = formData.get("option_1") as string;
-    const formOption_2 = formData.get("option_2") as string;
-    const formOption_3 = formData.get("option_3") as string;
-    const formOption_4 = formData.get("option_4") as string;
-    const formAnswer = formData.get("answer") as QuestionOptionKey;
+    const formData = await request.json();
+    const {
+    formCategory,
+    formTopic,
+    formDifficulty,
+    formText, 
+    formQuestionType,
+    formMarks,
+    formOptionType,
+    formOption_1,
+    formOption_2,
+    formOption_3, 
+    formOption_4,
+    formAnswer 
+    } = formData
 
 
     const questionData: Question = {
@@ -35,8 +37,8 @@ export async function POST(request: NextRequest) {
         answer: formAnswer
     }
 
-    if (formData.get("optioin_5")) {
-        questionData.options.option_5 = formData.get("option_5") as string;
+    if (formData["option_5"]) {
+        questionData.options.option_5 = formData["option_5"];
     }
 
     try {
@@ -50,21 +52,22 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-    const formData = await request.formData();
-    const formId = formData.get("id") as string;
-    const formCategory = formData.get("category") as string;
-    const formTopic = formData.get("topic") as string;
-    const formDifficulty = formData.get("difficulty") as string;
-    const formText = formData.get("text") as string;
-    const formQuestionType = formData.get("questionType") as QuestionType;
-    const formMarks = formData.get("marks") as string;
-    const formOptionType = formData.get("optionType") as OptionType;
-    const formOption_1 = formData.get("option_1") as string;
-    const formOption_2 = formData.get("option_2") as string;
-    const formOption_3 = formData.get("option_3") as string;
-    const formOption_4 = formData.get("option_4") as string;
-    const formAnswer = formData.get("answer") as QuestionOptionKey;
-
+    const formData = await request.json();
+    const {
+        formId,
+        formCategory,
+        formTopic,
+        formDifficulty,
+        formText, 
+        formQuestionType,
+        formMarks,
+        formOptionType,
+        formOption_1,
+        formOption_2,
+        formOption_3, 
+        formOption_4,
+        formAnswer 
+    } = formData
 
     const questionData: Question = {
         category: formCategory,
@@ -83,8 +86,8 @@ export async function PUT(request: NextRequest) {
         answer: formAnswer
     }
 
-    if (formData.get("option_5")) {
-        questionData.options.option_5 = formData.get("option_5") as string;
+    if (formData["option_5"]) {
+        questionData.options.option_5 = formData["option_5"];
     }
 
     try {
@@ -99,8 +102,8 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-    const formData = await request.formData();
-    const id = formData.get("id") as string;
+    const formData = await request.json();
+    const id = formData["id"];
 
     try {
         const result = await delete_question(id);
