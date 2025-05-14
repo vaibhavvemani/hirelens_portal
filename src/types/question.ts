@@ -11,7 +11,7 @@ export interface Question {
   image?: string;
   questionType: QuestionType,
   marks: number; 
-  optionType: OptionType;
+  optionType?: OptionType;
   options: {
     option_1: string;
     option_2: string;
