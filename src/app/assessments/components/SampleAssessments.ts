@@ -11,8 +11,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Web_Fundamentals_1",
       desc: "HTML/CSS Basics Test",
       cover_image: "/default.png",
-      duration: 30,
-      category: ["mcq"],
+      duration: "30",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -29,7 +29,7 @@ const SampleAssessment: AssessmentSystem = {
           text: "What does HTML stand for?",
           image: "",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Hyper Text Markup Language",
@@ -45,7 +45,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which CSS property changes the text color?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "text-color",
@@ -61,7 +61,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which HTML tag is used for the largest heading?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<h6>",
@@ -77,7 +77,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does CSS stand for?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Computer Style Sheets",
@@ -93,7 +93,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which attribute is used to link a CSS file to HTML?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "src",
@@ -109,7 +109,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which HTML element is used for JavaScript code?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<javascript>",
@@ -125,7 +125,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which character is used to indicate an end tag?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<",
@@ -141,7 +141,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which CSS property controls text size?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "text-style",
@@ -157,7 +157,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you insert a comment in HTML?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "// This is a comment",
@@ -173,7 +173,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which HTML attribute specifies an alternate text for an image?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "src",
@@ -189,8 +189,8 @@ const SampleAssessment: AssessmentSystem = {
     1002: {
       name: "JavaScript_Essentials",
       desc: "JavaScript Programming Test",
-      duration: 30,
-      category: ["tech mcq"],
+      duration: "30",
+      // category: ["tech mcq"],
       questionIds: [
         {
           category: "JavaScript",
@@ -198,7 +198,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which operator is used for strict equality comparison in JavaScript?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "==",
@@ -214,7 +214,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you declare a variable in JavaScript?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "variable x",
@@ -230,7 +230,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What will typeof null return in JavaScript?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "null",
@@ -246,7 +246,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which method adds one or more elements to the end of an array?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "push()",
@@ -262,7 +262,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the output of: console.log(1 + '1')?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "2",
@@ -278,7 +278,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which keyword is used to declare a constant in JavaScript?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "let",
@@ -294,7 +294,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What does DOM stand for in JavaScript?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Data Object Model",
@@ -310,7 +310,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which function is used to parse a string to an integer?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "parseInt()",
@@ -326,7 +326,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you write an IF statement in JavaScript?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "if x == 5 then",
@@ -342,7 +342,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the correct way to create a function in JavaScript?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "function = myFunction() {}",
@@ -359,8 +359,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Python_Programming",
       desc: "Python Language Test",
       cover_image: "/default.png",
-      duration: 35,
-      category: ["mcq"],
+      duration: "35",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -376,7 +376,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which keyword is used to define a function in Python?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "def",
@@ -392,7 +392,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you create a comment in Python?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "// comment",
@@ -408,7 +408,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which collection is ordered and changeable in Python?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Tuple",
@@ -424,7 +424,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is the output of: print(3 * 'hi')?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "hihihi",
@@ -440,7 +440,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which method removes all items from a dictionary?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "remove()",
@@ -456,7 +456,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you start a for loop in Python?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "for x in y:",
@@ -472,7 +472,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the correct file extension for Python files?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: ".pt",
@@ -488,7 +488,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which operator is used for exponentiation in Python?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "^",
@@ -504,7 +504,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does PEP stand for in Python?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Python Enhancement Proposal",
@@ -520,7 +520,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which function returns the length of a list?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "count()",
@@ -537,8 +537,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Web_Fundamentals_2",
       desc: "Second HTML/CSS Basics Test",
       cover_image: "/default.png",
-      duration: 30,
-      category: ["mcq"],
+      duration: "30",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -554,7 +554,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which tag is used to create a hyperlink in HTML?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<a>",
@@ -570,7 +570,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which tag is used to insert an image in HTML?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<img>",
@@ -586,7 +586,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which tag creates a line break in HTML?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<br>",
@@ -602,7 +602,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which attribute defines the destination of a link?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "src",
@@ -618,7 +618,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which doctype declaration is correct for HTML5?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<!DOCTYPE html>",
@@ -634,7 +634,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which property is used to change the background color in CSS?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "color",
@@ -650,7 +650,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which CSS property is used to center text?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "text-align",
@@ -666,7 +666,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you select an element with id 'main' in CSS?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "#main",
@@ -682,7 +682,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the correct syntax to apply a class called 'menu'?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "#menu",
@@ -698,7 +698,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which HTML tag is used to define a table row?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "<tr>",
@@ -715,8 +715,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "NodeJS_Backend",
       desc: "Node.js Backend Development Test",
       cover_image: "/default.png",
-      duration: 40,
-      category: ["mcq"],
+      duration: "40",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -732,7 +732,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is Node.js?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "A frontend JavaScript framework",
@@ -748,7 +748,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which module is used for file system operations?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "http",
@@ -764,7 +764,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does npm stand for?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Node Package Manager",
@@ -780,7 +780,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you import a module in Node.js?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "import module",
@@ -796,7 +796,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which method creates a new Express application?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "express()",
@@ -812,7 +812,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the purpose of package.json?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "To store project metadata and dependencies",
@@ -828,7 +828,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which global object is available in Node.js but not in browsers?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "window",
@@ -844,7 +844,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is middleware in Express?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Functions that have access to request and response objects",
@@ -860,7 +860,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which HTTP method is typically used for creating resources?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "GET",
@@ -876,7 +876,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does REST stand for?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Representational State Transfer",
@@ -893,8 +893,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Database_Concepts",
       desc: "Database Fundamentals Test",
       cover_image: "/default.png",
-      duration: 45,
-      category: ["mcq"],
+      duration: "45",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -910,7 +910,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is SQL?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "A programming language",
@@ -926,7 +926,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which SQL command retrieves data from a table?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "GET",
@@ -942,7 +942,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is a primary key?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "A field that uniquely identifies each record",
@@ -958,7 +958,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which database is document-oriented?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "MySQL",
@@ -974,7 +974,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does ACID stand for in database transactions?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Atomicity, Consistency, Isolation, Durability",
@@ -990,7 +990,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which SQL clause filters records?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "FILTER BY",
@@ -1006,7 +1006,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is a foreign key?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "A field that references the primary key of another table",
@@ -1022,7 +1022,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which NoSQL database uses key-value pairs?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "MongoDB",
@@ -1038,7 +1038,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which SQL command adds new records?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "ADD",
@@ -1054,7 +1054,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is normalization?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "The process of organizing data to reduce redundancy",
@@ -1071,8 +1071,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Git_Version_Control",
       desc: "Git and Version Control Test",
       cover_image: "/default.png",
-      duration: 30,
-      category: ["mcq"],
+      duration: "30",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -1088,7 +1088,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is Git?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "A programming language",
@@ -1104,7 +1104,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What command initializes a new Git repository?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "git start",
@@ -1120,7 +1120,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "How do you stage files for commit in Git?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "git stage",
@@ -1136,7 +1136,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does 'git clone' do?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Creates a new branch",
@@ -1152,7 +1152,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "How do you create and switch to a new branch in one command?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "git branch -new",
@@ -1168,7 +1168,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What command shows the commit history?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "git history",
@@ -1184,7 +1184,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "How do you discard changes in a file before staging?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "git undo",
@@ -1200,7 +1200,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What does 'git rebase' do?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Deletes a branch",
@@ -1216,7 +1216,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "How do you squash multiple commits into one?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "git merge --squash",
@@ -1232,7 +1232,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What command shows changes between commits?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "git changes",
@@ -1249,8 +1249,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Algorithms_Data_Structures",
       desc: "Algorithms and Data Structures Test",
       cover_image: "/default.png",
-      duration: 50,
-      category: ["mcq"],
+      duration: "50",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -1267,7 +1267,7 @@ const SampleAssessment: AssessmentSystem = {
           text: "What is the time complexity of binary search?",
           image: "",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "O(n)",
@@ -1283,7 +1283,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which data structure uses FIFO (First-In-First-Out) principle?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Stack",
@@ -1299,7 +1299,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is the worst-case time complexity of bubble sort?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "O(n)",
@@ -1315,7 +1315,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which data structure is typically used for implementing recursion?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Queue",
@@ -1331,7 +1331,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What algorithm uses divide-and-conquer strategy?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Bubble sort",
@@ -1347,7 +1347,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the main advantage of a hash table?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Constant time complexity for search operations",
@@ -1363,7 +1363,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "hard",
           text: "Which algorithm finds the shortest path in an unweighted graph?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Dijkstra's",
@@ -1379,7 +1379,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "hard",
           text: "What is the time complexity of inserting into a binary heap?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "O(1)",
@@ -1395,7 +1395,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "hard",
           text: "Which sorting algorithm has the best average-case time complexity?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Quick sort",
@@ -1411,7 +1411,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "hard",
           text: "What is the space complexity of a recursive algorithm that has depth n?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "O(1)",
@@ -1428,8 +1428,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Computer_Networking",
       desc: "Computer Networking Fundamentals Test",
       cover_image: "/default.png",
-      duration: 40,
-      category: ["mcq"],
+      duration: "40",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -1446,7 +1446,7 @@ const SampleAssessment: AssessmentSystem = {
           text: "What does IP stand for?",
           image: "",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Internet Protocol",
@@ -1462,7 +1462,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which port does HTTP typically use?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "21",
@@ -1478,7 +1478,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the purpose of a subnet mask?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "To encrypt network traffic",
@@ -1494,7 +1494,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which device operates at the Network Layer (Layer 3)?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Hub",
@@ -1510,7 +1510,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does DNS stand for?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Domain Name System",
@@ -1526,7 +1526,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which protocol is used for secure web browsing?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "HTTP",
@@ -1542,7 +1542,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is the IPv4 loopback address?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "192.168.1.1",
@@ -1558,7 +1558,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which protocol is used for sending email?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "IMAP",
@@ -1574,7 +1574,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the main purpose of NAT?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "To encrypt network traffic",
@@ -1590,7 +1590,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which wireless encryption standard is most secure?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "WEP",
@@ -1607,8 +1607,8 @@ const SampleAssessment: AssessmentSystem = {
       name: "Cybersecurity_Basics",
       desc: "Cybersecurity Fundamentals Test",
       cover_image: "/default.png",
-      duration: 35,
-      category: ["mcq"],
+      duration: "35",
+      // category: ["mcq"],
       topics: [
         {
           name: "technical_mcq",
@@ -1625,7 +1625,7 @@ const SampleAssessment: AssessmentSystem = {
           text: "What is phishing?",
           image: "",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "A network scanning technique",
@@ -1641,7 +1641,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What is the purpose of a firewall?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "To prevent unauthorized access to a network",
@@ -1657,7 +1657,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is two-factor authentication?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Using two different passwords",
@@ -1673,7 +1673,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Which is an example of malware?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Firewall",
@@ -1689,7 +1689,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What does VPN stand for?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Virtual Private Network",
@@ -1705,7 +1705,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is the purpose of encryption?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "To make data unreadable without a key",
@@ -1721,7 +1721,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "What should you do if you receive a suspicious email?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Open any attachments to check",
@@ -1737,7 +1737,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is a zero-day vulnerability?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "A bug with no known fix",
@@ -1753,7 +1753,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "Which is NOT a strong password practice?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Using a mix of letters, numbers, and symbols",
@@ -1769,7 +1769,7 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "medium",
           text: "What is social engineering?",
           questionType: "mcq",
-          marks: 1,
+          marks: "1",
           optionType: "single",
           options: {
             option_1: "Building social media platforms",
