@@ -68,7 +68,7 @@ const sidebarGroups: SidebarGroupType[] = [
   },
   {
     label: "Community",
-    items: [{ title: "Class Discussions", url: "#", icon: MessagesSquare }],
+    items: [{ title: "Class Discussions", url: "/discussions", icon: MessagesSquare }],
   },
   {
     label: "Utilities",
