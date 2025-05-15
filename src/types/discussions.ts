@@ -16,6 +16,21 @@ export type Circular = {
 };
 
 
-type Importance = "high" | "medium" | "low" | "none";
+export type Importance = "high" | "medium" | "low" | "none";
 
 type role = "HOD" | "Professor" 
+
+
+export type ThreadRole = 'teacher' | 'student';
+
+export type AssignmentThread = {
+  assignmentID: number;
+  assignmentName: string;
+  threads: {
+    role: ThreadRole;
+    name: string;
+    avatar: string | '/default.png';
+    message: string;
+    timestamp: Date;
+  }[];
+};
