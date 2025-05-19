@@ -24,8 +24,21 @@ const Circulars = () => {
             return "border-gray-300 bg-gray-50";
         }
       };
+
+      const getHeaderColor = (importance: Importance) => {
+        switch (importance) {
+          case "high":
+            return "text-red-700";
+          case "medium":
+            return "text-yellow-700";
+          case "low":
+            return "text-green-700";
+          case "none":
+          default:
+            return "text-gray-700";
+        }
+      };
     
-      // Function to get badge color based on importance
       const getBadgeColor = (importance: Importance) => {
         switch (importance) {
           case "high":
@@ -64,7 +77,7 @@ const Circulars = () => {
                     width={30}
                     height={30}
                   />
-                  <p className="whitespace-nowrap font-medium">{Circular.teacher.name}</p>
+                  <p className={`whitespace-nowrap font-bold ${getHeaderColor(Circular.importance)}`}>{Circular.teacher.name}</p>
                 </div>
                 <Badge className={`h-fit ${getBadgeColor(Circular.importance)}`}>{Circular.teacher.role}</Badge>
               </CardDescription>

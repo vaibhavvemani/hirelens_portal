@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Send } from "lucide-react";
 import { sampleDiscussion, assignments } from "./sampleDiscussions";
 import {
   Accordion,
@@ -9,6 +9,8 @@ import {
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 const Discussions = () => {
     function cardStyle(role: string): string{
@@ -79,6 +81,17 @@ const Discussions = () => {
                           </CardContent>
                         </Card>
                       ))}
+                      <div className="flex flex-col gap-2">
+                      <div className="relative">
+                        <Textarea className="resize-none h-[100px]" placeholder="any questions?"></Textarea>
+                        <Button className="absolute bottom-0 right-0 m-2 w-fit cursor-pointer hover:opacity-70">
+                          <div className="flex gap-2 items-center">
+                            <p>Submit</p>
+                            <Send />
+                          </div>
+                        </Button>
+                      </div>
+                      </div>
                     </div>
                   ))}
               </AccordionContent>
