@@ -2,11 +2,10 @@
 
 import React from "react";
 import Editor, { OnChange, OnMount } from "@monaco-editor/react";
-import { useState } from "react";
 
 type MonacoEditorProps = {
-  language?: string;
-  theme?: "vs-dark" | "light" | "vs-light" | string;
+  language: string;
+  theme: "vs-dark" | "light"
   value?: string;
   defaultValue?: string;
   onChange?: OnChange;
@@ -15,9 +14,8 @@ type MonacoEditorProps = {
 };
 
 const Monaco = ({
-
-  language = "javascript",
-  theme = "vs-dark",
+  language,
+  theme,
   value,
   defaultValue = "// Start coding here...",
   onChange,
@@ -33,25 +31,25 @@ const Monaco = ({
       horizontal: "auto",
       useShadows: false,
     },
-    // Remove Monaco's default padding to fit rounded corners
-    padding: { top: 12, bottom: 12 },
+    padding: { top: 20, bottom: 12 },
     roundedSelection: true,
   },
 }: MonacoEditorProps) => {
   return (
-    <div className="flex-1 h-full w-full overflow-hidden rounded-2xl z-10">
-      <Editor
-        height="100%"
-        width="100%"
-        defaultLanguage={language}
-        theme={theme}
-        value={value}
-        defaultValue={defaultValue}
-        onChange={onChange}
-        onMount={onMount}
-        options={options}
-      />
-    </div>
+    
+      <div className="h-full w-full overflow-hidden rounded-2xl">
+        <Editor
+          height="100%"
+          width="100%"
+          language={language}
+          theme={theme}
+          value={value}
+          defaultValue={defaultValue}
+          onChange={onChange}
+          onMount={onMount}
+          options={options}
+        />
+      </div>
   );
 };
 

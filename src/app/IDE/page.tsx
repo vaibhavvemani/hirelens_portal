@@ -1,5 +1,4 @@
-import { Card } from "@/components/ui/card";
-import Monaco from "./Monaco";
+import CodingIDE from "./CodingIDE";
 
 const page = () => {
   return (
@@ -12,11 +11,7 @@ const page = () => {
             A coding IDE that helps you write code faster and more efficiently.
           </p>
         </div>
-        
-        {/* Critical: This container prevents overflow */}
-        <Card className="flex-1 min-h-[500px] w-full overflow-hidden p-2 rounded-2xl">
-          <Monaco />
-        </Card>
+        <CodingIDE />
       </div>
     </div>
   );
