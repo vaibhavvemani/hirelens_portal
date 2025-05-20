@@ -62,7 +62,7 @@ const sidebarGroups: SidebarGroupType[] = [
     items: [
       { title: "Courses", url: "/assessments", icon: BookOpen },
       { title: "DSA Roadmap", url: "#", icon: CodeXml },
-      { title: "Coding IDE", url: "#", icon: SquareChevronRight },
+      { title: "Coding IDE", url: "IDE", icon: SquareChevronRight },
       { title: "Assessments", url: "/assessments", icon: FileText },
     ],
   },
