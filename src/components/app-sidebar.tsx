@@ -61,7 +61,7 @@ const sidebarGroups: SidebarGroupType[] = [
     label: "Learning & Development",
     items: [
       { title: "Courses", url: "/assessments", icon: BookOpen },
-      { title: "DSA Roadmap", url: "#", icon: CodeXml },
+      { title: "DSA Roadmap", url: "/DSARoadmap", icon: CodeXml },
       { title: "Coding IDE", url: "IDE", icon: SquareChevronRight },
       { title: "Assessments", url: "/assessments", icon: FileText },
     ],
@@ -97,7 +97,7 @@ export function AppSidebar() {
                     <SidebarMenuButton asChild>
                       <Link href={item.url} className="flex items-center">
                         <item.icon size={20} />
-                        <span>{item.title}</span>
+                        <p>{item.title}</p>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -110,9 +110,9 @@ export function AppSidebar() {
         <SidebarFooter className="mt-auto mb-2">
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton className="flex items-center">
+              <SidebarMenuButton className="flex items-center py-6 cursor-pointer">
                 <User2 size={20} />
-                <div>
+                <div className="flex flex-col">
                   <p className="font-extrabold">Username</p>
                   <p className="font-medium text-accent-foreground">
                     username@email.com
