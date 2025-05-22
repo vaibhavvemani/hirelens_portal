@@ -1,28 +1,24 @@
-interface TestResult {
-  testUid: number;
-  score: number;
-  submittedAt: Date;
-}
+import { AssignedTests, TestsTaken } from "@/types/studentTest";
 
-interface TestsTaken {
-  studentId: string;
-  testsTaken: TestResult[];
-}
-
-type TestStatus = "completed" | "pending";
-
-interface AssignedTest {
-  testUid: number;
-  status: TestStatus;
-  dueDate: Date;
-}
-
-interface AssignedTests {
-  studentId: string;
-  assignedTests: AssignedTest[];
-}
+const sampleAssignedTests: AssignedTests = {
+  studentId: "1NH22AI147",
+  assignedTests: [
+    { testUid: 1001, status: "completed", dueDate: new Date("2025-05-21") },
+    { testUid: 1002, status: "completed", dueDate: new Date("2025-05-22") },
+    { testUid: 1003, status: "completed", dueDate: new Date("2025-05-23") },
+    { testUid: 1004, status: "pending", dueDate: new Date("2025-05-24") },
+    { testUid: 1005, status: "pending", dueDate: new Date("2025-05-25") },
+    { testUid: 1006, status: "pending", dueDate: new Date("2025-05-26") },
+    { testUid: 1007, status: "pending", dueDate: new Date("2025-05-27") },
+    { testUid: 1008, status: "pending", dueDate: new Date("2025-05-28") },
+    { testUid: 1009, status: "pending", dueDate: new Date("2025-05-29") },
+    { testUid: 1010, status: "pending", dueDate: new Date("2025-05-30") },
+    { testUid: 1011, status: "pending", dueDate: new Date("2025-05-30") },
+  ],
+};
 
 
+export default sampleAssignedTests
 
 export const sampleTestsTaken: TestsTaken = {
   studentId: "1NH22AI147",
@@ -44,22 +40,3 @@ export const sampleTestsTaken: TestsTaken = {
     },
   ],
 };
-
-const sampleAssignedTests: AssignedTests = {
-  studentId: "1NH22AI147",
-  assignedTests: [
-    { testUid: 1001, status: "completed", dueDate: new Date("2025-05-06") },
-    { testUid: 1002, status: "completed", dueDate: new Date("2025-05-07") },
-    { testUid: 1003, status: "completed", dueDate: new Date("2025-05-08") },
-    { testUid: 1004, status: "pending", dueDate: new Date("2025-05-09") },
-    { testUid: 1005, status: "pending", dueDate: new Date("2025-05-10") },
-    { testUid: 1006, status: "pending", dueDate: new Date("2025-05-11") },
-    { testUid: 1007, status: "pending", dueDate: new Date("2025-05-12") },
-    { testUid: 1008, status: "pending", dueDate: new Date("2025-05-13") },
-    { testUid: 1009, status: "pending", dueDate: new Date("2025-05-14") },
-    { testUid: 1010, status: "pending", dueDate: new Date("2025-05-15") },
-  ],
-};
-
-
-export default sampleAssignedTests

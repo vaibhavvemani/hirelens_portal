@@ -18,8 +18,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 7,
           medium: 3,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -35,9 +35,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Hyper Text Markup Language",
             option_2: "Home Tool Markup Language",
             option_3: "Hyperlinks and Text Markup Language",
-            option_4: "High-level Text Machine Language"
+            option_4: "High-level Text Machine Language",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Web Development",
@@ -51,9 +51,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "text-color",
             option_2: "font-color",
             option_3: "color",
-            option_4: "text-style"
+            option_4: "text-style",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Web Development",
@@ -67,9 +67,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<h6>",
             option_2: "<heading>",
             option_3: "<h1>",
-            option_4: "<head>"
+            option_4: "<head>",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Web Development",
@@ -83,9 +83,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Computer Style Sheets",
             option_2: "Creative Style Sheets",
             option_3: "Cascading Style Sheets",
-            option_4: "Colorful Style Sheets"
+            option_4: "Colorful Style Sheets",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Web Development",
@@ -99,9 +99,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "src",
             option_2: "link",
             option_3: "href",
-            option_4: "style"
+            option_4: "style",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Web Development",
@@ -115,9 +115,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<javascript>",
             option_2: "<script>",
             option_3: "<js>",
-            option_4: "<code>"
+            option_4: "<code>",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Web Development",
@@ -131,9 +131,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<",
             option_2: ">",
             option_3: "/",
-            option_4: "\\"
+            option_4: "\\",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Web Development",
@@ -147,9 +147,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "text-style",
             option_2: "font-size",
             option_3: "text-size",
-            option_4: "font-style"
+            option_4: "font-style",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Web Development",
@@ -163,9 +163,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "// This is a comment",
             option_2: "<!-- This is a comment -->",
             option_3: "' This is a comment",
-            option_4: "/* This is a comment */"
+            option_4: "/* This is a comment */",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Web Development",
@@ -179,11 +179,11 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "src",
             option_2: "alt",
             option_3: "title",
-            option_4: "href"
+            option_4: "href",
           },
-          answer: "option_2"
-        }
-      ]
+          answer: "option_2",
+        },
+      ],
     },
 
     1002: {
@@ -204,9 +204,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "==",
             option_2: "===",
             option_3: "=",
-            option_4: "!="
+            option_4: "!=",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "JavaScript",
@@ -220,9 +220,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "variable x",
             option_2: "v x",
             option_3: "let x",
-            option_4: "x = variable"
+            option_4: "x = variable",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "JavaScript",
@@ -236,9 +236,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "null",
             option_2: "undefined",
             option_3: "object",
-            option_4: "number"
+            option_4: "number",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "JavaScript",
@@ -252,9 +252,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "push()",
             option_2: "pop()",
             option_3: "shift()",
-            option_4: "unshift()"
+            option_4: "unshift()",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "JavaScript",
@@ -268,9 +268,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "2",
             option_2: "11",
             option_3: "NaN",
-            option_4: "undefined"
+            option_4: "undefined",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "JavaScript",
@@ -284,9 +284,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "let",
             option_2: "var",
             option_3: "const",
-            option_4: "constant"
+            option_4: "constant",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "JavaScript",
@@ -300,9 +300,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Data Object Model",
             option_2: "Document Object Model",
             option_3: "Digital Object Management",
-            option_4: "Display Object Method"
+            option_4: "Display Object Method",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "JavaScript",
@@ -316,9 +316,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "parseInt()",
             option_2: "stringToInt()",
             option_3: "toInteger()",
-            option_4: "int()"
+            option_4: "int()",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "JavaScript",
@@ -332,9 +332,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "if x == 5 then",
             option_2: "if (x = 5)",
             option_3: "if x = 5",
-            option_4: "if (x == 5)"
+            option_4: "if (x == 5)",
           },
-          answer: "option_4"
+          answer: "option_4",
         },
         {
           category: "JavaScript",
@@ -348,11 +348,11 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "function = myFunction() {}",
             option_2: "function myFunction() {}",
             option_3: "create myFunction() {}",
-            option_4: "new function myFunction() {}"
+            option_4: "new function myFunction() {}",
           },
-          answer: "option_2"
-        }
-      ]
+          answer: "option_2",
+        },
+      ],
     },
 
     1003: {
@@ -366,8 +366,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 5,
           medium: 5,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -382,9 +382,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "def",
             option_2: "function",
             option_3: "func",
-            option_4: "define"
+            option_4: "define",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Python",
@@ -398,9 +398,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "// comment",
             option_2: "/* comment */",
             option_3: "# comment",
-            option_4: "-- comment"
+            option_4: "-- comment",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Python",
@@ -414,9 +414,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Tuple",
             option_2: "Set",
             option_3: "Dictionary",
-            option_4: "List"
+            option_4: "List",
           },
-          answer: "option_4"
+          answer: "option_4",
         },
         {
           category: "Python",
@@ -430,9 +430,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "hihihi",
             option_2: "3hi",
             option_3: "Error",
-            option_4: "hi hi hi"
+            option_4: "hi hi hi",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Python",
@@ -446,9 +446,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "remove()",
             option_2: "delete()",
             option_3: "clear()",
-            option_4: "purge()"
+            option_4: "purge()",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Python",
@@ -462,9 +462,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "for x in y:",
             option_2: "for (x in y)",
             option_3: "for x = y",
-            option_4: "for each x in y"
+            option_4: "for each x in y",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Python",
@@ -478,9 +478,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: ".pt",
             option_2: ".pyth",
             option_3: ".py",
-            option_4: ".python"
+            option_4: ".python",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Python",
@@ -494,9 +494,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "^",
             option_2: "**",
             option_3: "*^",
-            option_4: "^^"
+            option_4: "^^",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Python",
@@ -510,9 +510,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Python Enhancement Proposal",
             option_2: "Python Execution Process",
             option_3: "Programming Enhancement Protocol",
-            option_4: "Python Error Prevention"
+            option_4: "Python Error Prevention",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Python",
@@ -526,13 +526,13 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "count()",
             option_2: "size()",
             option_3: "len()",
-            option_4: "length()"
+            option_4: "length()",
           },
-          answer: "option_3"
-        }
-      ]
+          answer: "option_3",
+        },
+      ],
     },
-    
+
     1004: {
       name: "Web_Fundamentals_2",
       desc: "Second HTML/CSS Basics Test",
@@ -544,8 +544,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 7,
           medium: 3,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -560,9 +560,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<a>",
             option_2: "<link>",
             option_3: "<href>",
-            option_4: "<hyperlink>"
+            option_4: "<hyperlink>",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Web Development",
@@ -576,9 +576,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<img>",
             option_2: "<image>",
             option_3: "<src>",
-            option_4: "<pic>"
+            option_4: "<pic>",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Web Development",
@@ -592,9 +592,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<br>",
             option_2: "<lb>",
             option_3: "<break>",
-            option_4: "<newline>"
+            option_4: "<newline>",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Web Development",
@@ -608,9 +608,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "src",
             option_2: "href",
             option_3: "link",
-            option_4: "dest"
+            option_4: "dest",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Web Development",
@@ -624,9 +624,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<!DOCTYPE html>",
             option_2: "<!DOCTYPE HTML PUBLIC>",
             option_3: "<!DOCTYPE HTML5>",
-            option_4: "<DOCTYPE html>"
+            option_4: "<DOCTYPE html>",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Web Development",
@@ -640,9 +640,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "color",
             option_2: "background-color",
             option_3: "bg-color",
-            option_4: "background"
+            option_4: "background",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Web Development",
@@ -656,9 +656,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "text-align",
             option_2: "align-text",
             option_3: "center",
-            option_4: "alignment"
+            option_4: "alignment",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Web Development",
@@ -672,9 +672,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "#main",
             option_2: ".main",
             option_3: "main",
-            option_4: "*main"
+            option_4: "*main",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Web Development",
@@ -688,9 +688,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "#menu",
             option_2: ".menu",
             option_3: "menu",
-            option_4: "@menu"
+            option_4: "@menu",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Web Development",
@@ -704,13 +704,13 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "<tr>",
             option_2: "<td>",
             option_3: "<table>",
-            option_4: "<th>"
+            option_4: "<th>",
           },
-          answer: "option_1"
-        }
-      ]
+          answer: "option_1",
+        },
+      ],
     },
-    
+
     1005: {
       name: "NodeJS_Backend",
       desc: "Node.js Backend Development Test",
@@ -722,8 +722,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 5,
           medium: 5,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -738,9 +738,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "A frontend JavaScript framework",
             option_2: "A JavaScript runtime built on Chrome's V8 engine",
             option_3: "A package manager for JavaScript",
-            option_4: "A database management system"
+            option_4: "A database management system",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Node.js",
@@ -754,9 +754,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "http",
             option_2: "fs",
             option_3: "path",
-            option_4: "os"
+            option_4: "os",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Node.js",
@@ -770,9 +770,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Node Package Manager",
             option_2: "Node Project Manager",
             option_3: "New Package Modules",
-            option_4: "Node Program Manager"
+            option_4: "Node Program Manager",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Node.js",
@@ -786,9 +786,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "import module",
             option_2: "require()",
             option_3: "include module",
-            option_4: "using module"
+            option_4: "using module",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Node.js",
@@ -802,9 +802,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "express()",
             option_2: "new Express()",
             option_3: "createExpress()",
-            option_4: "Express.new()"
+            option_4: "Express.new()",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Node.js",
@@ -818,9 +818,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "To store project metadata and dependencies",
             option_2: "To configure the Node.js runtime",
             option_3: "To define database schemas",
-            option_4: "To store application secrets"
+            option_4: "To store application secrets",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Node.js",
@@ -834,9 +834,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "window",
             option_2: "document",
             option_3: "process",
-            option_4: "console"
+            option_4: "console",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Node.js",
@@ -847,12 +847,13 @@ const SampleAssessment: AssessmentSystem = {
           marks: "1",
           optionType: "single",
           options: {
-            option_1: "Functions that have access to request and response objects",
+            option_1:
+              "Functions that have access to request and response objects",
             option_2: "Database connection handlers",
             option_3: "Template rendering engines",
-            option_4: "Error handling functions"
+            option_4: "Error handling functions",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Node.js",
@@ -866,9 +867,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "GET",
             option_2: "POST",
             option_3: "PUT",
-            option_4: "DELETE"
+            option_4: "DELETE",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Node.js",
@@ -882,13 +883,13 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Representational State Transfer",
             option_2: "Remote Execution State Transfer",
             option_3: "Resource Endpoint State Transfer",
-            option_4: "Representational Endpoint State Transfer"
+            option_4: "Representational Endpoint State Transfer",
           },
-          answer: "option_1"
-        }
-      ]
+          answer: "option_1",
+        },
+      ],
     },
-    
+
     1006: {
       name: "Database_Concepts",
       desc: "Database Fundamentals Test",
@@ -900,8 +901,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 5,
           medium: 5,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -916,9 +917,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "A programming language",
             option_2: "A structured query language",
             option_3: "A NoSQL database",
-            option_4: "A server-side framework"
+            option_4: "A server-side framework",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Databases",
@@ -932,9 +933,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "GET",
             option_2: "SELECT",
             option_3: "RETRIEVE",
-            option_4: "FIND"
+            option_4: "FIND",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Databases",
@@ -948,9 +949,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "A field that uniquely identifies each record",
             option_2: "The first field in a table",
             option_3: "An encrypted password field",
-            option_4: "A foreign key reference"
+            option_4: "A foreign key reference",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Databases",
@@ -964,9 +965,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "MySQL",
             option_2: "PostgreSQL",
             option_3: "MongoDB",
-            option_4: "SQLite"
+            option_4: "SQLite",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Databases",
@@ -980,9 +981,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Atomicity, Consistency, Isolation, Durability",
             option_2: "Accuracy, Consistency, Integrity, Durability",
             option_3: "Atomicity, Completeness, Integrity, Durability",
-            option_4: "Accuracy, Completeness, Isolation, Durability"
+            option_4: "Accuracy, Completeness, Isolation, Durability",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Databases",
@@ -996,9 +997,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "FILTER BY",
             option_2: "WHERE",
             option_3: "HAVING",
-            option_4: "GROUP BY"
+            option_4: "GROUP BY",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Databases",
@@ -1009,12 +1010,13 @@ const SampleAssessment: AssessmentSystem = {
           marks: "1",
           optionType: "single",
           options: {
-            option_1: "A field that references the primary key of another table",
+            option_1:
+              "A field that references the primary key of another table",
             option_2: "An encrypted primary key",
             option_3: "A key that cannot be duplicated",
-            option_4: "The main key of a table"
+            option_4: "The main key of a table",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Databases",
@@ -1028,9 +1030,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "MongoDB",
             option_2: "Redis",
             option_3: "Cassandra",
-            option_4: "CouchDB"
+            option_4: "CouchDB",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Databases",
@@ -1044,9 +1046,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "ADD",
             option_2: "CREATE",
             option_3: "INSERT",
-            option_4: "UPDATE"
+            option_4: "UPDATE",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Databases",
@@ -1060,13 +1062,13 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "The process of organizing data to reduce redundancy",
             option_2: "Converting data to a standard format",
             option_3: "Encrypting database fields",
-            option_4: "Backing up database tables"
+            option_4: "Backing up database tables",
           },
-          answer: "option_1"
-        }
-      ]
+          answer: "option_1",
+        },
+      ],
     },
-    
+
     1007: {
       name: "Git_Version_Control",
       desc: "Git and Version Control Test",
@@ -1078,8 +1080,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 4,
           medium: 6,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -1094,9 +1096,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "A programming language",
             option_2: "A distributed version control system",
             option_3: "A cloud storage service",
-            option_4: "A database management system"
+            option_4: "A database management system",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1110,9 +1112,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "git start",
             option_2: "git init",
             option_3: "git new",
-            option_4: "git create"
+            option_4: "git create",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1126,9 +1128,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "git stage",
             option_2: "git add",
             option_3: "git commit",
-            option_4: "git update"
+            option_4: "git update",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1142,9 +1144,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Creates a new branch",
             option_2: "Copies a remote repository to local",
             option_3: "Deletes a repository",
-            option_4: "Merges two branches"
+            option_4: "Merges two branches",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1158,9 +1160,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "git branch -new",
             option_2: "git checkout -b",
             option_3: "git switch -c",
-            option_4: "git create-branch"
+            option_4: "git create-branch",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1174,9 +1176,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "git history",
             option_2: "git log",
             option_3: "git commits",
-            option_4: "git show-history"
+            option_4: "git show-history",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1190,9 +1192,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "git undo",
             option_2: "git reset",
             option_3: "git checkout --",
-            option_4: "git clean"
+            option_4: "git clean",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Version Control",
@@ -1206,9 +1208,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Deletes a branch",
             option_2: "Moves or combines a sequence of commits to a new base",
             option_3: "Creates a backup",
-            option_4: "Reverts all changes"
+            option_4: "Reverts all changes",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1222,9 +1224,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "git merge --squash",
             option_2: "git rebase -i",
             option_3: "git commit --amend",
-            option_4: "git squash"
+            option_4: "git squash",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Version Control",
@@ -1238,12 +1240,12 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "git changes",
             option_2: "git diff",
             option_3: "git compare",
-            option_4: "git status"
+            option_4: "git status",
           },
-          answer: "option_2"
-        }
-      ]
-    },    
+          answer: "option_2",
+        },
+      ],
+    },
 
     1008: {
       name: "Algorithms_Data_Structures",
@@ -1256,8 +1258,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 3,
           medium: 3,
-          hard: 4
-        }
+          hard: 4,
+        },
       ],
       questionIds: [
         {
@@ -1273,9 +1275,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "O(n)",
             option_2: "O(n log n)",
             option_3: "O(log n)",
-            option_4: "O(1)"
+            option_4: "O(1)",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Data Structures",
@@ -1289,9 +1291,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Stack",
             option_2: "Queue",
             option_3: "Tree",
-            option_4: "Graph"
+            option_4: "Graph",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Algorithms",
@@ -1305,9 +1307,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "O(n)",
             option_2: "O(n log n)",
             option_3: "O(n²)",
-            option_4: "O(log n)"
+            option_4: "O(log n)",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Data Structures",
@@ -1321,9 +1323,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Queue",
             option_2: "Stack",
             option_3: "Linked List",
-            option_4: "Tree"
+            option_4: "Tree",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Algorithms",
@@ -1337,9 +1339,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Bubble sort",
             option_2: "Merge sort",
             option_3: "Insertion sort",
-            option_4: "Selection sort"
+            option_4: "Selection sort",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Data Structures",
@@ -1353,9 +1355,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Constant time complexity for search operations",
             option_2: "Guaranteed ordered elements",
             option_3: "Efficient for range queries",
-            option_4: "Simple implementation"
+            option_4: "Simple implementation",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Algorithms",
@@ -1369,9 +1371,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Dijkstra's",
             option_2: "Bellman-Ford",
             option_3: "Breadth-First Search",
-            option_4: "Depth-First Search"
+            option_4: "Depth-First Search",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Data Structures",
@@ -1385,9 +1387,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "O(1)",
             option_2: "O(log n)",
             option_3: "O(n)",
-            option_4: "O(n log n)"
+            option_4: "O(n log n)",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Algorithms",
@@ -1401,9 +1403,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Quick sort",
             option_2: "Merge sort",
             option_3: "Heap sort",
-            option_4: "Insertion sort"
+            option_4: "Insertion sort",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Data Structures",
@@ -1417,13 +1419,13 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "O(1)",
             option_2: "O(log n)",
             option_3: "O(n)",
-            option_4: "O(n²)"
+            option_4: "O(n²)",
           },
-          answer: "option_3"
-        }
-      ]
+          answer: "option_3",
+        },
+      ],
     },
-    
+
     1009: {
       name: "Computer_Networking",
       desc: "Computer Networking Fundamentals Test",
@@ -1435,8 +1437,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 4,
           medium: 6,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -1452,9 +1454,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Internet Protocol",
             option_2: "Internal Process",
             option_3: "Interconnected Protocol",
-            option_4: "International Protocol"
+            option_4: "International Protocol",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Networking",
@@ -1468,9 +1470,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "21",
             option_2: "25",
             option_3: "80",
-            option_4: "443"
+            option_4: "443",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Networking",
@@ -1484,9 +1486,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "To encrypt network traffic",
             option_2: "To divide an IP address into network and host portions",
             option_3: "To mask private IP addresses",
-            option_4: "To filter malicious packets"
+            option_4: "To filter malicious packets",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Networking",
@@ -1500,9 +1502,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Hub",
             option_2: "Switch",
             option_3: "Router",
-            option_4: "Repeater"
+            option_4: "Repeater",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Networking",
@@ -1516,9 +1518,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Domain Name System",
             option_2: "Data Network Service",
             option_3: "Digital Naming Service",
-            option_4: "Dynamic Network Solution"
+            option_4: "Dynamic Network Solution",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Networking",
@@ -1532,9 +1534,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "HTTP",
             option_2: "FTP",
             option_3: "HTTPS",
-            option_4: "SMTP"
+            option_4: "SMTP",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Networking",
@@ -1548,9 +1550,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "192.168.1.1",
             option_2: "10.0.0.1",
             option_3: "127.0.0.1",
-            option_4: "172.16.0.1"
+            option_4: "172.16.0.1",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Networking",
@@ -1564,9 +1566,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "IMAP",
             option_2: "POP3",
             option_3: "SMTP",
-            option_4: "FTP"
+            option_4: "FTP",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Networking",
@@ -1580,9 +1582,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "To encrypt network traffic",
             option_2: "To allow multiple devices to share a single public IP",
             option_3: "To block unauthorized access",
-            option_4: "To increase network speed"
+            option_4: "To increase network speed",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Networking",
@@ -1596,13 +1598,13 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "WEP",
             option_2: "WPA",
             option_3: "WPA2",
-            option_4: "WPA3"
+            option_4: "WPA3",
           },
-          answer: "option_4"
-        }
-      ]
+          answer: "option_4",
+        },
+      ],
     },
-    
+
     1010: {
       name: "Cybersecurity_Basics",
       desc: "Cybersecurity Fundamentals Test",
@@ -1614,8 +1616,8 @@ const SampleAssessment: AssessmentSystem = {
           name: "technical_mcq",
           easy: 4,
           medium: 6,
-          hard: 0
-        }
+          hard: 0,
+        },
       ],
       questionIds: [
         {
@@ -1631,9 +1633,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "A network scanning technique",
             option_2: "A fraudulent attempt to obtain sensitive information",
             option_3: "A type of malware",
-            option_4: "A password cracking method"
+            option_4: "A password cracking method",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Security",
@@ -1647,9 +1649,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "To prevent unauthorized access to a network",
             option_2: "To increase internet speed",
             option_3: "To encrypt all network traffic",
-            option_4: "To block spam emails"
+            option_4: "To block spam emails",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Security",
@@ -1663,9 +1665,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Using two different passwords",
             option_2: "Verifying identity using two different methods",
             option_3: "Having two user accounts",
-            option_4: "Using two different security questions"
+            option_4: "Using two different security questions",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Security",
@@ -1679,9 +1681,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Firewall",
             option_2: "VPN",
             option_3: "Virus",
-            option_4: "HTTPS"
+            option_4: "HTTPS",
           },
-          answer: "option_3"
+          answer: "option_3",
         },
         {
           category: "Security",
@@ -1695,9 +1697,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Virtual Private Network",
             option_2: "Verified Private Network",
             option_3: "Virtual Protected Network",
-            option_4: "Verified Protected Network"
+            option_4: "Verified Protected Network",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Security",
@@ -1711,9 +1713,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "To make data unreadable without a key",
             option_2: "To compress data for storage",
             option_3: "To authenticate users",
-            option_4: "To filter network traffic"
+            option_4: "To filter network traffic",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Security",
@@ -1727,9 +1729,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Open any attachments to check",
             option_2: "Reply to verify the sender",
             option_3: "Click on links to see where they lead",
-            option_4: "Don't open it and report it"
+            option_4: "Don't open it and report it",
           },
-          answer: "option_4"
+          answer: "option_4",
         },
         {
           category: "Security",
@@ -1743,9 +1745,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "A bug with no known fix",
             option_2: "A security flaw that's been patched",
             option_3: "A type of phishing attack",
-            option_4: "An expired security certificate"
+            option_4: "An expired security certificate",
           },
-          answer: "option_1"
+          answer: "option_1",
         },
         {
           category: "Security",
@@ -1759,9 +1761,9 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Using a mix of letters, numbers, and symbols",
             option_2: "Using the same password for multiple accounts",
             option_3: "Changing passwords regularly",
-            option_4: "Using a password manager"
+            option_4: "Using a password manager",
           },
-          answer: "option_2"
+          answer: "option_2",
         },
         {
           category: "Security",
@@ -1775,12 +1777,63 @@ const SampleAssessment: AssessmentSystem = {
             option_1: "Building social media platforms",
             option_2: "Manipulating people to gain access to systems",
             option_3: "A type of network architecture",
-            option_4: "Programming social media algorithms"
+            option_4: "Programming social media algorithms",
           },
-          answer: "option_2"
-        }
-      ]
-    }
+          answer: "option_2",
+        },
+      ],
+    },
+    
+    1011: {
+      name: "Basic_JavaScript_Coding",
+      desc: "Fundamentals of JavaScript Coding",
+      cover_image: "/default.png",
+      duration: "30",
+      topics: [
+        {
+          name: "coding",
+          easy: 2,
+          medium: 0,
+          hard: 0,
+        },
+      ],
+      questionIds: [
+        {
+          category: "JavaScript",
+          topic: "Functions",
+          difficulty: "easy",
+          text: "Write a function that returns the sum of two numbers.",
+          questionType: "coding",
+          marks: "5",
+          sampleResults: [
+            { input: "2, 3", output: "5" },
+            { input: "-1, 1", output: "0" },
+          ],
+          hiddenTestCases: [
+            { input: "10, 20", output: "30" },
+            { input: "0, 0", output: "0" },
+          ],
+          solution: `function sum(a, b) { return a + b; }`,
+        },
+        {
+          category: "JavaScript",
+          topic: "Strings",
+          difficulty: "easy",
+          text: "Write a function that returns the reverse of a given string.",
+          questionType: "coding",
+          marks: "5",
+          sampleResults: [
+            { input: "'hello'", output: "'olleh'" },
+            { input: "'abc'", output: "'cba'" },
+          ],
+          hiddenTestCases: [
+            { input: "'racecar'", output: "'racecar'" },
+            { input: "'12345'", output: "'54321'" },
+          ],
+          solution: `function reverseString(str) { return str.split('').reverse().join(''); }`,
+        },
+      ],
+    },
   },
 };
 

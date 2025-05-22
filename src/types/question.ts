@@ -1,13 +1,22 @@
 import { ObjectId } from "mongodb";
 
-type QuestionOptionKey = "option_1" | "option_2" | "option_3" | "option_4" | "option_5";
 type QuestionType = "mcq" | "coding";
+type QuestionDifficulty = "easy" | "medium" | "hard";
 type OptionType = "multiple" | "single";
+type QuestionOptionKey = "option_1" | "option_2" | "option_3" | "option_4" | "option_5";
+type sampleResults = {
+  input: string;
+  output: string;
+}
+type hiddenTestCases = {
+  input: string;
+  output: string;
+}
 
 type BaseQuestion = {
   category: string;
   topic: string;
-  difficulty: string;
+  difficulty: QuestionDifficulty;
   text: string; 
   image?: string;
   marks: string; 
@@ -15,7 +24,7 @@ type BaseQuestion = {
 
 
 type MCQ = BaseQuestion & {
-  questionType: "mcq";
+  questionType: QuestionType
   optionType: OptionType;
   options: {
     option_1: string;
@@ -34,16 +43,7 @@ type Coding = BaseQuestion & {
   solution?: string
 }
 
-type sampleResults = {
-  input: string;
-  output: string;
-}
 
-
-type hiddenTestCases = {
-  input: string;
-  output: string;
-}
 
 
 export interface Filter {

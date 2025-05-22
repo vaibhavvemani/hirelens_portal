@@ -21,7 +21,6 @@ export default function TestPage() {
   const assessment = SampleAssessment.tests[Number(testId)];
 
   if (!assessment) {
-    console.log("assessment not found for testId:", testId);
     return <div className="text-center mt-10">Assessment not found</div>;
   }
 

@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/table";
 import { Progress } from "@/components/ui/progress";
 
-import { countQuestions } from "./Confirmation";
+import { countQuestions, marksPerQuestion, countTotalMarks } from "./Confirmation";
 
 interface CountdownProps {
   assessment: Test;
@@ -32,7 +32,7 @@ const Countdown = ({ assessment, testId }: CountdownProps) => {
     }
 
     const timer = setTimeout(() => {
-      setSecondsLeft((prev) => prev -1); //add -1 here
+      setSecondsLeft((prev) => prev -1);
     }, 1000);
 
     return () => clearTimeout(timer);
@@ -68,9 +68,9 @@ const Countdown = ({ assessment, testId }: CountdownProps) => {
               <TableCell className="p-3">
                 {countQuestions(assessment.questionIds)}
               </TableCell>
-              <TableCell className="p-3 text-center">1</TableCell>
+              <TableCell className="p-3 text-center">{marksPerQuestion(assessment.questionIds)}</TableCell>
               <TableCell className="p-3 text-right">
-                {countQuestions(assessment.questionIds) * 1}
+                {countTotalMarks(assessment.questionIds)}
               </TableCell>
             </TableRow>
           </TableBody>
