@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { useTestStore } from "../testpage/zustand/QuestionStore";
+
 import { Test } from "@/types/tests";
 import { Card } from "@/components/ui/card";
 import {
@@ -22,12 +24,14 @@ interface CountdownProps {
   testId: number;
 }
 const Countdown = ({ assessment, testId }: CountdownProps) => {
-  const [secondsLeft, setSecondsLeft] = useState(10);
+  const [secondsLeft, setSecondsLeft] = useState(2);
   const router = useRouter();
+  const setTest = useTestStore((state) => state.setTest);
 
   useEffect(() => {
     if (secondsLeft === 0) {
-      router.push(`/testpage/${testId}`);
+      setTest(assessment)
+      router.push(`/testpage`);
       return;
     }
 

@@ -23,6 +23,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1001_1",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -40,6 +41,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1001_2",
           category: "Web Development",
           topic: "CSS",
           difficulty: "easy",
@@ -56,6 +58,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1001_3",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -72,6 +75,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1001_4",
           category: "Web Development",
           topic: "CSS",
           difficulty: "medium",
@@ -88,6 +92,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1001_5",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -104,6 +109,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1001_6",
           category: "Web Development",
           topic: "HTML",
           difficulty: "medium",
@@ -120,6 +126,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1001_7",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -136,6 +143,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1001_8",
           category: "Web Development",
           topic: "CSS",
           difficulty: "medium",
@@ -152,6 +160,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1001_9",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -168,6 +177,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1001_10",
           category: "Web Development",
           topic: "HTML",
           difficulty: "medium",
@@ -193,6 +203,7 @@ const SampleAssessment: AssessmentSystem = {
       // category: ["tech mcq"],
       questionIds: [
         {
+          id: "q1002_1",
           category: "JavaScript",
           topic: "Operators",
           difficulty: "easy",
@@ -209,6 +220,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1002_2",
           category: "JavaScript",
           topic: "Variables",
           difficulty: "easy",
@@ -225,6 +237,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1002_3",
           category: "JavaScript",
           topic: "Data Types",
           difficulty: "medium",
@@ -241,6 +254,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1002_4",
           category: "JavaScript",
           topic: "Arrays",
           difficulty: "easy",
@@ -257,6 +271,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1002_5",
           category: "JavaScript",
           topic: "Type Coercion",
           difficulty: "medium",
@@ -273,6 +288,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1002_6",
           category: "JavaScript",
           topic: "Variables",
           difficulty: "medium",
@@ -289,6 +305,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1002_7",
           category: "JavaScript",
           topic: "DOM",
           difficulty: "easy",
@@ -305,6 +322,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1002_8",
           category: "JavaScript",
           topic: "Type Conversion",
           difficulty: "medium",
@@ -321,6 +339,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1002_9",
           category: "JavaScript",
           topic: "Control Flow",
           difficulty: "easy",
@@ -337,6 +356,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_4",
         },
         {
+          id: "q1002_10",
           category: "JavaScript",
           topic: "Functions",
           difficulty: "medium",
@@ -371,6 +391,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Functions",
           difficulty: "easy",
@@ -387,6 +408,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Syntax",
           difficulty: "easy",
@@ -403,6 +425,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Data Structures",
           difficulty: "medium",
@@ -419,6 +442,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_4",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Operators",
           difficulty: "easy",
@@ -435,6 +459,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Dictionaries",
           difficulty: "medium",
@@ -451,6 +476,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Loops",
           difficulty: "easy",
@@ -467,6 +493,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Files & Extensions",
           difficulty: "medium",
@@ -483,6 +510,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Operators",
           difficulty: "easy",
@@ -499,6 +527,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "PEP & Standards",
           difficulty: "medium",
@@ -515,6 +544,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1003_1",
           category: "Python",
           topic: "Built-in Functions",
           difficulty: "medium",
@@ -549,6 +579,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -565,6 +596,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -581,6 +613,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -597,6 +630,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -613,6 +647,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "HTML",
           difficulty: "medium",
@@ -629,6 +664,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "CSS",
           difficulty: "medium",
@@ -645,6 +681,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "CSS",
           difficulty: "easy",
@@ -661,6 +698,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "CSS",
           difficulty: "easy",
@@ -677,6 +715,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "CSS",
           difficulty: "medium",
@@ -693,6 +732,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1004_1",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -727,6 +767,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "Basics",
           difficulty: "easy",
@@ -743,6 +784,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "Modules",
           difficulty: "easy",
@@ -759,6 +801,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "npm",
           difficulty: "medium",
@@ -775,6 +818,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "Modules",
           difficulty: "easy",
@@ -791,6 +835,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "Express",
           difficulty: "medium",
@@ -807,6 +852,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "npm",
           difficulty: "medium",
@@ -823,6 +869,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "Global Objects",
           difficulty: "easy",
@@ -839,6 +886,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "Express",
           difficulty: "medium",
@@ -856,6 +904,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "HTTP Methods",
           difficulty: "easy",
@@ -872,6 +921,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1005_1",
           category: "Node.js",
           topic: "API Design",
           difficulty: "medium",
@@ -906,6 +956,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "easy",
@@ -922,6 +973,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "easy",
@@ -938,6 +990,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "medium",
@@ -954,6 +1007,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "NoSQL",
           difficulty: "easy",
@@ -970,6 +1024,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "medium",
@@ -986,6 +1041,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "medium",
@@ -1002,6 +1058,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "easy",
@@ -1019,6 +1076,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "NoSQL",
           difficulty: "medium",
@@ -1035,6 +1093,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "easy",
@@ -1051,6 +1110,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1006_1",
           category: "Databases",
           topic: "SQL",
           difficulty: "medium",
@@ -1085,6 +1145,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "easy",
@@ -1101,6 +1162,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "easy",
@@ -1117,6 +1179,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "easy",
@@ -1133,6 +1196,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "medium",
@@ -1149,6 +1213,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "medium",
@@ -1165,6 +1230,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "medium",
@@ -1181,6 +1247,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "medium",
@@ -1197,6 +1264,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "easy",
@@ -1213,6 +1281,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "medium",
@@ -1229,6 +1298,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1007_1",
           category: "Version Control",
           topic: "Git",
           difficulty: "medium",
@@ -1263,6 +1333,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1008_1",
           category: "Algorithms",
           topic: "Searching",
           difficulty: "easy",
@@ -1280,6 +1351,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1008_1",
           category: "Data Structures",
           topic: "Basic Structures",
           difficulty: "easy",
@@ -1296,6 +1368,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1008_1",
           category: "Algorithms",
           topic: "Sorting",
           difficulty: "easy",
@@ -1312,6 +1385,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1008_1",
           category: "Data Structures",
           topic: "Memory Management",
           difficulty: "medium",
@@ -1328,6 +1402,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1008_1",
           category: "Algorithms",
           topic: "Sorting",
           difficulty: "medium",
@@ -1344,6 +1419,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1008_1",
           category: "Data Structures",
           topic: "Hashing",
           difficulty: "medium",
@@ -1360,6 +1436,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1008_1",
           category: "Algorithms",
           topic: "Graph Theory",
           difficulty: "hard",
@@ -1376,6 +1453,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1008_1",
           category: "Data Structures",
           topic: "Heaps",
           difficulty: "hard",
@@ -1392,6 +1470,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1008_1",
           category: "Algorithms",
           topic: "Sorting",
           difficulty: "hard",
@@ -1408,6 +1487,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1008_1",
           category: "Data Structures",
           topic: "Memory Management",
           difficulty: "hard",
@@ -1442,6 +1522,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Protocols",
           difficulty: "easy",
@@ -1459,6 +1540,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Protocols",
           difficulty: "easy",
@@ -1475,6 +1557,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "IP Addressing",
           difficulty: "medium",
@@ -1491,6 +1574,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Network Devices",
           difficulty: "easy",
@@ -1507,6 +1591,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Protocols",
           difficulty: "medium",
@@ -1523,6 +1608,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Protocols",
           difficulty: "medium",
@@ -1539,6 +1625,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "IP Addressing",
           difficulty: "easy",
@@ -1555,6 +1642,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Protocols",
           difficulty: "medium",
@@ -1571,6 +1659,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Network Address Translation",
           difficulty: "medium",
@@ -1587,6 +1676,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1009_1",
           category: "Networking",
           topic: "Wireless Security",
           difficulty: "medium",
@@ -1621,6 +1711,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Threats",
           difficulty: "easy",
@@ -1638,6 +1729,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Network Security",
           difficulty: "easy",
@@ -1654,6 +1746,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Authentication",
           difficulty: "medium",
@@ -1670,6 +1763,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Threats",
           difficulty: "easy",
@@ -1686,6 +1780,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_3",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Network Security",
           difficulty: "medium",
@@ -1702,6 +1797,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Cryptography",
           difficulty: "medium",
@@ -1718,6 +1814,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Best Practices",
           difficulty: "easy",
@@ -1734,6 +1831,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_4",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Vulnerabilities",
           difficulty: "medium",
@@ -1750,6 +1848,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Authentication",
           difficulty: "medium",
@@ -1766,6 +1865,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
+          id: "q1010_1",
           category: "Security",
           topic: "Threats",
           difficulty: "medium",
@@ -1799,6 +1899,7 @@ const SampleAssessment: AssessmentSystem = {
       ],
       questionIds: [
         {
+          id: "q1011_1",
           category: "JavaScript",
           topic: "Functions",
           difficulty: "easy",
@@ -1816,6 +1917,7 @@ const SampleAssessment: AssessmentSystem = {
           solution: `function sum(a, b) { return a + b; }`,
         },
         {
+          id: "q1011_2",
           category: "JavaScript",
           topic: "Strings",
           difficulty: "easy",
