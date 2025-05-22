@@ -30,7 +30,7 @@ const TestPage = () => {
   return (
     <div className="w-full flex justify-center mt-4">
       <div className="flex flex-col flex-1 gap-5 w-full max-w-[1300px] px-4 pb-3">
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-5">
           <Card className="w-full flex flex-row justify-between items-center text-center p-5 py-3">
             <CardTitle className="w-1/3 text-left text-2xl font-bold">
               {test.name.replace(/_/g, " ")}
