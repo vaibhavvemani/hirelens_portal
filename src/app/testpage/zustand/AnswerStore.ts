@@ -7,14 +7,14 @@ type MCQResponse = {
   type: "mcq";
   flag: boolean;
   questionID: string;
-  answer: QuestionOptionKey;
+  answer: QuestionOptionKey | QuestionOptionKey[];
 };
 
 type CodingResponse = {
   type: "coding";
   flag: boolean;
   questionID: string;
-  code: string;
+  answer: string;
 };
 
 type AnswerMap = {
@@ -24,12 +24,12 @@ type AnswerMap = {
 type AnswersState = {
   test: Test | null;
   answers: AnswerMap;
-  flag: boolean;
   setTest: (test: Test) => void;
-  setAnswers: (answers: AnswerMap) => void;
-  updateAnswer: (response: MCQResponse | CodingResponse) => void;
-  toggleFlag: () => void;
-  setFlag: (value: boolean) => void;
+  updateAnswer: (questionID: string, answer: QuestionOptionKey) => void;
+  deleteAnswer: (questionID: string) => void;
+  toggleFlag: (questionID: string) => void;
+  checkFlag: (questionID: string) => boolean;
+  resetState: () => void; // <- add this
 };
 
 export const useAnswersStore = create<AnswersState>()(
@@ -37,22 +37,75 @@ export const useAnswersStore = create<AnswersState>()(
     (set, get) => ({
       test: null,
       answers: {},
-      flag: false,
       setTest: (test: Test) => set({ test }),
-      setAnswers: (answers: AnswerMap) => set({ answers }),
-      updateAnswer: (response) =>
+      updateAnswer: (questionID, answer) =>
         set((state) => ({
           answers: {
             ...state.answers,
-            [response.questionID]: response,
+            [questionID]: {
+              type: "mcq",
+              flag: state.answers[questionID]?.flag || false,
+              questionID,
+              answer,
+            },
           },
         })),
-      toggleFlag: () => set((state) => ({ flag: !state.flag })),
-      setFlag: (value: boolean) => set({ flag: value }),
+        deleteAnswer: (questionID: string) => {
+          set((state) => {
+            const newAnswers = { ...state.answers };
+            delete newAnswers[questionID]; // removes the key
+            return { answers: newAnswers };
+          });
+        },
+        
+      toggleFlag: (questionID: string) =>
+        set((state) => {
+          const existing = state.answers[questionID];
+          if (!existing) return {};
+          return {
+            answers: {
+              ...state.answers,
+              [questionID]: {
+                ...existing,
+                flag: !existing.flag,
+              },
+            },
+          };
+        }),
+        checkFlag: (questionID: string) =>{
+          const existing = get().answers[questionID]
+          return existing?.flag || false
+        },
+      resetState: () => {
+        // Clear localStorage and reset the in-memory state
+        useAnswersStore.persist.clearStorage();
+        set({ test: null, answers: {} });
+      },
     }),
     {
       name: "answers-store",
-      partialize: (state) => ({ answers: state.answers, flag: state.flag }),
+      partialize: (state) => ({ answers: state.answers }),
     }
   )
 );
+
+
+
+{/*
+  
+  answers: {
+    q1: {
+      type: "mcq",
+      flag: false,
+      questionID: "q1",
+      answer: "B", // selected answer
+    },
+    q2: {
+      type: "coding",
+      flag: true,
+      questionID: "q2",
+      code: `function reverseString(str) {
+  return str.split('').reverse().join('');
+}`,
+    },
+  */}

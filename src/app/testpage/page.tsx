@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
 import { useTestStore } from "./zustand/QuestionStore";
+import { useAnswersStore } from "./zustand/AnswerStore";
 import { Card, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import MCQInterface from "./MCQ/MCQInterface";
@@ -15,6 +15,7 @@ const TestPage = () => {
   );
   const nextQuestion = useTestStore((state) => state.nextQuestion);
   const previousQuestion = useTestStore((state) => state.previousQuestion);
+  const resetState = useAnswersStore((state)=>state.resetState)
 
   if (!test) {
     return (
@@ -26,7 +27,6 @@ const TestPage = () => {
 
   const questionIds = test.questionIds;
   const currentQuestion = questionIds[currentQuestionIndex];
-
   return (
     <div className="w-full flex justify-center mt-4">
       <div className="flex flex-col flex-1 gap-5 w-full max-w-[1300px] px-4 pb-3">
@@ -41,7 +41,7 @@ const TestPage = () => {
               </p>
             </div>
             <div className="w-1/3 text-right">
-              <Button className="w-fit p-5 font-bold text-base cursor-pointer">
+              <Button className="w-fit p-5 font-bold text-base cursor-pointer" onClick={()=>resetState()}>
                 Submit test
               </Button>
             </div>

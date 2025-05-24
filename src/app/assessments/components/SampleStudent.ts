@@ -6,7 +6,7 @@ const sampleAssignedTests: AssignedTests = {
     { testUid: 1001, status: "completed", dueDate: new Date("2025-05-21") },
     { testUid: 1002, status: "completed", dueDate: new Date("2025-05-22") },
     { testUid: 1003, status: "completed", dueDate: new Date("2025-05-23") },
-    { testUid: 1004, status: "pending", dueDate: new Date("2025-05-24") },
+    { testUid: 1004, status: "pending", dueDate: new Date("2025-05-29") },
     { testUid: 1005, status: "pending", dueDate: new Date("2025-05-25") },
     { testUid: 1006, status: "pending", dueDate: new Date("2025-05-26") },
     { testUid: 1007, status: "pending", dueDate: new Date("2025-05-27") },

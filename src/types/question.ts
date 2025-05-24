@@ -2,7 +2,7 @@ import { ObjectId } from "mongodb";
 
 type QuestionDifficulty = "easy" | "medium" | "hard";
 type OptionType = "multiple" | "single";
-export type QuestionOptionKey = "option_1" | "option_2" | "option_3" | "option_4" | "option_5";
+export type QuestionOptionKey = "option_1" | "option_2" | "option_3" | "option_4" | "option_5" | null;
 
 type sampleResults = {
   input: string;

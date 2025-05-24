@@ -596,7 +596,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
-          id: "q1004_1",
+          id: "q1004_2",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -613,7 +613,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
-          id: "q1004_1",
+          id: "q1004_3",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -630,7 +630,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
-          id: "q1004_1",
+          id: "q1004_4",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
@@ -647,7 +647,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
-          id: "q1004_1",
+          id: "q1004_5",
           category: "Web Development",
           topic: "HTML",
           difficulty: "medium",
@@ -664,7 +664,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
-          id: "q1004_1",
+          id: "q1004_6",
           category: "Web Development",
           topic: "CSS",
           difficulty: "medium",
@@ -681,7 +681,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
-          id: "q1004_1",
+          id: "q1004_7",
           category: "Web Development",
           topic: "CSS",
           difficulty: "easy",
@@ -698,7 +698,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
-          id: "q1004_1",
+          id: "q1004_8",
           category: "Web Development",
           topic: "CSS",
           difficulty: "easy",
@@ -715,7 +715,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_1",
         },
         {
-          id: "q1004_1",
+          id: "q1004_9",
           category: "Web Development",
           topic: "CSS",
           difficulty: "medium",
@@ -732,7 +732,7 @@ const SampleAssessment: AssessmentSystem = {
           answer: "option_2",
         },
         {
-          id: "q1004_1",
+          id: "q1004_10",
           category: "Web Development",
           topic: "HTML",
           difficulty: "easy",
