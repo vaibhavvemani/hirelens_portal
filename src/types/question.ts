@@ -1,4 +1,5 @@
 import { ObjectId } from "mongodb";
+import { ProgrammingLanguage } from "./programmingLanguage";
 
 type QuestionDifficulty = "easy" | "medium" | "hard";
 type OptionType = "multiple" | "single";
@@ -40,6 +41,7 @@ type Coding = BaseQuestion & {
   questionType: "coding";
   sampleResults: sampleResults[];
   hiddenTestCases: hiddenTestCases[];
+  languages? : ProgrammingLanguage[];
   solution?: string;
 };
 

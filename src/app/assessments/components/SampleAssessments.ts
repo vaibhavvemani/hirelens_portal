@@ -1905,6 +1905,22 @@ const SampleAssessment: AssessmentSystem = {
           difficulty: "easy",
           text: "Write a function that returns the sum of two numbers.",
           questionType: "coding",
+          languages: [
+            {
+              id: 45,
+              name: "Assembly (NASM 2.14.02)",
+              monaco: "asm",
+              extensions: [".asm", ".nasm"],
+              judge0Category: "Assembly"
+            },
+            {
+              id: 46,
+              name: "Bash (5.0.0)",
+              monaco: "shell",
+              extensions: [".sh", ".bash"],
+              judge0Category: "Shell"
+            },
+          ],
           marks: "5",
           sampleResults: [
             { input: "2, 3", output: "5" },

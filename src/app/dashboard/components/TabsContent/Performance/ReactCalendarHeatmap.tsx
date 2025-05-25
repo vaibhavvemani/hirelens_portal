@@ -6,7 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import React from "react";
+
 
 type HeatmapValue = {
   date: string; // 'YYYY-MM-DD'

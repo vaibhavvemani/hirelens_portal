@@ -1,4 +1,3 @@
-import React from "react";
 import { useTestStore } from "../zustand/QuestionStore";
 import { useAnswersStore } from "../zustand/AnswerStore";
 import { Card } from "@/components/ui/card";
@@ -103,9 +102,9 @@ const MCQInterface = () => {
             ):(
               <p>No answer</p>
             )} */}
-            {Object.entries(answers).map(([questionId, answer]) => (
+            {/* {Object.entries(answers).map(([questionId, answer]) => (
               <p key={questionId}>{questionId}: {answer.answer}</p>
-            ))}
+            ))}*/}
           </div>
         )}
         <div className="flex w-full gap-2">
