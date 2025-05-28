@@ -7,7 +7,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 export default function SidebarConditional() {
   const pathname = usePathname();
 
-  const showSidebarRoutes = ["/dashboard", "/assessments", "/calendar", "/drives", "/discussions", "/IDE", "/DSARoadmap"];
+  const showSidebarRoutes = ["/dashboard", "/assessments", "/calendar", "/drives", "/discussions", "/IDE", "/DSARoadmap", "/courses"];
 
   const showSidebar = showSidebarRoutes.some((route) => pathname.startsWith(route));
 

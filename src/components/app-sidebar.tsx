@@ -58,17 +58,20 @@ const sidebarGroups: SidebarGroupType[] = [
     ],
   },
   {
+    label: "Class",
+    
+    items: [
+      { title: "Courses", url: "/courses", icon: BookOpen },
+      { title: "Class Discussions", url: "/discussions", icon: MessagesSquare }
+    ],
+  },
+  {
     label: "Learning & Development",
     items: [
-      { title: "Courses", url: "/assessments", icon: BookOpen },
       { title: "DSA Roadmap", url: "/DSARoadmap", icon: CodeXml },
       { title: "Coding IDE", url: "IDE", icon: SquareChevronRight },
       { title: "Assessments", url: "/assessments", icon: FileText },
     ],
-  },
-  {
-    label: "Community",
-    items: [{ title: "Class Discussions", url: "/discussions", icon: MessagesSquare }],
   },
   {
     label: "Utilities",
