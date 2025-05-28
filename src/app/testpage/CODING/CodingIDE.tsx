@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import Monaco from "@/app/IDE/Monaco";
+import Monaco from "./Monaco";
 import {
   Select,
   SelectContent,
@@ -12,20 +12,37 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Terminal } from "lucide-react";
+import { useAnswersStore } from "../zustand/AnswerStore";
 
-import { SUPPORTED_LANGUAGES } from "@/app/IDE/languages";
 import { ProgrammingLanguage } from "@/types/programmingLanguage";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useTestStore } from "../zustand/QuestionStore";
 
 type CodingIDEProps = {
   languages: ProgrammingLanguage[];
+  boilerplate: string;
 };
 
-const CodingIDE = ({ languages }: CodingIDEProps) => {
-  const [language, setLanguage] = useState("javascript");
+const CodingIDE = ({ languages, boilerplate }: CodingIDEProps) => {
+  const [language, setLanguage] = useState(languages[0].monaco);
   const [theme, setTheme] = useState<THEMES>("vs-dark");
+  const [code, setCode] = useState(boilerplate);
+
+  const answer = useAnswersStore((state) => state.answers);
+  const updateAnswer = useAnswersStore((state) => state.updateAnswer);
+  const deleteAnswer = useAnswersStore((state) => state.deleteAnswer);
+  const test = useTestStore((state) => state.test);
+
+  const questions = useTestStore((state) => state.test?.questionIds);
+  const questionIndex = useTestStore((state) => state.currentQuestionIndex);
+  const currentQuestion = questions?.[questionIndex];
+
+  function handleRun() {
+    if (!currentQuestion) return;
+    updateAnswer(currentQuestion?.id, currentQuestion?.questionType, code);
+  }
 
   type THEMES = "vs-dark" | "light";
 
@@ -61,14 +78,27 @@ const CodingIDE = ({ languages }: CodingIDEProps) => {
           </SelectContent>
         </Select>
 
-        <Button className="cursor-pointer">
+        <Button className="cursor-pointer" onClick={handleRun}>
           <Terminal />
           Run Code
         </Button>
       </div>
       <div className="h-full w-full flex-1 ">
-        <Monaco language={language} theme={theme} />
+        <Monaco
+          language={language}
+          theme={theme}
+          defaultValue={boilerplate}
+          onCodeChange={setCode}
+        />
       </div>
+      {currentQuestion && answer[currentQuestion.id]?.answer && (
+        <div className="mt-4 p-2 rounded-lg bg-muted text-sm">
+          <strong>Saved Answer:</strong>
+          <pre className="whitespace-pre-wrap break-words mt-2">
+            {String(answer[currentQuestion.id].answer)}
+          </pre>
+        </div>
+      )}
     </Card>
   );
 };

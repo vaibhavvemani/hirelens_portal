@@ -25,7 +25,7 @@ type AnswersState = {
   test: Test | null;
   answers: AnswerMap;
   setTest: (test: Test) => void;
-  updateAnswer: (questionID: string, answer: QuestionOptionKey) => void;
+  updateAnswer: (questionID: string,questionType: "mcq" | "coding", answer: QuestionOptionKey|string) => void;
   deleteAnswer: (questionID: string) => void;
   toggleFlag: (questionID: string) => void;
   checkFlag: (questionID: string) => boolean;
@@ -38,18 +38,37 @@ export const useAnswersStore = create<AnswersState>()(
       test: null,
       answers: {},
       setTest: (test: Test) => set({ test }),
-      updateAnswer: (questionID, answer) =>
-        set((state) => ({
-          answers: {
-            ...state.answers,
-            [questionID]: {
+      updateAnswer: (questionID, questionType, answer) =>
+        set((state) => {
+          const flag = state.answers[questionID]?.flag || false;
+      
+          let newAnswer: MCQResponse | CodingResponse;
+      
+          if (questionType === "mcq") {
+            newAnswer = {
               type: "mcq",
-              flag: state.answers[questionID]?.flag || false,
+              flag,
               questionID,
-              answer,
+              answer: answer as QuestionOptionKey | QuestionOptionKey[],
+            };
+          } else {
+            newAnswer = {
+              type: "coding",
+              flag,
+              questionID,
+              answer: answer as string,
+            };
+          }
+      
+          return {
+            answers: {
+              ...state.answers,
+              [questionID]: newAnswer,
             },
-          },
-        })),
+          };
+        }),
+      
+      
         deleteAnswer: (questionID: string) => {
           set((state) => {
             const newAnswers = { ...state.answers };

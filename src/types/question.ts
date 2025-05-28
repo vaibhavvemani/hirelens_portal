@@ -39,6 +39,7 @@ type MCQ = BaseQuestion & {
 
 type Coding = BaseQuestion & {
   questionType: "coding";
+  boilerplate: string;
   sampleResults: sampleResults[];
   hiddenTestCases: hiddenTestCases[];
   languages? : ProgrammingLanguage[];

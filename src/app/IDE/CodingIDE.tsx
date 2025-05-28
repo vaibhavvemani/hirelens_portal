@@ -62,7 +62,7 @@ const CodingIDE = () => {
         </Button>
       </div>
       <div className="h-full w-full flex-1 ">
-        <Monaco language={language} theme={theme} />
+        <Monaco language={language} theme={theme} defaultValue="// Start coding here..."/>
       </div>
     </Card>
   );

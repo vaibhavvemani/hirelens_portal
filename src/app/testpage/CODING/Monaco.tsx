@@ -7,6 +7,7 @@ type MonacoEditorProps = {
   theme: "vs-dark" | "light"
   value?: string;
   defaultValue: string;
+  onCodeChange: (value: string) => void
   onChange?: OnChange;
   onMount?: OnMount;
   options?: any;
@@ -17,7 +18,7 @@ const Monaco = ({
   theme,
   value,
   defaultValue,
-  onChange,
+  onCodeChange,
   onMount,
   options = {
     fontSize: 14,
@@ -44,7 +45,7 @@ const Monaco = ({
           theme={theme}
           value={value}
           defaultValue={defaultValue}
-          onChange={onChange}
+          onChange={(value) => onCodeChange(value?? '')}
           onMount={onMount}
           options={options}
         />

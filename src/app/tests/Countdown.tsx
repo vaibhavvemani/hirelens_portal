@@ -24,13 +24,15 @@ interface CountdownProps {
   testId: number;
 }
 const Countdown = ({ assessment, testId }: CountdownProps) => {
-  const [secondsLeft, setSecondsLeft] = useState(2);
+  const [secondsLeft, setSecondsLeft] = useState(1);
   const router = useRouter();
   const setTest = useTestStore((state) => state.setTest);
+  const setStartTime = useTestStore((state) => state.setStartTime)
 
   useEffect(() => {
     if (secondsLeft === 0) {
       setTest(assessment)
+      setStartTime(new Date())
       router.push(`/testpage`);
       return;
     }

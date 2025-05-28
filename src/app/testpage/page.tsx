@@ -7,15 +7,18 @@ import { Button } from "@/components/ui/button";
 import MCQInterface from "./MCQ/MCQInterface";
 import CodingInterface from "./CODING/CodingInterface";
 import QuestionNavigator from "./QuestionNavigator";
+import CountdownClock from "./CountdownClock";
+import { useRouter } from "next/navigation";
 
 const TestPage = () => {
+  const router = useRouter();
   const test = useTestStore((state) => state.test);
   const currentQuestionIndex = useTestStore(
     (state) => state.currentQuestionIndex
   );
-  const nextQuestion = useTestStore((state) => state.nextQuestion);
-  const previousQuestion = useTestStore((state) => state.previousQuestion);
-  const resetState = useAnswersStore((state)=>state.resetState)
+  const resetState = useAnswersStore((state) => state.resetState);
+  const answers = useAnswersStore((state) => state.answers);
+  const startTime = useTestStore((state) => state.startTime);
 
   if (!test) {
     return (
@@ -36,12 +39,24 @@ const TestPage = () => {
               {test.name.replace(/_/g, " ")}
             </CardTitle>
             <div className="w-1/3 flex justify-center">
-              <p className="w-fit text-center bg-accent text-accent-foreground text-2xl px-5 py-2 rounded-lg font-bold">
-                29:59
-              </p>
+              <CountdownClock
+                startTime={startTime}
+                duration={Number(test?.duration) ?? null}
+                onComplete={() => {
+                  // submitTestFunction()
+                  console.log('test submitted')
+                  resetState(); // Submit logic
+                  setTimeout(() => {
+                    router.push("/assessments");
+                  }, 300);
+                }}
+              />
             </div>
             <div className="w-1/3 text-right">
-              <Button className="w-fit p-5 font-bold text-base cursor-pointer" onClick={()=>resetState()}>
+              <Button
+                className="w-fit p-5 font-bold text-base cursor-pointer"
+                onClick={() => resetState()}
+              >
                 Submit test
               </Button>
             </div>
@@ -53,6 +68,31 @@ const TestPage = () => {
           )}
           <QuestionNavigator />
         </div>
+        {/* <div className="bg-muted p-4 rounded-md mt-4 space-y-2">
+          <h2 className="text-xl font-bold">Submitted Answers:</h2>
+          {Object.entries(answers).length === 0 ? (
+            <p className="text-muted-foreground">No answers submitted.</p>
+          ) : (
+            Object.entries(answers).map(([questionID, answer]) => (
+              <div
+                key={questionID}
+                className="border p-3 rounded-md bg-white shadow-sm"
+              >
+                <p className="font-semibold">Question ID: {questionID}</p>
+                <p>Type: {answer.type}</p>
+                <p>Flagged: {answer.flag ? "Yes" : "No"}</p>
+                <p>
+                  Answer:{" "}
+                  {answer.type === "mcq"
+                    ? Array.isArray(answer.answer)
+                      ? answer.answer.join(", ")
+                      : answer.answer
+                    : answer.answer}
+                </p>
+              </div>
+            ))
+          )}
+        </div> */}
       </div>
     </div>
   );

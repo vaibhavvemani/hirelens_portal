@@ -5,6 +5,8 @@ import { QuestionOptionKey } from "@/types/question";
 
 type TestState = {
   test: Test | null;
+  startTime: Date | null;
+  setStartTime: (date: Date) => void;
   currentQuestionIndex: number;
   setTest: (test: Test) => void;
   nextQuestion: () => void;
@@ -27,6 +29,8 @@ export const useTestStore = create<TestState>()(
           ),
         });
       },
+      startTime: null,
+      setStartTime: (date) =>set({startTime: date}),
       previousQuestion: () =>
         set((state) => ({
           currentQuestionIndex: Math.max(state.currentQuestionIndex - 1, 0),

@@ -35,7 +35,7 @@ const MCQInterface = () => {
 
   function chooseAnswer(key: QuestionOptionKey) {
     if (!currentQuestion) return;
-    updateAnswer(currentQuestion.id, key);
+    updateAnswer(currentQuestion.id, currentQuestion.questionType, key);
   }
 
   function flagQuestion() {

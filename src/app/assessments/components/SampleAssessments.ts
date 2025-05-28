@@ -1888,7 +1888,7 @@ const SampleAssessment: AssessmentSystem = {
       name: "Basic_JavaScript_Coding",
       desc: "Fundamentals of JavaScript Coding",
       cover_image: "/default.png",
-      duration: "30",
+      duration: "0.2",
       topics: [
         {
           name: "coding",
@@ -1902,6 +1902,7 @@ const SampleAssessment: AssessmentSystem = {
           id: "q1011_1",
           category: "JavaScript",
           topic: "Functions",
+          boilerplate: "//function add(a, b) { return a + b; }",
           difficulty: "easy",
           text: "Write a function that returns the sum of two numbers.",
           questionType: "coding",
@@ -1936,6 +1937,7 @@ const SampleAssessment: AssessmentSystem = {
           id: "q1011_2",
           category: "JavaScript",
           topic: "Strings",
+          boilerplate: "//function reverse(s) { return s.split('').reverse().join('')",
           difficulty: "easy",
           text: "Write a function that returns the reverse of a given string.",
           questionType: "coding",
