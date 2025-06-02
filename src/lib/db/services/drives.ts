@@ -1,4 +1,4 @@
-import clientPromise from "@/lib/mongodb";
+import clientPromise from "@/lib/db/mongodb";
 import { Drive } from "@/types/drives";
 import { ObjectId } from "mongodb";
 

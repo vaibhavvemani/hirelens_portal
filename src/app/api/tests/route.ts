@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { add_test, delete_test, update_test } from "@/lib/db/tests";
+import { add_test, delete_test, update_test } from "@/lib/db/services/tests";
 
 export async function POST(request: NextRequest) {
     const data = await request.json();
