@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { get_test } from "@/lib/db/tests";
+import { get_test } from "@/lib/db/services/tests";
 
 export async function POST(request: NextRequest) {
     const data = await request.json();
