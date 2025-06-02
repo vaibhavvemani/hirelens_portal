@@ -1,4 +1,7 @@
-import { SamplesCourses } from "./sampleCourses";
+"use client"
+
+import { SampleCourses } from "./sampleCourses";
+import { Course } from "@/types/courses";
 import {
   Card,
   CardContent,
@@ -8,8 +11,33 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { BookOpen, File } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 const CourseCards = () => {
+  const getTotalFilesInCourse = (course: Course): number => {
+    return course.modules.reduce(
+      (totalFiles, module) => totalFiles + module.Files.length,
+      0
+    );
+  };
+  const getLastUpdatedDate = (course: Course): Date => {
+    if (!course.modules.length) return new Date(); // fallback if no modules
+    
+    return new Date(Math.max(
+      ...course.modules.map(module => module.lastUpdated.getTime())
+    ));
+  };
+  const formatDate = (date: Date): string => {
+    return date.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+    // Example output: "Mar 15, 2023"
+  };
+
+  const router = useRouter()
   return (
     <div className="flex flex-col gap-4 pb-6">
       <div className="flex items-center gap-2">
@@ -17,19 +45,20 @@ const CourseCards = () => {
         <h1 className="text-lg font-bold">Course Documents</h1>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        {SamplesCourses.map((course) => {
+        {SampleCourses.map((course) => {
           const overallProgress =
             course.modules.reduce((sum, module) => sum + module.progress, 0) /
             course.modules.length;
 
           return (
-            <Card key={course.id} className="w-full p-4 hover:shadow-lg transition-all duration-300">
+            <Card key={course.id} className="w-full p-4 hover:shadow-lg transition-all duration-300 cursor-pointer"
+            onClick={()=> router.push(`/courses/${course.id}`)}>
               <CardHeader className="p-0 pb-3">
                 <div className="flex justify-between items-start">
                   <div>
-                    <CardTitle className="text-lg font-semibold">{course.title}</CardTitle>
+                    <CardTitle className="text-lg font-semibold">{course.name}</CardTitle>
                     <CardDescription className="text-sm font-bold text-muted-foreground">
-                      {course.professor}
+                      {course.faculty}
                     </CardDescription>
                   </div>
                   <div className="text-right">
@@ -43,15 +72,17 @@ const CourseCards = () => {
                 <div className="space-y-3">
                   <div className="flex h-2 bg-gray-200 rounded-full overflow-hidden">
                     {course.modules.map((module, index) => (
+                      <Tooltip key={index}>
+                        <TooltipTrigger asChild>
                       <div
                         key={index}
                         className={`flex-1 ${
                           module.progress === 100
-                            ? "bg-green-500"
+                            ? "bg-green-400"
                             : module.progress > 0
-                            ? "bg-blue-500"
+                            ? "bg-blue-400"
                             : "bg-gray-200"
-                        } ${index > 0 ? "border-l border-white" : ""}`}
+                        } ${index > 0 ? "border-l-3 border-white" : ""}`}
                         style={{
                           background:
                             module.progress > 0 && module.progress < 100
@@ -59,6 +90,11 @@ const CourseCards = () => {
                               : undefined,
                         }}
                       />
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom">
+                        <p className="text-xs font-bold">{`Progress: ${module.progress}%`}</p>
+                      </TooltipContent>
+                      </Tooltip>
                     ))}
                   </div>
                   <div className="flex justify-between text-xs text-gray-600">
@@ -75,12 +111,12 @@ const CourseCards = () => {
                 </div>
               </CardContent>
 
-              <CardFooter className="p-0 flex justify-between items-center">
+              <CardFooter className="p-0 flex justify-between items-center font-medium">
                 <div className="flex items-center gap-1 text-gray-500">
-                  <File size={14} />
-                  <span className="text-sm">{course.documentCount} documents</span>
+                  <File size={14} strokeWidth={2}/>
+                  <p className="text-sm">{getTotalFilesInCourse(course)} documents</p>
                 </div>
-                <span className="text-sm text-gray-500">Updated {course.lastUpdated}</span>
+                <p className="text-sm text-gray-500">Last updated: {formatDate(getLastUpdatedDate(course))}</p>
               </CardFooter>
             </Card>
           );
