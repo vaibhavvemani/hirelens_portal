@@ -9,7 +9,7 @@ export async function GET() {
       questionType: "mcq",
       topic: "JavaScript Basics",
       category: "Programming",
-      difficulty: "easy",
+      difficulty: "medium",
       marks: 5,
       mcqData: {
         optionType: "single",

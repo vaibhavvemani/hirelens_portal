@@ -36,19 +36,25 @@ const questionSchema = new Schema<IQuestion>({
         optionType: {
             type: String,
             enum: ["multiple", "single"],
-            required: function(this: IQuestion) { return this.questionType === "mcq"; },
-        },
-        options: [{
-            id: String,
-            text: String,
-            isCorrect: Boolean,
-        }],
-        validate: {
-            validator: function(this: IQuestion) {
-                return this.questionType != "mcq" || (this.mcqData?.options && this.mcqData?.options.length >= 2);
+            required: function (this: IQuestion) {
+                return this.questionType === "mcq";
             },
-            message: "MCQ questions must have at least 2 options."
-        }
+        },
+        options: {
+            type: [
+                {
+                    id: { type: String, required: true },
+                    text: { type: String, required: true },
+                    isCorrect: { type: Boolean, required: true },
+                },
+            ],
+            validate: {
+                validator: function (this: IQuestion, val: { id: string; text: string; isCorrect: boolean }[]) {
+                    return this.questionType !== "mcq" || (val && val.length >= 2);
+                },
+                message: "MCQ questions must have at least 2 options.",
+            },
+        },
     },
 
     // For Coding questions
