@@ -253,7 +253,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
 
       {/* Preview Modal */}
       <Dialog open={isPreviewOpen} onOpenChange={setIsPreviewOpen}>
-        <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+        <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-y-auto overflow-x-hidden">
           <DialogHeader className="p-6 pb-0">
             <div className="flex justify-between items-start">
               <div>
