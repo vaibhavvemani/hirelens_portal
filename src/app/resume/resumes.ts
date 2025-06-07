@@ -4,21 +4,22 @@ import { Resume } from "@/types/resume";
     {
       id: 1,
       name: "Software Engineer",
-      description: "Resume for every software engineer dev role",
-      file: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      description: "Resume for software engineer dev role",
+      file: "http://localhost:3000/resume/dummy.pdf",
       aiscore: 88,
       dateUpdated: new Date("2024-03-15"),
-      default: true
+      default: false
     },
     {
       id: 2,
       name: "Product Manager",
-      description: "Resume for every software engineer dev role",
-      file: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      description: "Resume for software engineer dev role",
+      file: "http://localhost:3000/resume/Sam_Resume_Dev.pdf",
       aiscore: 75,
       dateUpdated: new Date("2024-04-22"),
-      default: false
+      default: true
     },
+
   ];
   
   export default resumes;
