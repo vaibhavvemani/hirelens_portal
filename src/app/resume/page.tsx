@@ -1,4 +1,4 @@
-import React from "react";
+import YourResumes from "./YourResumes";
 
 const page = () => {
   return (
@@ -10,6 +10,7 @@ const page = () => {
             Manage your resumes and optimize them with AI assistance
           </p>
         </div>
+        <YourResumes />
       </div>
     </div>
   );
