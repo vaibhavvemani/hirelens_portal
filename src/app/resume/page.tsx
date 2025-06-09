@@ -1,3 +1,4 @@
+import JobContainer from "./JobContainer";
 import YourResumes from "./YourResumes";
 
 const page = () => {
@@ -11,6 +12,7 @@ const page = () => {
           </p>
         </div>
         <YourResumes />
+        <JobContainer />
       </div>
     </div>
   );

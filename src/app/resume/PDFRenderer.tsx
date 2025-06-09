@@ -11,9 +11,19 @@ import { CloudUpload, Trash, Trash2 } from "lucide-react";
 
 interface PDFRendererProps {
   fileUrl: string;
+  width: number;
+  height: number;
+  scale: number;
+  navigator: boolean;
 }
 
-const PDFRenderer: React.FC<PDFRendererProps> = ({ fileUrl }) => {
+const PDFRenderer: React.FC<PDFRendererProps> = ({
+  fileUrl,
+  width,
+  height,
+  scale,
+  navigator
+}) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
 
@@ -37,7 +47,10 @@ const PDFRenderer: React.FC<PDFRendererProps> = ({ fileUrl }) => {
   };
 
   return (
-    <div className="w-full h-[70vh] flex flex-col items-center overflow-hidden no-shadow-pdf gap-2 hide-scroller">
+    <div
+      style={{ width: `${width}px`, height: `${height}px` }}
+      className="flex flex-col items-center overflow-hidden no-shadow-pdf gap-2 hide-scroller"
+    >
       <div className="flex-1 w-full overflow-y-scroll hide-scroller">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
           <Viewer
@@ -45,10 +58,11 @@ const PDFRenderer: React.FC<PDFRendererProps> = ({ fileUrl }) => {
             plugins={[pageNavigationPluginInstance]}
             onDocumentLoad={handleDocumentLoad}
             onPageChange={handlePageChange}
-            defaultScale={0.85}
+            defaultScale={scale}
           />
         </Worker>
       </div>
+      {navigator && (
       <div className="flex justify-around w-full mt-2">
         <div className="w-full flex items-center px-4 gap-3">
           <Button
@@ -70,10 +84,17 @@ const PDFRenderer: React.FC<PDFRendererProps> = ({ fileUrl }) => {
           </Button>
         </div>
         <div className="flex gap-1">
-          <Button><CloudUpload />Replace file</Button>
-          <Button className="bg-red-500"><Trash2/>Delete</Button>
+          <Button>
+            <CloudUpload />
+            Replace file
+          </Button>
+          <Button className="bg-red-500">
+            <Trash2 />
+            Delete
+          </Button>
         </div>
       </div>
+      )}
     </div>
   );
 };

@@ -86,7 +86,7 @@ const YourResumes = () => {
                   </Badge>
                 </Card>
               </DialogHeader>
-              <PDFRenderer fileUrl={resume.file} />
+              <PDFRenderer fileUrl={resume.file} width={520} height={750} scale={0.85} navigator={true} />
             </DialogContent>
           </Dialog>
         </div>

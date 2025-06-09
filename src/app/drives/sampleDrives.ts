@@ -4,7 +4,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 1,
     company: "Google",
-    logo: "/google.png",
+    logo: "/default.png",
     role: "DS Intern",
     type: "Full time",
     location: "Bangalore",
@@ -52,7 +52,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 2,
     company: "Microsoft",
-    logo: "/microsoft.png",
+    logo: "/default.png",
     role: "DS Intern",
     type: "Internship cum Full time",
     location: "Bangalore",
@@ -100,7 +100,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 3,
     company: "Amazon",
-    logo: "/amazon.png",
+    logo: "/default.png",
     role: "Software Development Engineering Intern",
     type: "Internship cum Full time",
     location: "Bangalore",
@@ -148,7 +148,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 4,
     company: "Meta",
-    logo: "/meta.png",
+    logo: "/default.png",
     role: "Software Engineer Intern",
     type: "Full time",
     location: "Bangalore",
@@ -196,7 +196,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 5,
     company: "Adobe",
-    logo: "/adobe.png",
+    logo: "/default.png",
     role: "Intern - Creative Tools",
     type: "Internship cum Full time",
     location: "Bangalore",
@@ -244,7 +244,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 6,
     company: "Flipkart",
-    logo: "/flipkart.png",
+    logo: "/default.png",
     role: "E-commerce Intern",
     type: "Internship",
     location: "Bangalore",
@@ -292,7 +292,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 7,
     company: "Swiggy",
-    logo: "/swiggy.png",
+    logo: "/default.png",
     role: "Logistics Intern",
     type: "Full time",
     location: "Bangalore",
@@ -340,7 +340,7 @@ export const sampleDrives: Drive[] = [
   {
     driveID: 8,
     company: "Zomato",
-    logo: "/zomato.png",
+    logo: "/default.png",
     role: "Food-Tech Intern",
     type: "Internship",
     location: "Bangalore",
