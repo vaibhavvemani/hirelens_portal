@@ -6,7 +6,7 @@ import { Resume } from "@/types/resume";
       name: "Software Engineer",
       description: "Resume for software engineer dev role",
       file: "http://localhost:3000/resume/dummy.pdf",
-      aiscore: 88,
+      atsscore: 88,
       dateUpdated: new Date("2024-03-15"),
       default: true
     },
@@ -15,7 +15,7 @@ import { Resume } from "@/types/resume";
       name: "Product Manager",
       description: "Resume for project manager role",
       file: "http://localhost:3000/resume/Sam_Resume_Dev.pdf",
-      aiscore: 75,
+      atsscore: 75,
       dateUpdated: new Date("2024-04-22"),
       default: false
     },
@@ -24,7 +24,7 @@ import { Resume } from "@/types/resume";
       name: "Product Manager",
       description: "Resume for project manager role",
       file: "http://localhost:3000/resume/Sam_Resume_Dev.pdf",
-      aiscore: 75,
+      atsscore: 75,
       dateUpdated: new Date("2024-04-22"),
       default: false
     },

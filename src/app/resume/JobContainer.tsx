@@ -93,7 +93,7 @@ const JobContainer = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-3 gap-2 min-w-[370px]">
+          <div className="flex flex-3 gap-2 min-w-[370px] justify-start">
             {resumes.map((resume, i) => (
               <Dialog key={i}>
                 <DialogTrigger key={i} asChild>

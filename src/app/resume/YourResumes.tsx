@@ -43,9 +43,9 @@ const YourResumes = () => {
           <CardContent className="p-0 mt-3">
             <div className="flex flex-col gap-1">
               <p className="text-xs text-muted-foreground font-semibold">
-                AI Score: {resume.aiscore}%
+                ATS Score: {resume.atsscore}%
               </p>
-              <Progress value={resume.aiscore} />
+              <Progress value={resume.atsscore} />
             </div>
             <p className="text-xs h-fit mt-2 text-muted-foreground font-medium bg-secondary w-fit px-2 py-1 rounded-sm">
               Last updated: {resume.dateUpdated.toLocaleDateString()}
@@ -76,17 +76,17 @@ const YourResumes = () => {
                   <DialogTitle>{resume.name}</DialogTitle>
                 </div>
                 {resume.description && <DialogDescription>{resume.description}</DialogDescription>}
-                <Card className="flex flex-row w-full justify-between gap-5 items-center mt-3 px-4 py-2">
+                <Card className="flex flex-row w-full justify-between gap-5 items-center mt-3 px-4 py-2 hide-scroller">
                   <div className="flex flex-5 flex-col gap-1">
-                    <p className="text-sm font-semibold">AI Score: {resume.aiscore}%</p>
-                    <Progress value={resume.aiscore} />
+                    <p className="text-sm font-semibold">ATS Score: {resume.atsscore}%</p>
+                    <Progress value={resume.atsscore} />
                   </div>
                   <Badge className="flex flex-3 text-sm">
                     Last Updated: {resume.dateUpdated.toLocaleDateString()}
                   </Badge>
                 </Card>
               </DialogHeader>
-              <PDFRenderer fileUrl={resume.file} width={520} height={750} scale={0.85} navigator={true} />
+              <PDFRenderer fileUrl={resume.file} width={520} height={650} scale={0.85} navigator={true} />
             </DialogContent>
           </Dialog>
         </div>

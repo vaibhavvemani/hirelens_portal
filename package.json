@@ -37,6 +37,7 @@
     "lucide-react": "^0.503.0",
     "mongodb": "^6.15.0",
     "mongoose": "^8.15.1",
+    "motion": "^12.16.0",
     "next": "15.2.4",
     "pdfjs-dist": "^3.11.174",
     "react": "^18.3.1",

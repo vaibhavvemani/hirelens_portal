@@ -51,7 +51,7 @@ const PDFRenderer: React.FC<PDFRendererProps> = ({
       style={{ width: `${width}px`, height: `${height}px` }}
       className="flex flex-col items-center overflow-hidden no-shadow-pdf gap-2 hide-scroller"
     >
-      <div className="flex-1 w-full overflow-y-scroll hide-scroller">
+      <div className="flex-1 w-full overflow-y-scroll hide-scroller items-center">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
           <Viewer
             fileUrl={fileUrl}

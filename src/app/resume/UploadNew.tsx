@@ -14,7 +14,7 @@ const UploadNew = () => {
     name: "",
     description: "",
     file: "",
-    aiscore: 0,
+    atsscore: 0,
     default: false,
     dateUpdated: new Date(),
   });

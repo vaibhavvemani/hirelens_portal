@@ -3,7 +3,7 @@ export interface Resume {
     name: string;
     description?: string;
     file: string;
-    aiscore: number;
+    atsscore: number;
     default: boolean;
     dateUpdated: Date;
   }
