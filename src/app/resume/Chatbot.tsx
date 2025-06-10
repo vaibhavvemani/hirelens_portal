@@ -56,8 +56,8 @@ const Chatbot = ({resume, drive}: ChatbotProps) => {
   return (
     <div className="flex flex-col h-full justify-between">
         <TypingAnimation className="text-xs font-medium" delay={2000}>👋🏽  Welcome! I'm here to assist you with your resume!!</TypingAnimation>
-        <div className="flex gap-2 items-center max-h-[45px] justify-between">
-        <Textarea placeholder="Enter a prompt.." className="resize-none overflow-y-scroll hide-scroller min-h-[45px] max-h-[45px] p-2"/>
+        <div className="flex gap-2 items-center max-h-[35px] justify-between">
+        <Textarea placeholder="Enter a prompt.." className="resize-none overflow-y-scroll hide-scroller min-h-[35px] max-h-[35px] py-1 px-2"/>
         <Button className="h-full text-base">Send <Send /></Button>
         </div>
     </div>
