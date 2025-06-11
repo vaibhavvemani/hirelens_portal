@@ -54,7 +54,7 @@ const sidebarGroups: SidebarGroupType[] = [
     label: "Student Profile",
     items: [
       { title: "Resume", url: "/resume", icon: FileUser },
-      { title: "Mail", url: "#", icon: Mail },
+      { title: "Mail", url: "/mail", icon: Mail },
     ],
   },
   {
