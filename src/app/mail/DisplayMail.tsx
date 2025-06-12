@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import { mail } from "@/types/mail";
+import { MessageSquareDot } from "lucide-react";
 import Image from "next/image";
 
 interface DisplayMailProps {
@@ -24,12 +26,14 @@ const DisplayMail = ({ mail }: DisplayMailProps) => {
   if (mail === null)
     return (
       <div className="w-full h-full flex flex-col items-center justify-center">
-        <p className="text-2xl text-muted-foreground font-semibold">Select an email!</p>
+        <p className="text-2xl text-muted-foreground font-semibold">
+          Select an email!
+        </p>
       </div>
     );
   return (
     <div className="flex flex-col py-2 mx-4">
-      <p className="text-2xl font-bold">{mail.subject}</p>
+        <p className="text-2xl font-bold">{mail.subject}</p>
       <div className="flex justify-between mt-2 items-center">
         <div className="flex gap-3 items-center">
           <Image
@@ -44,7 +48,7 @@ const DisplayMail = ({ mail }: DisplayMailProps) => {
             alt={mail.from.name}
           />
           <p className="font-semibold text-xl">{mail.from.name}</p>
-          <Badge className="py-0">{mail.from.role}</Badge>
+          <Badge className="py-0.5">{mail.from.role}</Badge>
         </div>
         <Badge className="py-0 h-fit text-base bg-accent text-accent-foreground">
           {mail.date.toDateString()}
@@ -82,6 +86,7 @@ const DisplayMail = ({ mail }: DisplayMailProps) => {
               </Dialog>
             ))}
           </div>
+          <Button className="mt-5 w-fit self-end p-0 bg-blue-700 text-blue-50 hover:bg-blue-500 ease-in-out duration-450"><MessageSquareDot />Mark as unread</Button>
         </div>
       ) : (
         <></>

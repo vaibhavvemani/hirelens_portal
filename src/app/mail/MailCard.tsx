@@ -12,10 +12,18 @@ function trimMessage(message: string) {
   return message.length > 25 ? message.substring(0, 70) + "..." : message;
 }
 
-const MailCard = ({ mail}: MailCardProps) => {
-    const setSelectedMail = currentMailStore((state) => state.setSelectedMail);
+const MailCard = ({ mail }: MailCardProps) => {
+  const studentID = 1001;
+  const setSelectedMail = currentMailStore((state) => state.setSelectedMail);
   return (
-    <div className="flex flex-col px-3 py-2 hover:bg-accent hover:cursor-pointer ease-in-out transition-all duration-300" onClick={() => setSelectedMail(mail)}>
+    <div
+      className={`flex flex-col px-3 py-2 hover:bg-accent hover:cursor-pointer ease-in-out transition-all duration-300 ${
+        mail.to.find((r) => r.studentID === studentID)?.read
+          ? "border-l-blue-600 border-l-2"
+          : ""
+      }`}
+      onClick={() => setSelectedMail(mail)}
+    >
       <div className="flex justify-between">
         <div className="flex items-center gap-2">
           <Image
@@ -34,12 +42,21 @@ const MailCard = ({ mail}: MailCardProps) => {
         <div className="flex gap-2 items-center">
           <Star
             size={15}
-            className="hover:stroke-blue-500 ease-in-out transition-all duration-300"
+            className={`hover:stroke-blue-500 ease-in-out transition-all duration-300 ${
+              mail.to.find((r) => r.studentID === studentID)?.starred
+                ? "fill-blue-400 stroke-blue-700"
+                : ""
+            }`}
           />
+
           <Archive
             size={15}
-            className="hover:stroke-amber-400 ease-in-out transition-all duration-300"
-          />
+            className={`hover:stroke-amber-500 ease-in-out transition-all duration-300 ${
+              mail.to.find((r) => r.studentID === studentID)?.archived
+                ? "fill-amber-400 stroke-amber-700"
+                : ""
+            }`}
+            />
         </div>
       </div>
       <div className="flex flex-col ml-10">

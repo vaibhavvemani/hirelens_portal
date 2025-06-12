@@ -25,8 +25,11 @@ type Sender = {
 
 type Receiver = {
     studentID: number,
+    read: boolean;
+    starred: boolean;
+    archived: boolean;
 }
 
-type Category = "HRD" | "Professor" | "Announcements" | "Other"
+export type Category = "HRD" | "Professor" | "Announcements" | "Other"
 
 export type Filter = "Inbox" | "Starred" | "Archived" | "Dept of. HRD" | "Professors" | "Announcements"
