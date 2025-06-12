@@ -19,8 +19,8 @@ const MailCard = ({ mail }: MailCardProps) => {
     <div
       className={`flex flex-col px-3 py-2 hover:bg-accent hover:cursor-pointer ease-in-out transition-all duration-300 ${
         mail.to.find((r) => r.studentID === studentID)?.read
-          ? "border-l-blue-600 border-l-2"
-          : ""
+          ? ""
+          : "border-l-blue-600 border-l-2"
       }`}
       onClick={() => setSelectedMail(mail)}
     >
