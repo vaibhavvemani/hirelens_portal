@@ -14,6 +14,7 @@ function trimMessage(message: string) {
 
 const MailCard = ({ mail }: MailCardProps) => {
   const studentID = 1001;
+  const selectedMail = currentMailStore((state) => state.selectedMail)
   const setSelectedMail = currentMailStore((state) => state.setSelectedMail);
   return (
     <div
@@ -21,7 +22,9 @@ const MailCard = ({ mail }: MailCardProps) => {
         mail.to.find((r) => r.studentID === studentID)?.read
           ? ""
           : "border-l-blue-600 border-l-2"
-      }`}
+      }
+          
+      ${mail===selectedMail? "bg-accent": ""}`}
       onClick={() => setSelectedMail(mail)}
     >
       <div className="flex justify-between">
