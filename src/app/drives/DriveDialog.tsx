@@ -19,6 +19,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Description from "./DialogTabsContent/Description";
+import Requirements from "./DialogTabsContent/Requirements";
+import Company from "./DialogTabsContent/Company";
+import Rounds from "./DialogTabsContent/Rounds";
 
 const DriveDialog = ({ drive }: { drive: Drive }) => {
   return (
@@ -92,147 +96,30 @@ const DriveDialog = ({ drive }: { drive: Drive }) => {
       </div>
 
       <Tabs defaultValue="description" className="mt-4">
-        <TabsList className="grid w-full grid-cols-3 mb-2">
-          <TabsTrigger value="description">
-            Description
-          </TabsTrigger>
-          <TabsTrigger value="requirements">
-            Requirements
-          </TabsTrigger>
+        <TabsList className="grid w-full grid-cols-4 mb-2">
+          <TabsTrigger value="description">Description</TabsTrigger>
+          <TabsTrigger value="requirements">Requirements</TabsTrigger>
           <TabsTrigger value="company">Company</TabsTrigger>
+          <TabsTrigger value="rounds">Rounds</TabsTrigger>
         </TabsList>
         <TabsContent
           value="description"
           className="flex flex-col gap-3"
         >
-          <div className="flex flex-col gap-2">
-            <h1 className="text-xl font-bold">
-              Drive description
-            </h1>
-            <p className="text-sm font-semibold text-muted-foreground">
-              {drive.jobdesc}
-            </p>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h1 className="text-xl font-bold">Job description</h1>
-            <ul className="list-disc pl-5">
-              {drive.completeJobDesc.map((point, index) => (
-                <li key={index}>{point}</li>
-              ))}
-            </ul>
-          </div>
+          <Description drive={drive} />
         </TabsContent>
         <TabsContent
           value="requirements"
           className="flex flex-col gap-3"
         >
-          <div className="flex flex-col gap-1">
-            <h1 className="text-xl font-bold">Prerequisites:</h1>
-            <p className="text-sm font-medium">
-              {drive.prerequisites}
-            </p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <h1 className="text-lg font-bold">Requirements:</h1>
-            <ul>
-              <ul>
-                {Object.entries(drive.requirements).map(
-                  ([key, value], index) => {
-                    let label = "";
-                    switch (key) {
-                      case "tenth_grade":
-                        label = "10th Grade";
-                        break;
-                      case "twelfth_grade":
-                        label = "12th Grade";
-                        break;
-                      case "cgpa":
-                        label = "Minimum CGPA";
-                        break;
-                      case "departments":
-                        label = "Eligible Departments";
-                        break;
-                      default:
-                        label = key;
-                    }
-
-                    return (
-                      <li
-                        key={index}
-                        className="flex gap-2 items-center"
-                      >
-                        <p className="font-bold">{label}:</p>{" "}
-                        {Array.isArray(value) ? (
-                          value.join(", ")
-                        ) : (
-                          <p className="font-semibold text-accent-foreground">
-                            {value}
-                          </p>
-                        )}
-                      </li>
-                    );
-                  }
-                )}
-              </ul>
-            </ul>
-          </div>
+          <Requirements drive={drive} />
         </TabsContent>
         <TabsContent value="company" className="flex flex-col">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <Building strokeWidth={2.5} size={20} />
-              <h1 className="text-xl font-bold">
-                {drive.company}
-              </h1>
-            </div>
-
-            <div className="flex flex-col gap-1 font-medium">
-              {/* Description */}
-              <div className="flex items-start gap-2">
-                <FileText
-                  strokeWidth={2}
-                  size={18}
-                  className="mt-0.5 flex-shrink-0"
-                />
-                <p className="text-sm">
-                  {drive.companydetails.description}
-                </p>
-              </div>
-
-              {/* Website */}
-              <div className="flex items-center gap-2">
-                <Globe strokeWidth={2} size={18} />
-                <a
-                  href={drive.companydetails.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-blue-600 hover:underline"
-                >
-                  {drive.companydetails.website}
-                </a>
-              </div>
-
-              {/* Revenue */}
-              <div className="flex items-center gap-2">
-                <Banknote strokeWidth={2} size={18} />
-                <p className="text-sm">
-                  Revenue: {drive.companydetails.revenue}
-                </p>
-              </div>
-
-              {/* Address */}
-              <div className="flex items-start gap-2">
-                <MapPin
-                  strokeWidth={2}
-                  size={18}
-                  className="mt-0.5 flex-shrink-0"
-                />
-                <p className="text-sm">
-                  {drive.companydetails.address}
-                </p>
-              </div>
-            </div>
-          </div>
+          <Rounds drive={drive} />
+          <Company drive={drive} />
+        </TabsContent>
+        <TabsContent value="rounds" className="flex flex-col">
+          <Rounds drive={drive} />
         </TabsContent>
       </Tabs>
     </DialogContent>

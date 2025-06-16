@@ -47,6 +47,38 @@ export const sampleDrives: Drive[] = [
       revenue: "$282.8 billion (2022)",
       address: "Googleplex, 1600 Amphitheatre Parkway, Mountain View, California, U.S."
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Placed",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -95,6 +127,38 @@ export const sampleDrives: Drive[] = [
       revenue: "$198.3 billion (2022)",
       address: "One Microsoft Way, Redmond, Washington, U.S."
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Placed",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -142,7 +206,39 @@ export const sampleDrives: Drive[] = [
       website: "https://www.amazon.com",
       revenue: "$513.98 billion (2022)",
       address: "410 Terry Avenue North, Seattle, Washington, U.S."
-    },
+    },    
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Placed",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -191,6 +287,33 @@ export const sampleDrives: Drive[] = [
       revenue: "$116.61 billion (2022)",
       address: "1 Hacker Way, Menlo Park, California, U.S."
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -239,6 +362,33 @@ export const sampleDrives: Drive[] = [
       revenue: "$17.61 billion (2022)",
       address: "345 Park Avenue, San Jose, California, U.S."
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -287,6 +437,33 @@ export const sampleDrives: Drive[] = [
       revenue: "$6 billion (2022)",
       address: "Flipkart Internet Private Limited, Bangalore, Karnataka, India"
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -335,6 +512,33 @@ export const sampleDrives: Drive[] = [
       revenue: "$1.02 billion (2022)",
       address: "Swiggy, Auro Center, Bangalore, Karnataka, India"
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -383,6 +587,33 @@ export const sampleDrives: Drive[] = [
       revenue: "$1 billion (2022)",
       address: "Zomato Limited, Gurugram, Haryana, India"
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -431,6 +662,33 @@ export const sampleDrives: Drive[] = [
       revenue: "$18.21 billion (2023)",
       address: "Electronics City, Hosur Road, Bangalore, Karnataka, India"
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: ["1NH22AI001"]
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: ["1NH22AI001"]
+      }
+    ],
     duration: "12 months"
   },
   {
@@ -479,6 +737,33 @@ export const sampleDrives: Drive[] = [
       revenue: "$27.9 billion (2023)",
       address: "TCS House, Mumbai, Maharashtra, India"
     },
+    rounds: [
+      {
+        roundName: "Online Assessment",
+        date: new Date("2023-10-15"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI002", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 1",
+        date: new Date("2023-10-22"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "Technical Interview - Round 2",
+        date: new Date("2023-10-29"),
+        eligibleStudents: ["1NH22AI001", "1NH22AI003"]
+      },
+      {
+        roundName: "HR Interview",
+        date: new Date("2023-11-05"),
+        eligibleStudents: null
+      },
+      {
+        roundName: "Final Managerial Round",
+        date: new Date("2023-11-12"),
+        eligibleStudents: null
+      }
+    ],
     duration: "12 months"
   },
 ];
