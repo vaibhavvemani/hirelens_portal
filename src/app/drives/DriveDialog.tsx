@@ -115,10 +115,9 @@ const DriveDialog = ({ drive }: { drive: Drive }) => {
           <Requirements drive={drive} />
         </TabsContent>
         <TabsContent value="company" className="flex flex-col">
-          <Rounds drive={drive} />
           <Company drive={drive} />
         </TabsContent>
-        <TabsContent value="rounds" className="flex flex-col">
+        <TabsContent value="rounds" className="flex flex-col pb-5">
           <Rounds drive={drive} />
         </TabsContent>
       </Tabs>
