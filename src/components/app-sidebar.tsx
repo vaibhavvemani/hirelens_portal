@@ -23,8 +23,9 @@ import {
   CodeXml,
   Mail,
   FileText,
-  Calendar,
   MessagesSquare,
+  Calendar,
+  SquarePen,
   FileUser,
   SquareChevronRight,
   BriefcaseBusiness,
@@ -48,7 +49,7 @@ const sidebarGroups: SidebarGroupType[] = [
     items: [
       { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
       { title: "Interview Drives", url: "/drives", icon: BriefcaseBusiness },
-      { title: "Feedback", url: "/feedback", icon: MessagesSquare }
+      { title: "Feedback", url: "/feedback", icon: SquarePen }
     ],
   },
   {
@@ -114,7 +115,8 @@ export function AppSidebar() {
         <SidebarFooter className="mt-auto mb-2">
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton className="flex items-center py-6 cursor-pointer">
+              <SidebarMenuButton asChild className="flex items-center py-6 cursor-pointer">
+                <Link href="/profile">
                 <User2 size={20} />
                 <div className="flex flex-col">
                   <p className="font-extrabold">Username</p>
@@ -122,6 +124,7 @@ export function AppSidebar() {
                     username@email.com
                   </p>
                 </div>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
