@@ -48,6 +48,7 @@ const sidebarGroups: SidebarGroupType[] = [
     items: [
       { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
       { title: "Interview Drives", url: "/drives", icon: BriefcaseBusiness },
+      { title: "Feedback", url: "/feedback", icon: MessagesSquare }
     ],
   },
   {

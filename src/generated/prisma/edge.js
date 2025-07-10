@@ -107,7 +107,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/samsusikar/Desktop/hirelens_assessment/src/generated/prisma",
+      "value": "/Users/vaibhavvemani/Developer/hirelens_assessment/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -121,12 +121,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/samsusikar/Desktop/hirelens_assessment/prisma/schema.prisma",
+    "sourceFilePath": "/Users/vaibhavvemani/Developer/hirelens_assessment/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../../prisma",
   "clientVersion": "6.9.0",
